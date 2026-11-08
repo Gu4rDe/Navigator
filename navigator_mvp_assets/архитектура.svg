@@ -1,0 +1,137 @@
+<svg width="1800" height="950" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 1800 950">
+<rect width="1800" height="950" x="0" y="0" fill="#FFFFFF"></rect>
+<path d="M190 120Q322.2 134.5 450 169.3" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3333 8L0 6L-5.3333 8L0 0Z" transform="matrix(-0.263,1.056,-0.965,-0.287,436.77,199.5226)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M190 300Q316.1 243.5 449.2 207.5" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3 8L0 6L-5.3 8L0 0Z" transform="matrix(0.261,1.056,-0.965,0.285,435.8323,245.6636)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M190 480Q315.6 345.2 461.4 233.5" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3 8L0 6L-5.3 8L0 0Z" transform="matrix(0.609,0.868,-0.794,0.666,449.2925,276.9269)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M190 660Q313.6 440.3 473 245.9" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3 8L0 6L-5.3 8L0 0Z" transform="matrix(0.773,0.694,-0.634,0.846,462.156,291.8971)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M520 190Q526.4 253.6 524.6 317.2" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3333 8L0 6L-5.3333 8L0 0Z" transform="matrix(-1,-0.03,0.027,-1.094,519.0785,377.9522)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M520 390Q527.4 463.6 524.9 537.2" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3333 8L0 6L-5.3333 8L0 0Z" transform="matrix(-0.999,-0.037,0.034,-1.094,519.3439,643.4884)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M520 390Q646.2 337.5 778.7 305.6" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3 8L0 6L-5.3 8L0 0Z" transform="matrix(0.234,1.064,-0.972,0.256,799.3031,364.0086)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M520 190Q671.5 306.3 801.2 445.8" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="7" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3333 8L0 6L-5.3333 8L0 0Z" transform="matrix(-0.732,0.745,-0.681,-0.801,824.0845,533.1507)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="7" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M520 390Q671.5 506.3 801.2 645.8" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="8" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3333 8L0 6L-5.3333 8L0 0Z" transform="matrix(-0.732,0.745,-0.681,-0.801,824.0845,774.53)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="8" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M850 290Q993.6 275.6 1137.2 284.2" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="9" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3333 8L0 6L-5.3333 8L0 0Z" transform="matrix(-0.059,1.092,-0.998,-0.065,1194.755,338.1662)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="9" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M850 500Q993.6 485.6 1137.2 494.2" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="10" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3333 8L0 6L-5.3333 8L0 0Z" transform="matrix(-0.059,1.092,-0.998,-0.065,1194.755,591.6145)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="10" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M1550 290Q1416.4 303.4 1282.8 295.7" transform="matrix(1.103,0,0,1.207,-59.5588,-4.8276)" fill="none" pointer-events="visible" stroke="#94A3B8" stroke-width="1.4734578701944943" stroke-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="11" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
+<path d="M0 0L5.3 8L0 6L-5.3 8L0 0Z" transform="matrix(0.057,-1.092,0.998,0.062,1355.2526,352.0747)" fill="#94A3B8" fill-opacity="0.5" ecmeta_series_index="0" ecmeta_data_index="11" ecmeta_ssr_type="chart" class="zr0-cls-1"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,150,140)" fill="#2563EB" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-2"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,150,357.2414)" fill="#2563EB" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr0-cls-2"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,150,574.4828)" fill="#2563EB" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr0-cls-2"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,150,791.7241)" fill="#2563EB" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr0-cls-2"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,513.9706,224.4828)" fill="#0891B2" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr0-cls-3"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,513.9706,465.8621)" fill="#0891B2" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr0-cls-3"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,513.9706,731.3793)" fill="#0891B2" ecmeta_series_index="0" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr0-cls-3"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,877.9412,345.1724)" fill="#059669" ecmeta_series_index="0" ecmeta_data_index="7" ecmeta_ssr_type="chart" class="zr0-cls-4"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,877.9412,598.6207)" fill="#059669" ecmeta_series_index="0" ecmeta_data_index="8" ecmeta_ssr_type="chart" class="zr0-cls-4"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,877.9412,840)" fill="#7C3AED" ecmeta_series_index="0" ecmeta_data_index="9" ecmeta_ssr_type="chart" class="zr0-cls-5"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,1275,345.1724)" fill="#475569" ecmeta_series_index="0" ecmeta_data_index="10" ecmeta_ssr_type="chart" class="zr0-cls-6"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,1275,598.6207)" fill="#475569" ecmeta_series_index="0" ecmeta_data_index="11" ecmeta_ssr_type="chart" class="zr0-cls-6"></path>
+<path d="M-0.5 -1L0.5 -1A0.5 0.5 0 0 1 1 -0.5L1 0.5A0.5 0.5 0 0 1 0.5 1L-0.5 1A0.5 0.5 0 0 1 -1 0.5L-1 -0.5A0.5 0.5 0 0 1 -0.5 -1" transform="matrix(120,0,0,44.864,1650,345.1724)" fill="#475569" ecmeta_series_index="0" ecmeta_data_index="12" ecmeta_ssr_type="chart" class="zr0-cls-6"></path>
+<path d="M-67.5 -21l135 0l0 42l-135 0Z" transform="translate(150 140)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" y="-10.5" transform="translate(150 140)" fill="#FFFFFF">Android</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" y="10.5" transform="translate(150 140)" fill="#FFFFFF">навигация</text>
+<path d="M-67.5 -21l135 0l0 42l-135 0Z" transform="translate(150 357.2414)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" y="-10.5" transform="translate(150 357.2414)" fill="#FFFFFF">iOS</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" y="10.5" transform="translate(150 357.2414)" fill="#FFFFFF">навигация</text>
+<path d="M-163.8 -21l327.6 0l0 42l-327.6 0Z" transform="translate(150 574.4828)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" y="-10.5" transform="translate(150 574.4828)" fill="#FFFFFF">Desktop</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="10.5" transform="translate(150 574.4828)" fill="#FFFFFF">планирование / симуляция</text>
+<path d="M-163.8 -21l327.6 0l0 42l-327.6 0Z" transform="translate(150 791.7241)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="-10.5" transform="translate(150 791.7241)" fill="#FFFFFF">Web / Kotlin JS</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="10.5" transform="translate(150 791.7241)" fill="#FFFFFF">планирование / симуляция</text>
+<path d="M-80.9 -21l161.7 0l0 42l-161.7 0Z" transform="translate(513.9706 224.4828)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="-10.5" transform="translate(513.9706 224.4828)" fill="#FFFFFF">shared UI</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="10.5" transform="translate(513.9706 224.4828)" fill="#FFFFFF">Compose + Decompose</text>
+<path d="M-158.4 -21l316.8 0l0 42l-316.8 0Z" transform="translate(513.9706 465.8621)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="-10.5" transform="translate(513.9706 465.8621)" fill="#FFFFFF">domain + data</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="10.5" transform="translate(513.9706 465.8621)" fill="#FFFFFF">маршруты, ИТС, настройки</text>
+<path d="M-97.2 -21l194.4 0l0 42l-194.4 0Z" transform="translate(513.9706 731.3793)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="-10.5" transform="translate(513.9706 731.3793)" fill="#FFFFFF">platform adapters</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="10.5" transform="translate(513.9706 731.3793)" fill="#FFFFFF">GNSS, звук, файлы</text>
+<path d="M-126.7 -21l253.5 0l0 42l-253.5 0Z" transform="translate(877.9412 345.1724)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="-10.5" transform="translate(877.9412 345.1724)" fill="#FFFFFF">Ktor Client + DTO</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="10.5" transform="translate(877.9412 345.1724)" fill="#FFFFFF">внешний контракт /v1</text>
+<path d="M-77.2 -21l154.4 0l0 42l-154.4 0Z" transform="translate(877.9412 598.6207)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="-10.5" transform="translate(877.9412 598.6207)" fill="#FFFFFF">MapLibre adapter</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="10.5" transform="translate(877.9412 598.6207)" fill="#FFFFFF">карта и overlays</text>
+<path d="M-93.8 -21l187.6 0l0 42l-187.6 0Z" transform="translate(877.9412 840)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="-10.5" transform="translate(877.9412 840)" fill="#FFFFFF">Fake / replay</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="10.5" transform="translate(877.9412 840)" fill="#FFFFFF">локальные fixtures</text>
+<path d="M-114.6 -21l229.2 0l0 42l-229.2 0Z" transform="translate(1275 345.1724)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="-10.5" transform="translate(1275 345.1724)" fill="#FFFFFF">API навигатора</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="10.5" transform="translate(1275 345.1724)" fill="#FFFFFF">отдельный проект</text>
+<path d="M-92.1 -21l184.2 0l0 42l-184.2 0Z" transform="translate(1275 598.6207)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="-10.5" transform="translate(1275 598.6207)" fill="#FFFFFF">Ресурсы карты</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="10.5" transform="translate(1275 598.6207)" fill="#FFFFFF">style / tiles / glyphs</text>
+<path d="M-146.7 -21l293.4 0l0 42l-293.4 0Z" transform="translate(1650 345.1724)" fill="none" pointer-events="visible" class="zr0-cls-0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="-10.5" transform="translate(1650 345.1724)" fill="#FFFFFF">ИТС города</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:15px;font-family:Noto Sans CJK SC, sans-serif;font-weight:600;" xml:space="preserve" y="10.5" transform="translate(1650 345.1724)" fill="#FFFFFF">обработка вне проекта</text>
+<path d="M-5 -5l1092.9 0l0 24l-1092.9 0Z" transform="translate(358.55 913)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#b7b9be" stroke-width="0" class="zr0-cls-7"></path>
+<path d="M3 0L15 0A3 3 0 0 1 18 3L18 9A3 3 0 0 1 15 12L3 12A3 3 0 0 1 0 9L0 3A3 3 0 0 1 3 0" transform="translate(358.55 914)" fill="#2563EB" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-7"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:Noto Sans CJK SC, sans-serif;" x="23" y="6" transform="translate(358.55 914)" fill="#64748B">Клиенты</text>
+<path d="M0 -1l121 0l0 14l-121 0Z" transform="translate(358.55 914)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="legend" class="zr0-cls-8"></path>
+<path d="M3 0L15 0A3 3 0 0 1 18 3L18 9A3 3 0 0 1 15 12L3 12A3 3 0 0 1 0 9L0 3A3 3 0 0 1 3 0" transform="translate(487.55 914)" fill="#0891B2" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-7"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:Noto Sans CJK SC, sans-serif;" xml:space="preserve" x="23" y="6" transform="translate(487.55 914)" fill="#64748B">Общий KMP-код</text>
+<path d="M0 -1l173.9 0l0 14l-173.9 0Z" transform="translate(487.55 914)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="legend" class="zr0-cls-8"></path>
+<path d="M3 0L15 0A3 3 0 0 1 18 3L18 9A3 3 0 0 1 15 12L3 12A3 3 0 0 1 0 9L0 3A3 3 0 0 1 3 0" transform="translate(669.47 914)" fill="#059669" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-7"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:Noto Sans CJK SC, sans-serif;" xml:space="preserve" x="23" y="6" transform="translate(669.47 914)" fill="#64748B">Интеграционный слой</text>
+<path d="M0 -1l278.9 0l0 14l-278.9 0Z" transform="translate(669.47 914)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="legend" class="zr0-cls-8"></path>
+<path d="M3 0L15 0A3 3 0 0 1 18 3L18 9A3 3 0 0 1 15 12L3 12A3 3 0 0 1 0 9L0 3A3 3 0 0 1 3 0" transform="translate(956.39 914)" fill="#7C3AED" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-7"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:Noto Sans CJK SC, sans-serif;" xml:space="preserve" x="23" y="6" transform="translate(956.39 914)" fill="#64748B">Локальные fixtures</text>
+<path d="M0 -1l198.1 0l0 14l-198.1 0Z" transform="translate(956.39 914)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="legend" class="zr0-cls-8"></path>
+<path d="M3 0L15 0A3 3 0 0 1 18 3L18 9A3 3 0 0 1 15 12L3 12A3 3 0 0 1 0 9L0 3A3 3 0 0 1 3 0" transform="translate(1162.53 914)" fill="#475569" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-7"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:Noto Sans CJK SC, sans-serif;" xml:space="preserve" x="23" y="6" transform="translate(1162.53 914)" fill="#64748B">Внешние зависимости</text>
+<path d="M0 -1l278.9 0l0 14l-278.9 0Z" transform="translate(1162.53 914)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="legend" class="zr0-cls-8"></path>
+<path d="M-496.4 -5l992.7 0l0 66l-992.7 0Z" transform="translate(900 25)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr0-cls-7"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:30px;font-family:Noto Sans CJK SC, sans-serif;font-weight:700;" xml:space="preserve" y="15" transform="translate(900 25)" fill="#17233C">Архитектура frontend KMP-проекта</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:Noto Sans CJK SC, sans-serif;" xml:space="preserve" y="48" transform="translate(900 25)" fill="#64748B">В репозитории только клиенты; API и обработка ИТС реализуются отдельно</text>
+<style ><![CDATA[
+.zr0-cls-0:hover {
+cursor:pointer;
+}
+.zr0-cls-1:hover {
+cursor:pointer;
+fill:rgba(162,179,202,1);
+}
+.zr0-cls-2:hover {
+cursor:pointer;
+fill:rgba(40,108,255,1);
+}
+.zr0-cls-3:hover {
+cursor:pointer;
+fill:rgba(8,159,195,1);
+}
+.zr0-cls-4:hover {
+cursor:pointer;
+fill:rgba(5,165,115,1);
+}
+.zr0-cls-5:hover {
+cursor:pointer;
+fill:rgba(136,63,255,1);
+}
+.zr0-cls-6:hover {
+cursor:pointer;
+fill:rgba(78,93,115,1);
+}
+.zr0-cls-7:hover {
+pointer-events:none;
+}
+.zr0-cls-8:hover {
+cursor:pointer;
+fill:rgba(0,0,0,0);
+}
+
+]]>
+
+</style>
+</svg>
