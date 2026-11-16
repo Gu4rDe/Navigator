@@ -13,6 +13,9 @@ local.properties
 *.keystore
 !debug.keystore
 
+# Kimi Design
+.kimi-design/*.lock
+
 # macOS
 .DS_Store
 
