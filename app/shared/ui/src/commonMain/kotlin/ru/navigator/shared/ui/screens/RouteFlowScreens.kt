@@ -21,12 +21,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.StrokeCap
-import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ru.navigator.shared.ui.components.DesignStatusBar
 import ru.navigator.shared.ui.components.NvButton
@@ -36,7 +32,6 @@ import ru.navigator.shared.ui.components.NvDivider
 import ru.navigator.shared.ui.components.NvGlyph
 import ru.navigator.shared.ui.components.NvIcon
 import ru.navigator.shared.ui.components.NvIconButton
-import ru.navigator.shared.ui.components.NvIconButtonKind
 import ru.navigator.shared.ui.components.NvMapBase
 import ru.navigator.shared.ui.components.NvSegmented
 import ru.navigator.shared.ui.components.NvSettingRow
@@ -177,23 +172,33 @@ fun PreviewScreen(onBack: () -> Unit, onStart: () -> Unit, onSimulate: () -> Uni
         NvMapBase {
             OverlayPath(
                 Path().apply {
-                    moveTo(78f, 844f); lineTo(78f, 560f)
-                    quadraticTo(78f, 528f, 110f, 528f); lineTo(318f, 528f)
+                    moveTo(78f, 844f)
+                    lineTo(78f, 560f)
+                    quadraticTo(78f, 528f, 110f, 528f)
+                    lineTo(318f, 528f)
                 },
-                NavigatorColors.MapRoadMajor, 6f,
+                NavigatorColors.MapRoadMajor,
+                6f,
             )
             OverlayPath(
                 Path().apply {
-                    moveTo(198f, 844f); lineTo(198f, 380f)
+                    moveTo(198f, 844f)
+                    lineTo(198f, 380f)
                     quadraticTo(198f, 340f, 238f, 340f)
-                    lineTo(318f, 340f); lineTo(318f, 528f)
+                    lineTo(318f, 340f)
+                    lineTo(318f, 528f)
                 },
-                NavigatorColors.MapRoadMajor, 6f,
+                NavigatorColors.MapRoadMajor,
+                6f,
             )
             OverlayPath(mainRoutePath(), NavigatorColors.BrandPrimary, 8f)
             OverlayPath(
-                Path().apply { moveTo(198f, 700f); lineTo(198f, 640f) },
-                NavigatorColors.StatusWarning, 8f,
+                Path().apply {
+                    moveTo(198f, 700f)
+                    lineTo(198f, 640f)
+                },
+                NavigatorColors.StatusWarning,
+                8f,
             )
             PositionMarker(187, 689, accuracy = false)
             DestinationPin(305, 494)
@@ -280,8 +285,11 @@ private fun RouteOptionRow(
             .clip(RoundedCornerShape(12.dp))
             .background(NavigatorColors.SurfaceCard)
             .then(
-                if (selected) Modifier.border(2.dp, NavigatorColors.BrandPrimary, RoundedCornerShape(12.dp))
-                else Modifier.border(HairlineBorder, RoundedCornerShape(12.dp))
+                if (selected) {
+                    Modifier.border(2.dp, NavigatorColors.BrandPrimary, RoundedCornerShape(12.dp))
+                } else {
+                    Modifier.border(HairlineBorder, RoundedCornerShape(12.dp))
+                }
             )
             .padding(vertical = 12.dp, horizontal = 14.dp),
         horizontalArrangement = Arrangement.spacedBy(12.dp),
@@ -307,10 +315,13 @@ fun GuidanceScreen(onFinish: () -> Unit) {
             OverlayPath(mainRoutePath(), NavigatorColors.StatusUnknown, 8f)
             OverlayPath(
                 Path().apply {
-                    moveTo(198f, 716f); lineTo(198f, 560f)
-                    quadraticTo(198f, 528f, 230f, 528f); lineTo(318f, 528f)
+                    moveTo(198f, 716f)
+                    lineTo(198f, 560f)
+                    quadraticTo(198f, 528f, 230f, 528f)
+                    lineTo(318f, 528f)
                 },
-                NavigatorColors.BrandPrimary, 8f,
+                NavigatorColors.BrandPrimary,
+                8f,
             )
             PositionMarker(187, 689, accuracy = false)
             DestinationPin(305, 494)
@@ -374,7 +385,10 @@ fun GuidanceScreen(onFinish: () -> Unit) {
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
                 ) {
-                    Column { BasicText("14:58", style = NavigatorType.Eta); BasicText("прибытие", style = NavigatorType.Caption) }
+                    Column {
+                        BasicText("14:58", style = NavigatorType.Eta)
+                        BasicText("прибытие", style = NavigatorType.Caption)
+                    }
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         BasicText("26 мин", style = NavigatorType.Title)
                         BasicText("осталось", style = NavigatorType.Caption)

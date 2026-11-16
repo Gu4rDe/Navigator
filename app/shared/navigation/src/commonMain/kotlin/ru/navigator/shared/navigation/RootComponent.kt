@@ -14,16 +14,27 @@ import kotlinx.serialization.Serializable
 @Serializable
 sealed interface ScreenConfig {
     @Serializable data object Welcome : ScreenConfig
+
     @Serializable data object Map : ScreenConfig
+
     @Serializable data object Search : ScreenConfig
+
     @Serializable data object Point : ScreenConfig
+
     @Serializable data object Build : ScreenConfig
+
     @Serializable data object Preview : ScreenConfig
+
     @Serializable data object Guidance : ScreenConfig
+
     @Serializable data object Arrival : ScreenConfig
+
     @Serializable data object Event : ScreenConfig
+
     @Serializable data object Settings : ScreenConfig
+
     @Serializable data object Status : ScreenConfig
+
     @Serializable data object About : ScreenConfig
 }
 
@@ -39,8 +50,7 @@ class RootComponent(context: ComponentContext) : ComponentContext by context {
         childFactory = ::createChild,
     )
 
-    private fun createChild(config: ScreenConfig, componentContext: ComponentContext): ScreenComponent =
-        ScreenComponent(config, componentContext)
+    private fun createChild(config: ScreenConfig, componentContext: ComponentContext): ScreenComponent = ScreenComponent(config, componentContext)
 
     @OptIn(DelicateDecomposeApi::class)
     fun navigateTo(config: ScreenConfig) {

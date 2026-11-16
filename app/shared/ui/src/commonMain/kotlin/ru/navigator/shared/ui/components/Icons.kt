@@ -23,8 +23,11 @@ private fun iconPath(data: NvIconData): Path {
     val parser = PathParser()
     var target: Path? = null
     for ((d, fillType) in data.paths) {
-        target = if (target == null) parser.parsePathString(d).toPath()
-        else parser.parsePathString(d).toPath(target)
+        target = if (target == null) {
+            parser.parsePathString(d).toPath()
+        } else {
+            parser.parsePathString(d).toPath(target)
+        }
         target.fillType = fillType
     }
     return target ?: Path()

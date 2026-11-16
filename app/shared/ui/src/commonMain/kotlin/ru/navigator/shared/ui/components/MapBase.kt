@@ -103,10 +103,8 @@ fun NvMapBase(
             )
 
             // map.roads
-            fun vRoad(x: Float, width: Float, color: Color) =
-                drawLine(color, Offset(x, 0f), Offset(x, 844f), strokeWidth = width)
-            fun hRoad(y: Float, width: Float, color: Color) =
-                drawLine(color, Offset(0f, y), Offset(390f, y), strokeWidth = width)
+            fun vRoad(x: Float, width: Float, color: Color) = drawLine(color, Offset(x, 0f), Offset(x, 844f), strokeWidth = width)
+            fun hRoad(y: Float, width: Float, color: Color) = drawLine(color, Offset(0f, y), Offset(390f, y), strokeWidth = width)
 
             vRoad(78f, 12f, NavigatorColors.MapRoadMajor)
             vRoad(198f, 8f, NavigatorColors.MapRoad)

@@ -30,6 +30,7 @@ import ru.navigator.shared.ui.components.DesignStatusBar
 import ru.navigator.shared.ui.components.NvButton
 import ru.navigator.shared.ui.components.NvButtonKind
 import ru.navigator.shared.ui.components.NvButtonSize
+import ru.navigator.shared.ui.components.NvDivider
 import ru.navigator.shared.ui.components.NvGlyph
 import ru.navigator.shared.ui.components.NvIcon
 import ru.navigator.shared.ui.components.NvIconButton
@@ -37,7 +38,6 @@ import ru.navigator.shared.ui.components.NvIconButtonKind
 import ru.navigator.shared.ui.components.NvInput
 import ru.navigator.shared.ui.components.NvInputState
 import ru.navigator.shared.ui.components.NvListItem
-import ru.navigator.shared.ui.components.NvDivider
 import ru.navigator.shared.ui.components.NvMapBase
 import ru.navigator.shared.ui.components.NvTag
 import ru.navigator.shared.ui.components.NvTagTone
@@ -157,15 +157,19 @@ fun MapScreen(
             OverlayPath(mainRoutePath(), NavigatorColors.BrandPrimary, 8f)
             OverlayPath(
                 androidx.compose.ui.graphics.Path().apply {
-                    moveTo(198f, 756f); lineTo(198f, 656f)
+                    moveTo(198f, 756f)
+                    lineTo(198f, 656f)
                 },
-                NavigatorColors.StatusWarning, 8f,
+                NavigatorColors.StatusWarning,
+                8f,
             )
             OverlayPath(
                 androidx.compose.ui.graphics.Path().apply {
-                    moveTo(198f, 844f); lineTo(198f, 768f)
+                    moveTo(198f, 844f)
+                    lineTo(198f, 768f)
                 },
-                NavigatorColors.StatusError, 8f,
+                NavigatorColors.StatusError,
+                8f,
             )
             PositionMarker(166, 668)
             DestinationPin(305, 494)
