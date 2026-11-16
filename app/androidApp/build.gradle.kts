@@ -23,8 +23,8 @@ android {
 dependencies {
     implementation(libs.decompose)
     implementation(libs.activity.compose)
-    implementation("androidx.compose.ui:ui-tooling:1.12.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.12.1")
+    implementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(project(":app:shared:navigation"))
     implementation(project(":app:shared:ui"))
     implementation(project(":core:model"))

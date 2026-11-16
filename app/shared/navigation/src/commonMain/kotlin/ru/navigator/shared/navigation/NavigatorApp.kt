@@ -1,6 +1,7 @@
 package ru.navigator.shared.navigation
 
 import androidx.compose.runtime.Composable
+import com.arkivanov.decompose.FaultyDecomposeApi
 import com.arkivanov.decompose.extensions.compose.stack.Children
 import com.arkivanov.decompose.extensions.compose.stack.animation.fade
 import com.arkivanov.decompose.extensions.compose.stack.animation.slide
@@ -21,6 +22,7 @@ import ru.navigator.shared.ui.screens.WelcomeScreen
 import ru.navigator.shared.ui.theme.NavigatorColors
 
 /** Корень приложения: дизайн-вьюпорт 390×844 и стек экранов по Prototype flow. */
+@OptIn(FaultyDecomposeApi::class)
 @Composable
 fun NavigatorApp(root: RootComponent) {
     DesignViewport(background = NavigatorColors.SurfaceBase) {

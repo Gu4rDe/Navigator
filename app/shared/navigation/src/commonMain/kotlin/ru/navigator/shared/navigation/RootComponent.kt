@@ -1,6 +1,7 @@
 package ru.navigator.shared.navigation
 
 import com.arkivanov.decompose.ComponentContext
+import com.arkivanov.decompose.DelicateDecomposeApi
 import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
@@ -41,6 +42,7 @@ class RootComponent(context: ComponentContext) : ComponentContext by context {
     private fun createChild(config: ScreenConfig, componentContext: ComponentContext): ScreenComponent =
         ScreenComponent(config, componentContext)
 
+    @OptIn(DelicateDecomposeApi::class)
     fun navigateTo(config: ScreenConfig) {
         navigation.push(config)
     }
