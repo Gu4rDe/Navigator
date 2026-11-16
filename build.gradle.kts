@@ -5,4 +5,5 @@ plugins {
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.androidKmpLibrary) apply false
     alias(libs.plugins.kotlinxSerialization) apply false
+    alias(libs.plugins.ktlint) apply false
 }

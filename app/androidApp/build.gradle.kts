@@ -1,4 +1,5 @@
 plugins {
+    alias(libs.plugins.ktlint)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeCompiler)
 }

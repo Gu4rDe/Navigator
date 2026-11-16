@@ -1,0 +1,36 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.{yml,yaml,json}]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{kt,kts}]
+ktlint_code_style = android_studio
+# Длинные строки в UI-коде и SVG-путях иконок не ограничиваем.
+max_line_length = off
+# Trailing comma — используемый в проекте стиль; правило не навязываем,
+# но и не удаляем уже поставленные запятые.
+ij_kotlin_allow_trailing_comma = true
+ij_kotlin_allow_trailing_comma_on_call_site = true
+ktlint_standard_trailing-comma-on-call-site = disabled
+ktlint_standard_trailing-comma-on-declaration-site = disabled
+
+# Compose-соглашение: @Composable-функции именуются в PascalCase.
+[app/shared/ui/**/*.kt]
+ktlint_standard_function-naming = disabled
+
+[app/shared/navigation/**/*.kt]
+ktlint_standard_function-naming = disabled
+
+[app/androidApp/**/*.kt]
+ktlint_standard_function-naming = disabled
