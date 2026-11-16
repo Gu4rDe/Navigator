@@ -1,0 +1,53 @@
+id: list-item
+name: List item
+
+expose:
+  title: {node: li.title, field: content}
+  subtitle: {node: li.subtitle, field: content}
+  leading: {node: li.icon, field: children}
+  trailing: {node: li.trailing, field: children}
+
+root:
+  id: li.root
+  type: frame
+  size: [fill, hug]
+  layout: {type: flex, direction: row, gap: 12, padding: [12, 16], alignItems: center}
+  fill: $surface.card
+  children:
+    - id: li.avatar
+      type: frame
+      size: [36, 36]
+      cornerRadius: $radius.pill
+      fill: $status.infoBg
+      layout: {type: flex, alignItems: center, justifyContent: center}
+      children:
+        - id: li.icon
+          type: frame
+          size: [hug, hug]
+          layout: {type: flex, alignItems: center, justifyContent: center}
+    - id: li.texts
+      type: frame
+      size: [220, hug]
+      layout: {type: flex, direction: column, gap: 2}
+      children:
+        - id: li.title
+          type: text
+          size: [fill, hug]
+          style: $text.strong
+          maxLines: 1
+          content: Заголовок
+        - id: li.subtitle
+          type: text
+          size: [fill, hug]
+          style: $text.caption
+          maxLines: 1
+          content: Подпись
+    - id: li.trailing
+      type: frame
+      size: [hug, hug]
+      layout: {type: flex, direction: row, gap: 8, alignItems: center}
+
+variants:
+  noIcon:
+    true:
+      li.avatar: {visible: false}

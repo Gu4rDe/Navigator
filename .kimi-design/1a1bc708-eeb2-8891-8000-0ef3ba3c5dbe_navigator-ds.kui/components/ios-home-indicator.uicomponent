@@ -1,0 +1,16 @@
+id: ios-home-indicator
+name: iOS Home 指示条
+
+# Bare glyph, not a 34 pt safe-area container. Center horizontally, 8 pt from
+# the screen bottom. ios-tab-bar already includes it; do not stack another one.
+root:
+  id: ios-home-indicator.root
+  type: frame
+  size: [134, 5]
+  cornerRadius: 2.5
+  fill: "#000000"
+
+variants:
+  style:
+    light:
+      ios-home-indicator.root: {fill: "#FFFFFF"}

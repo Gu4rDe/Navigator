@@ -1,0 +1,58 @@
+id: ios-status-bar
+name: iOS 状态栏（竖屏）
+
+# Default geometry: 393 pt Dynamic Island layout; not a universal safe-area inset.
+
+expose:
+  time: {node: ios-status-bar.time, field: content}
+
+root:
+  id: ios-status-bar.root
+  type: frame
+  size: [fill, 59]
+  layout: {type: flex, direction: row, padding: [0, 27], alignItems: center, justifyContent: spaceBetween}
+  children:
+    - id: ios-status-bar.time
+      type: text
+      size: [81, 22]
+      align: [center, middle]
+      content: 9:41
+      fontFamily: Helvetica Neue
+      fontSize: 17
+      lineHeight: 22
+      fontWeight: 600
+      color: "#000000"
+    - id: ios-status-bar.icons
+      type: frame
+      size: [hug, hug]
+      layout: {type: flex, direction: row, gap: 6, alignItems: center}
+      children:
+        - id: ios-status-bar.signal
+          type: svg
+          size: [18, 12]
+          fill: "#000000"
+          content: |
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="0.8"/><rect x="5" y="5.5" width="3" height="6.5" rx="0.8"/><rect x="10" y="3" width="3" height="9" rx="0.8"/><rect x="15" width="3" height="12" rx="0.8"/></svg>
+        - id: ios-status-bar.wifi
+          type: svg
+          size: [17, 12]
+          fill: "#000000"
+          content: |
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 12"><path d="M0 3.3A12.6 12.6 0 0 1 17 3.3L15.1 5.2A9.8 9.8 0 0 0 1.9 5.2ZM3.4 6.7A7.6 7.6 0 0 1 13.6 6.7L11.7 8.6A4.9 4.9 0 0 0 5.3 8.6ZM6.7 10A2.7 2.7 0 0 1 10.3 10L8.5 11.8Z"/></svg>
+        - id: ios-status-bar.battery
+          type: svg
+          size: [27, 13]
+          fill: "#000000"
+          content: |
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 13"><path fill-rule="evenodd" opacity="0.35" d="M3.5 0H21.5A3.5 3.5 0 0 1 25 3.5V9.5A3.5 3.5 0 0 1 21.5 13H3.5A3.5 3.5 0 0 1 0 9.5V3.5A3.5 3.5 0 0 1 3.5 0ZM3.5 1A2.5 2.5 0 0 0 1 3.5V9.5A2.5 2.5 0 0 0 3.5 12H21.5A2.5 2.5 0 0 0 24 9.5V3.5A2.5 2.5 0 0 0 21.5 1Z"/><path opacity="0.4" d="M26 4.5C27.3333 5 27.3333 8 26 8.5Z"/><rect x="2" y="2" width="21" height="9" rx="1.5"/></svg>
+
+variants:
+  style:
+    light:
+      ios-status-bar.time: {color: "#FFFFFF"}
+      ios-status-bar.signal: {fill: "#FFFFFF"}
+      ios-status-bar.wifi: {fill: "#FFFFFF"}
+      ios-status-bar.battery: {fill: "#FFFFFF"}
+  device:
+    notch:
+      ios-status-bar.root: {size: [fill, 47]}

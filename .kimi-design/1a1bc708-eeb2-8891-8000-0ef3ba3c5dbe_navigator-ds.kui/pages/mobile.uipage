@@ -1,0 +1,3249 @@
+name: Экраны mobile
+
+children:
+  # ── примечания к фреймам ──
+  - {
+      id: note.1,
+      type: text,
+      position: [ 60, 72 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 1. Запуск
+    }
+  - {
+      id: note.2,
+      type: text,
+      position: [ 510, 72 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 2. Карта
+    }
+  - {
+      id: note.3,
+      type: text,
+      position: [ 960, 72 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 3. Поиск
+    }
+  - {
+      id: note.4,
+      type: text,
+      position: [ 1410, 72 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 4. Точка
+    }
+  - {
+      id: note.5,
+      type: text,
+      position: [ 60, 1022 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 5. Построение
+    }
+  - {
+      id: note.6,
+      type: text,
+      position: [ 510, 1022 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 6. Варианты
+    }
+  - {
+      id: note.7,
+      type: text,
+      position: [ 960, 1022 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 7. Ведение
+    }
+  - {
+      id: note.8,
+      type: text,
+      position: [ 1410, 1022 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 8. Прибытие
+    }
+  - {
+      id: note.9,
+      type: text,
+      position: [ 60, 1972 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 9. Событие
+    }
+  - {
+      id: note.10,
+      type: text,
+      position: [ 510, 1972 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 10. Настройки
+    }
+  - {
+      id: note.11,
+      type: text,
+      position: [ 960, 1972 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 11. Статус
+    }
+  - {
+      id: note.12,
+      type: text,
+      position: [ 1410, 1972 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: 12. О программе
+    }
+
+  # ═══ 1. Первый запуск ═══
+  - id: screen.welcome
+    type: frame
+    position: [ 60, 120 ]
+    size: [ 390, 844 ]
+    layout: { type: flex, direction: column, overflow: hidden }
+    fill: $surface.base
+    children:
+      - {
+          id: sb.welcome,
+          type: instance,
+          source: ios-status-bar,
+          size: [ fill, 59 ],
+          values: { time: "14:32" }
+        }
+      - id: welcome.hero
+        type: frame
+        size: [ fill, hug ]
+        layout:
+          {
+            type: flex,
+            direction: column,
+            gap: 12,
+            padding: [ 24, 24, 8, 24 ],
+            alignItems: center
+          }
+        children:
+          - id: welcome.icon
+            type: frame
+            size: [ 88, 88 ]
+            cornerRadius: $radius.pill
+            fill: $brand.bg
+            layout: { type: flex, alignItems: center, justifyContent: center }
+            children:
+              - {
+                  id: welcome.icon.glyph,
+                  type: svg,
+                  size: [ 36, 36 ],
+                  icon: fas:route,
+                  fill: $brand.primary
+                }
+          - {
+              id: welcome.title,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.h1,
+              content: Навигатор
+            }
+          - id: welcome.sub
+            type: text
+            size: [ fill, hug ]
+            style: $text.body
+            color: $text.secondary
+            align: [ center, top ]
+            content: Маршруты, пробки и события на дороге
+      - id: welcome.card
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 20, 16, 0, 16 ]
+        layout: { type: flex, direction: column, padding: [ 16, 16, 8, 16 ], gap: 4 }
+        fill: $surface.card
+        stroke: $stroke.hairline
+        cornerRadius: $radius.lg
+        children:
+          - {
+              id: welcome.card.title,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.subtitle,
+              content: Геолокация
+            }
+          - {
+              id: welcome.card.sub,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.caption,
+              content: "Для позиции на карте, ведения и пересчёта"
+            }
+          - id: welcome.opt.exact
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 12,
+                padding: [ 10, 0 ],
+                alignItems: center
+              }
+            children:
+              - id: welcome.radio.exact
+                type: frame
+                size: [ 22, 22 ]
+                cornerRadius: $radius.pill
+                stroke: { color: $brand.primary, width: 2, alignment: inside }
+                layout: { type: flex, alignItems: center, justifyContent: center }
+                children:
+                  - {
+                      id: welcome.radio.exact.dot,
+                      type: ellipse,
+                      size: [ 12, 12 ],
+                      fill: $brand.primary
+                    }
+              - id: welcome.opt.exact.texts
+                type: frame
+                size: [ 240, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: welcome.opt.exact.t,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.strong,
+                      content: Точная геолокация
+                    }
+                  - {
+                      id: welcome.opt.exact.s,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.caption,
+                      content: Ведение и голосовые подсказки
+                    }
+          - id: welcome.opt.approx
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 12,
+                padding: [ 10, 0 ],
+                alignItems: center
+              }
+            children:
+              - {
+                  id: welcome.radio.approx,
+                  type: ellipse,
+                  size: [ 22, 22 ],
+                  stroke: { color: $border.default, width: 2, alignment: inside }
+                }
+              - id: welcome.opt.approx.texts
+                type: frame
+                size: [ 240, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: welcome.opt.approx.t,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.strong,
+                      content: Приблизительная
+                    }
+                  - {
+                      id: welcome.opt.approx.s,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.caption,
+                      content: "Позиция с погрешностью до 500 м"
+                    }
+          - id: welcome.opt.none
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 12,
+                padding: [ 10, 0 ],
+                alignItems: center
+              }
+            children:
+              - {
+                  id: welcome.radio.none,
+                  type: ellipse,
+                  size: [ 22, 22 ],
+                  stroke: { color: $border.default, width: 2, alignment: inside }
+                }
+              - id: welcome.opt.none.texts
+                type: frame
+                size: [ 240, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: welcome.opt.none.t,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.strong,
+                      content: Без геолокации
+                    }
+                  - {
+                      id: welcome.opt.none.s,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.caption,
+                      content: Ручной выбор точки старта
+                    }
+      - id: welcome.privacy
+        type: text
+        size: [ fill, hug ]
+        margin: [ 12, 24, 0, 24 ]
+        style: $text.caption
+        align: [ center, top ]
+        content: Позиция обрабатывается на устройстве
+      - { id: welcome.spacer, type: frame, size: [ fill, fill ] }
+      - id: welcome.actions
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: column, gap: 4, padding: [ 8, 16, 40, 16 ] }
+        children:
+          - id: button.allow
+            type: instance
+            source: button
+            size: [ fill, 48 ]
+            values: { label: Разрешить геолокацию, size: lg }
+          - id: button.skip
+            type: instance
+            source: button
+            size: [ fill, 40 ]
+            values: { label: Продолжить без геолокации, kind: ghost }
+      - {
+          id: hi.welcome,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+  # ═══ 2. Основная карта ═══
+  - id: screen.map
+    type: frame
+    position: [ 510, 120 ]
+    size: [ 390, 844 ]
+    layout: { type: free, overflow: hidden }
+    fill: $map.canvas
+    children:
+      - id: map.base
+        type: instance
+        source: map-base
+        size: [ 390, 844 ]
+        position: [ 0, 0 ]
+        values:
+          overlays:
+            - id: ov.route
+              type: path
+              position: [ 0, 0 ]
+              size: [ 390, 844 ]
+              viewBox: [ 390, 844 ]
+              path: M198 844 L198 560 Q198 528 230 528 L318 528
+              stroke: { color: $brand.primary, width: 8, cap: round }
+            - id: ov.jam.warn
+              type: path
+              position: [ 0, 0 ]
+              size: [ 390, 844 ]
+              viewBox: [ 390, 844 ]
+              path: M198 756 L198 656
+              stroke: { color: $status.warning, width: 8, cap: round }
+            - id: ov.jam.err
+              type: path
+              position: [ 0, 0 ]
+              size: [ 390, 844 ]
+              viewBox: [ 390, 844 ]
+              path: M198 844 L198 768
+              stroke: { color: $status.error, width: 8, cap: round }
+            - {
+                id: ov.accuracy,
+                type: ellipse,
+                position: [ 166, 668 ],
+                size: [ 64, 64 ],
+                fill: "#1677FF26"
+              }
+            - {
+                id: ov.position,
+                type: ellipse,
+                position: [ 187, 689 ],
+                size: [ 22, 22 ],
+                fill: $brand.primary,
+                stroke: { color: $surface.card, width: 3, alignment: inside }
+              }
+            - {
+                id: ov.pin,
+                type: svg,
+                position: [ 305, 494 ],
+                size: [ 26, 34 ],
+                icon: fas:location-dot,
+                fill: $status.error
+              }
+            - id: ov.event
+              type: frame
+              position: [ 242, 316 ]
+              size: [ 28, 28 ]
+              cornerRadius: $radius.pill
+              fill: $status.warning
+              stroke: { color: $surface.card, width: 2, alignment: inside }
+              layout: { type: flex, alignItems: center, justifyContent: center }
+              children:
+                - {
+                    id: ov.event.icon,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:car-burst,
+                    fill: $text.inverse
+                  }
+      - {
+          id: sb.map,
+          type: instance,
+          source: ios-status-bar,
+          position: [ 0, 0 ],
+          size: [ 390, 59 ],
+          values: { time: "14:32", style: light }
+        }
+      - id: search.bar
+        type: frame
+        position: [ 16, 72 ]
+        size: [ 358, 48 ]
+        layout:
+          {
+            type: flex,
+            direction: row,
+            gap: 10,
+            padding: [ 0, 14 ],
+            alignItems: center
+          }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        effects: $shadow.card
+        children:
+          - {
+              id: search.bar.icon,
+              type: svg,
+              size: [ 18, 18 ],
+              icon: fas:magnifying-glass,
+              fill: $text.disabled
+            }
+          - {
+              id: search.bar.text,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.body,
+              color: $text.disabled,
+              content: Куда поедем?
+            }
+      - {
+          id: map.live,
+          type: instance,
+          source: tag,
+          position: [ 16, 132 ],
+          values: { label: LIVE, tone: live }
+        }
+      - {
+          id: map.fresh,
+          type: text,
+          position: [ 88, 136 ],
+          size: [ hug, hug ],
+          fontSize: 13,
+          fontWeight: 600,
+          color: "#FFFFFFCC",
+          content: данные на 14:32
+        }
+      - id: button.events
+        type: instance
+        source: icon-button
+        position: [ 330, 200 ]
+        size: [ 44, 44 ]
+        values:
+          badge: true
+          glyph:
+            - {
+                id: g.events,
+                type: svg,
+                size: [ 20, 20 ],
+                icon: fas:triangle-exclamation,
+                fill: $text.primary
+              }
+      - id: button.status
+        type: instance
+        source: icon-button
+        position: [ 330, 256 ]
+        size: [ 44, 44 ]
+        values:
+          glyph:
+            - {
+                id: g.status,
+                type: svg,
+                size: [ 20, 20 ],
+                icon: fas:signal,
+                fill: $text.primary
+              }
+      - id: button.settings
+        type: instance
+        source: icon-button
+        position: [ 330, 312 ]
+        size: [ 44, 44 ]
+        values:
+          glyph:
+            - {
+                id: g.settings,
+                type: svg,
+                size: [ 20, 20 ],
+                icon: fas:gear,
+                fill: $text.primary
+              }
+      - id: button.about
+        type: instance
+        source: icon-button
+        position: [ 330, 368 ]
+        size: [ 44, 44 ]
+        values:
+          glyph:
+            - {
+                id: g.about,
+                type: svg,
+                size: [ 20, 20 ],
+                icon: fas:circle-info,
+                fill: $text.primary
+              }
+      - id: fab.route
+        type: instance
+        source: icon-button
+        position: [ 318, 616 ]
+        size: [ 56, 56 ]
+        values:
+          kind: primary
+          size: lg
+          glyph:
+            - {
+                id: g.route,
+                type: svg,
+                size: [ 22, 22 ],
+                icon: fas:route,
+                fill: $text.inverse
+              }
+      - id: map.sheet
+        type: frame
+        position: [ 0, 696 ]
+        size: [ 390, 148 ]
+        layout: { type: flex, direction: column, gap: 12, padding: [ 10, 16, 34, 16 ] }
+        fill: $surface.card
+        cornerRadius: [ 20, 20, 0, 0 ]
+        effects: $shadow.overlay
+        children:
+          - {
+              id: map.sheet.grab,
+              type: rect,
+              size: [ 36, 4 ],
+              cornerRadius: $radius.pill,
+              fill: $border.default,
+              alignSelf: center
+            }
+          - id: map.sheet.chips
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 8 }
+            children:
+              - id: chip.home
+                type: instance
+                source: button
+                values:
+                  label: Домой
+                  kind: secondary
+                  iconVisible: true
+                  icon:
+                    - {
+                        id: g.chip.home,
+                        type: svg,
+                        size: [ 14, 14 ],
+                        icon: fas:house,
+                        fill: $text.secondary
+                      }
+              - id: chip.work
+                type: instance
+                source: button
+                values:
+                  label: На работу
+                  kind: secondary
+                  iconVisible: true
+                  icon:
+                    - {
+                        id: g.chip.work,
+                        type: svg,
+                        size: [ 14, 14 ],
+                        icon: fas:briefcase,
+                        fill: $text.secondary
+                      }
+              - id: chip.events
+                type: instance
+                source: button
+                values:
+                  label: События рядом
+                  kind: secondary
+                  iconVisible: true
+                  icon:
+                    - {
+                        id: g.chip.events,
+                        type: svg,
+                        size: [ 14, 14 ],
+                        icon: fas:triangle-exclamation,
+                        fill: $text.secondary
+                      }
+          - id: map.sheet.hint
+            type: text
+            size: [ fill, hug ]
+            style: $text.caption
+            content: Пробки обновлены 14:32, маршрут до центра 32 мин
+      - {
+          id: hi.map,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+  # ═══ 3. Поиск ═══
+  - id: screen.search
+    type: frame
+    position: [ 960, 120 ]
+    size: [ 390, 844 ]
+    layout: { type: flex, direction: column, overflow: hidden }
+    fill: $surface.base
+    children:
+      - {
+          id: sb.search,
+          type: instance,
+          source: ios-status-bar,
+          size: [ fill, 59 ],
+          values: { time: "14:32" }
+        }
+      - id: search.header
+        type: frame
+        size: [ fill, hug ]
+        layout:
+          {
+            type: flex,
+            direction: row,
+            gap: 10,
+            padding: [ 8, 16 ],
+            alignItems: center
+          }
+        children:
+          - id: search.back
+            type: instance
+            source: icon-button
+            size: [ 44, 44 ]
+            values:
+              glyph:
+                - {
+                    id: g.search.back,
+                    type: svg,
+                    size: [ 18, 18 ],
+                    icon: fas:arrow-left,
+                    fill: $text.primary
+                  }
+          - id: search.input
+            type: instance
+            source: input
+            size: [ fill, 48 ]
+            values: { value: Тверская, state: focus }
+      - id: search.chips
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: row, gap: 8, padding: [ 4, 16, 8, 16 ] }
+        children:
+          - id: search.chip.home
+            type: instance
+            source: button
+            values:
+              label: Дом
+              kind: secondary
+              iconVisible: true
+              icon:
+                - {
+                    id: g.sch.home,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:house,
+                    fill: $text.secondary
+                  }
+          - id: search.chip.work
+            type: instance
+            source: button
+            values:
+              label: Работа
+              kind: secondary
+              iconVisible: true
+              icon:
+                - {
+                    id: g.sch.work,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:briefcase,
+                    fill: $text.secondary
+                  }
+          - id: search.chip.recent
+            type: instance
+            source: button
+            values:
+              label: Недавние
+              kind: secondary
+              iconVisible: true
+              icon:
+                - {
+                    id: g.sch.recent,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:clock-rotate-left,
+                    fill: $text.secondary
+                  }
+      - {
+          id: search.cap.history,
+          type: text,
+          size: [ fill, hug ],
+          margin: [ 12, 16, 4, 16 ],
+          style: $text.caption,
+          content: "История, хранится локально"
+        }
+      - id: search.history
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 0, 16 ]
+        layout: { type: flex, direction: column }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - id: history.1
+            type: instance
+            source: list-item
+            size: [ fill, hug ]
+            values:
+              title: Тверская ул., 15
+              subtitle: Москва, 2,4 км
+              leading:
+                - {
+                    id: g.h1,
+                    type: svg,
+                    size: [ 16, 16 ],
+                    icon: fas:clock-rotate-left,
+                    fill: $status.info
+                  }
+          - {
+              id: search.d1,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: history.2
+            type: instance
+            source: list-item
+            size: [ fill, hug ]
+            values:
+              title: Парк Горького, главный вход
+              subtitle: Москва, 5,1 км
+              leading:
+                - {
+                    id: g.h2,
+                    type: svg,
+                    size: [ 16, 16 ],
+                    icon: fas:clock-rotate-left,
+                    fill: $status.info
+                  }
+      - {
+          id: search.cap.results,
+          type: text,
+          size: [ fill, hug ],
+          margin: [ 16, 16, 4, 16 ],
+          style: $text.caption,
+          content: "Результаты, API обновлено 14:32"
+        }
+      - id: search.results
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 0, 16 ]
+        layout: { type: flex, direction: column }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - id: result.1
+            type: instance
+            source: list-item
+            size: [ fill, hug ]
+            values:
+              title: Тверская улица
+              subtitle: Москва, 1,1 км
+              leading:
+                - {
+                    id: g.r1,
+                    type: svg,
+                    size: [ 16, 16 ],
+                    icon: fas:location-dot,
+                    fill: $status.info
+                  }
+              trailing:
+                - {
+                    id: g.r1t,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:chevron-right,
+                    fill: $text.disabled
+                  }
+          - {
+              id: search.d2,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: result.2
+            type: instance
+            source: list-item
+            size: [ fill, hug ]
+            values:
+              title: Тверская площадь
+              subtitle: Москва, 1,4 км
+              leading:
+                - {
+                    id: g.r2,
+                    type: svg,
+                    size: [ 16, 16 ],
+                    icon: fas:location-dot,
+                    fill: $status.info
+                  }
+              trailing:
+                - {
+                    id: g.r2t,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:chevron-right,
+                    fill: $text.disabled
+                  }
+          - {
+              id: search.d3,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: result.3
+            type: instance
+            source: list-item
+            size: [ fill, hug ]
+            values:
+              title: Тверской бульвар
+              subtitle: Москва, 1,8 км
+              leading:
+                - {
+                    id: g.r3,
+                    type: svg,
+                    size: [ 16, 16 ],
+                    icon: fas:location-dot,
+                    fill: $status.info
+                  }
+              trailing:
+                - {
+                    id: g.r3t,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:chevron-right,
+                    fill: $text.disabled
+                  }
+      - {
+          id: hi.search,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+  # ═══ 4. Карточка точки ═══
+  - id: screen.point
+    type: frame
+    position: [ 1410, 120 ]
+    size: [ 390, 844 ]
+    layout: { type: free, overflow: hidden }
+    fill: $map.canvas
+    children:
+      - id: point.map
+        type: instance
+        source: map-base
+        size: [ 390, 844 ]
+        position: [ 0, 0 ]
+        values:
+          overlays:
+            - {
+                id: ov.p.accuracy,
+                type: ellipse,
+                position: [ 166, 240 ],
+                size: [ 64, 64 ],
+                fill: "#1677FF26"
+              }
+            - {
+                id: ov.p.position,
+                type: ellipse,
+                position: [ 187, 261 ],
+                size: [ 22, 22 ],
+                fill: $brand.primary,
+                stroke: { color: $surface.card, width: 3, alignment: inside }
+              }
+            - {
+                id: ov.p.pin,
+                type: svg,
+                position: [ 182, 330 ],
+                size: [ 30, 40 ],
+                icon: fas:location-dot,
+                fill: $status.error
+              }
+      - {
+          id: sb.point,
+          type: instance,
+          source: ios-status-bar,
+          position: [ 0, 0 ],
+          size: [ 390, 59 ],
+          values: { time: "14:32", style: light }
+        }
+      - id: point.back
+        type: instance
+        source: icon-button
+        position: [ 16, 72 ]
+        size: [ 44, 44 ]
+        values:
+          glyph:
+            - {
+                id: g.point.back,
+                type: svg,
+                size: [ 18, 18 ],
+                icon: fas:arrow-left,
+                fill: $text.primary
+              }
+      - {
+          id: point.live,
+          type: instance,
+          source: tag,
+          position: [ 330, 80 ],
+          values: { label: LIVE, tone: live }
+        }
+      - id: point.sheet
+        type: frame
+        position: [ 0, 410 ]
+        size: [ 390, 434 ]
+        layout: { type: flex, direction: column, gap: 12, padding: [ 10, 16, 34, 16 ] }
+        fill: $surface.card
+        cornerRadius: [ 20, 20, 0, 0 ]
+        effects: $shadow.overlay
+        children:
+          - {
+              id: point.grab,
+              type: rect,
+              size: [ 36, 4 ],
+              cornerRadius: $radius.pill,
+              fill: $border.default,
+              alignSelf: center
+            }
+          - id: point.head
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 4 }
+            children:
+              - {
+                  id: point.title,
+                  type: text,
+                  size: [ fill, hug ],
+                  style: $text.title,
+                  content: "Тверская ул., 15"
+                }
+              - {
+                  id: point.coords,
+                  type: text,
+                  size: [ fill, hug ],
+                  style: $text.caption,
+                  content: "55.7602, 37.6185, reverse-geocoding, обновлено 14:32"
+                }
+          - id: point.tags
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 8 }
+            children:
+              - {
+                  id: point.tag.live,
+                  type: instance,
+                  source: tag,
+                  values: { label: LIVE, tone: live }
+                }
+              - {
+                  id: point.tag.event,
+                  type: instance,
+                  source: tag,
+                  values: { label: "ДТП в 400 м", tone: warning }
+                }
+              - {
+                  id: point.tag.save,
+                  type: instance,
+                  source: tag,
+                  values: { label: Не сохранено, tone: unknown, dotVisible: false }
+                }
+          - id: point.nearby
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 10,
+                padding: [ 10, 12 ],
+                alignItems: center
+              }
+            fill: $status.warningBg
+            cornerRadius: $radius.md
+            children:
+              - {
+                  id: point.nearby.icon,
+                  type: svg,
+                  size: [ 18, 18 ],
+                  icon: fas:car-burst,
+                  fill: $status.warning
+                }
+              - id: point.nearby.texts
+                type: frame
+                size: [ 290, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: point.nearby.t,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.strong,
+                      fontSize: 14,
+                      content: "ДТП, занята правая полоса"
+                    }
+                  - {
+                      id: point.nearby.s,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.caption,
+                      content: "Действует до 15:30, достоверность 87%"
+                    }
+          - id: button.here
+            type: instance
+            source: button
+            size: [ fill, 48 ]
+            values:
+              label: Сюда
+              size: lg
+              iconVisible: true
+              icon:
+                - {
+                    id: g.here,
+                    type: svg,
+                    size: [ 16, 16 ],
+                    icon: fas:location-arrow,
+                    fill: $text.inverse
+                  }
+          - id: point.grid
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: grid, rows: [ 40, 40 ], columns: [ 1fr, 1fr ], gap: 8 }
+            children:
+              - id: button.from
+                type: instance
+                source: button
+                size: [ fill, fill ]
+                values: { label: Отсюда, kind: secondary }
+              - id: button.save
+                type: instance
+                source: button
+                size: [ fill, fill ]
+                values: { label: Сохранить, kind: secondary }
+              - id: button.showmap
+                type: instance
+                source: button
+                size: [ fill, fill ]
+                values: { label: На карте, kind: secondary }
+              - id: button.recalc
+                type: instance
+                source: button
+                size: [ fill, fill ]
+                values: { label: Пересчитать, kind: secondary }
+      - {
+          id: hi.point,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+  # ═══ 5. Построение маршрута ═══
+  - id: screen.build
+    type: frame
+    position: [ 60, 1070 ]
+    size: [ 390, 844 ]
+    layout: { type: flex, direction: column, overflow: hidden }
+    fill: $surface.base
+    children:
+      - {
+          id: sb.build,
+          type: instance,
+          source: ios-status-bar,
+          size: [ fill, 59 ],
+          values: { time: "14:32" }
+        }
+      - id: build.header
+        type: frame
+        size: [ fill, hug ]
+        layout:
+          {
+            type: flex,
+            direction: row,
+            gap: 10,
+            padding: [ 8, 16 ],
+            alignItems: center
+          }
+        children:
+          - id: build.back
+            type: instance
+            source: icon-button
+            size: [ 44, 44 ]
+            values:
+              glyph:
+                - {
+                    id: g.build.back,
+                    type: svg,
+                    size: [ 18, 18 ],
+                    icon: fas:arrow-left,
+                    fill: $text.primary
+                  }
+          - {
+              id: build.title,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.subtitle,
+              content: Маршрут
+            }
+          - {
+              id: build.live,
+              type: instance,
+              source: tag,
+              values: { label: LIVE, tone: live }
+            }
+      - id: build.route
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 8, 16, 0, 16 ]
+        layout: { type: flex, direction: column, padding: 4 }
+        fill: $surface.card
+        stroke: $stroke.hairline
+        cornerRadius: $radius.lg
+        children:
+          - id: build.from
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 12,
+                padding: [ 12, 16 ],
+                alignItems: center
+              }
+            children:
+              - {
+                  id: build.from.dot,
+                  type: ellipse,
+                  size: [ 12, 12 ],
+                  fill: $status.success
+                }
+              - id: build.from.texts
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: build.from.cap,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: Откуда
+                    }
+                  - {
+                      id: build.from.val,
+                      type: text,
+                      size: [ 240, hug ],
+                      style: $text.strong,
+                      content: Текущая позиция
+                    }
+          - {
+              id: build.div,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: build.to
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 12,
+                padding: [ 12, 16 ],
+                alignItems: center
+              }
+            children:
+              - {
+                  id: build.to.dot,
+                  type: svg,
+                  size: [ 13, 13 ],
+                  icon: fas:location-dot,
+                  fill: $status.error
+                }
+              - id: build.to.texts
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: build.to.cap,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: Куда
+                    }
+                  - {
+                      id: build.to.val,
+                      type: text,
+                      size: [ 240, hug ],
+                      style: $text.strong,
+                      content: "Тверская ул., 15"
+                    }
+          - id: build.swap
+            type: instance
+            source: icon-button
+            position: [ 300, 40 ]
+            size: [ 40, 40 ]
+            overrides:
+              ib.root: { size: [ 40, 40 ], stroke: $stroke.hairline, effects: null }
+            values:
+              glyph:
+                - {
+                    id: g.swap,
+                    type: svg,
+                    size: [ 16, 16 ],
+                    icon: fas:arrow-right-arrow-left,
+                    rotation: 90,
+                    fill: $brand.primary
+                  }
+      - id: build.options
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 12, 16, 0, 16 ]
+        layout: { type: flex, direction: column }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - id: build.opt.tolls
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Избегать платных
+              subtitle: Платные участки и туннели
+              control:
+                - { id: sw.tolls, type: instance, source: switch }
+          - {
+              id: build.d1,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: build.opt.jams
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Избегать пробок
+              subtitle: Пересчёт по LIVE-трафику
+              control:
+                - { id: sw.jams, type: instance, source: switch, values: { state: on } }
+          - {
+              id: build.d2,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: build.opt.unknown
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Исключить дороги без данных
+              subtitle: Участки с покрытием unknown
+              control:
+                - { id: sw.unknown, type: instance, source: switch, values: { state: on } }
+      - id: build.transport
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 12, 16, 0, 16 ]
+        layout: { type: flex, direction: row, gap: 12, alignItems: center }
+        children:
+          - {
+              id: build.transport.cap,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.caption,
+              content: Транспорт
+            }
+          - id: build.transport.seg
+            type: instance
+            source: segmented
+            values: { label1: Авто, label2: Пешком, label3: Вело }
+      - id: build.depart
+        type: instance
+        source: setting-row
+        size: [ fill, hug ]
+        margin: [ 12, 16, 0, 16 ]
+        values:
+          title: Отправление
+          subtitle: Сейчас, 14:32
+          control:
+            - {
+                id: g.depart,
+                type: svg,
+                size: [ 14, 14 ],
+                icon: fas:chevron-right,
+                fill: $text.disabled
+              }
+        overrides:
+          row.root: { cornerRadius: $radius.lg }
+      - id: build.study
+        type: instance
+        source: setting-row
+        size: [ fill, hug ]
+        margin: [ 12, 16, 0, 16 ]
+        values:
+          title: Учебный сценарий
+          subtitle: Симуляция без GNSS, будет помечена
+          control:
+            - { id: sw.study, type: instance, source: switch }
+        overrides:
+          row.root: { cornerRadius: $radius.lg }
+      - { id: build.spacer, type: frame, size: [ fill, fill ] }
+      - id: build.actions
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: column, padding: [ 8, 16, 40, 16 ] }
+        children:
+          - id: button.build
+            type: instance
+            source: button
+            size: [ fill, 48 ]
+            values: { label: Построить маршрут, size: lg }
+      - {
+          id: hi.build,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+  # ═══ 6. Предпросмотр маршрута ═══
+  - id: screen.preview
+    type: frame
+    position: [ 510, 1070 ]
+    size: [ 390, 844 ]
+    layout: { type: free, overflow: hidden }
+    fill: $map.canvas
+    children:
+      - id: preview.map
+        type: instance
+        source: map-base
+        size: [ 390, 844 ]
+        position: [ 0, 0 ]
+        values:
+          overlays:
+            - id: ov.alt2
+              type: path
+              position: [ 0, 0 ]
+              size: [ 390, 844 ]
+              viewBox: [ 390, 844 ]
+              path: M78 844 L78 560 Q78 528 110 528 L318 528
+              stroke: { color: $map.roadMajor, width: 6, cap: round }
+            - id: ov.alt1
+              type: path
+              position: [ 0, 0 ]
+              size: [ 390, 844 ]
+              viewBox: [ 390, 844 ]
+              path: M198 844 L198 380 Q198 340 238 340 L318 340 L318 528
+              stroke: { color: $map.roadMajor, width: 6, cap: round }
+            - id: ov.route.main
+              type: path
+              position: [ 0, 0 ]
+              size: [ 390, 844 ]
+              viewBox: [ 390, 844 ]
+              path: M198 844 L198 560 Q198 528 230 528 L318 528
+              stroke: { color: $brand.primary, width: 8, cap: round }
+            - id: ov.jam2
+              type: path
+              position: [ 0, 0 ]
+              size: [ 390, 844 ]
+              viewBox: [ 390, 844 ]
+              path: M198 700 L198 640
+              stroke: { color: $status.warning, width: 8, cap: round }
+            - {
+                id: ov.p2.position,
+                type: ellipse,
+                position: [ 187, 689 ],
+                size: [ 22, 22 ],
+                fill: $brand.primary,
+                stroke: { color: $surface.card, width: 3, alignment: inside }
+              }
+            - {
+                id: ov.p2.pin,
+                type: svg,
+                position: [ 305, 494 ],
+                size: [ 26, 34 ],
+                icon: fas:location-dot,
+                fill: $status.error
+              }
+      - {
+          id: sb.preview,
+          type: instance,
+          source: ios-status-bar,
+          position: [ 0, 0 ],
+          size: [ 390, 59 ],
+          values: { time: "14:32", style: light }
+        }
+      - id: preview.back
+        type: instance
+        source: icon-button
+        position: [ 16, 72 ]
+        size: [ 44, 44 ]
+        values:
+          glyph:
+            - {
+                id: g.preview.back,
+                type: svg,
+                size: [ 18, 18 ],
+                icon: fas:arrow-left,
+                fill: $text.primary
+              }
+      - id: preview.title
+        type: frame
+        position: [ 72, 72 ]
+        size: [ hug, 44 ]
+        layout:
+          {
+            type: flex,
+            direction: row,
+            gap: 8,
+            padding: [ 0, 16 ],
+            alignItems: center
+          }
+        fill: $surface.card
+        cornerRadius: $radius.pill
+        effects: $shadow.card
+        children:
+          - {
+              id: preview.title.text,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.strong,
+              content: Варианты маршрута
+            }
+          - {
+              id: preview.title.live,
+              type: instance,
+              source: tag,
+              values: { label: LIVE, tone: live }
+            }
+      - id: preview.sheet
+        type: frame
+        position: [ 0, 428 ]
+        size: [ 390, 416 ]
+        layout: { type: flex, direction: column, gap: 10, padding: [ 10, 16, 34, 16 ] }
+        fill: $surface.card
+        cornerRadius: [ 20, 20, 0, 0 ]
+        effects: $shadow.overlay
+        children:
+          - {
+              id: preview.grab,
+              type: rect,
+              size: [ 36, 4 ],
+              cornerRadius: $radius.pill,
+              fill: $border.default,
+              alignSelf: center
+            }
+          - {
+              id: preview.fresh,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.caption,
+              content: "3 варианта, данные на 14:32"
+            }
+          - id: preview.r1
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 12,
+                padding: [ 12, 14 ],
+                alignItems: center
+              }
+            fill: $surface.card
+            stroke: { color: $brand.primary, width: 2, alignment: inside }
+            cornerRadius: $radius.lg
+            children:
+              - id: preview.r1.texts
+                type: frame
+                size: [ 230, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: preview.r1.eta,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.title,
+                      content: 32 мин
+                    }
+                  - {
+                      id: preview.r1.meta,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.caption,
+                      content: "18,4 км, в пути 28 мин, пробка 4 мин"
+                    }
+              - {
+                  id: preview.r1.tag,
+                  type: instance,
+                  source: tag,
+                  values: { label: Быстрый, tone: success, dotVisible: false }
+                }
+          - id: preview.r2
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 12,
+                padding: [ 12, 14 ],
+                alignItems: center
+              }
+            fill: $surface.card
+            stroke: $stroke.hairline
+            cornerRadius: $radius.lg
+            children:
+              - id: preview.r2.texts
+                type: frame
+                size: [ 230, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: preview.r2.eta,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.title,
+                      content: 38 мин
+                    }
+                  - {
+                      id: preview.r2.meta,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.caption,
+                      content: "19,2 км, без платных и без участков unknown"
+                    }
+              - {
+                  id: preview.r2.tag,
+                  type: instance,
+                  source: tag,
+                  values: { label: Спокойный, dotVisible: false }
+                }
+          - id: preview.r3
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 12,
+                padding: [ 12, 14 ],
+                alignItems: center
+              }
+            fill: $surface.card
+            stroke: $stroke.hairline
+            cornerRadius: $radius.lg
+            children:
+              - id: preview.r3.texts
+                type: frame
+                size: [ 230, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: preview.r3.eta,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.title,
+                      content: 41 мин
+                    }
+                  - {
+                      id: preview.r3.meta,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.caption,
+                      content: "17,1 км, проезжает зону ДТП"
+                    }
+              - {
+                  id: preview.r3.tag,
+                  type: instance,
+                  source: tag,
+                  values: { label: События, tone: warning, dotVisible: false }
+                }
+          - id: preview.actions
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 8 }
+            margin: [ 4, 0, 0, 0 ]
+            children:
+              - id: button.start
+                type: instance
+                source: button
+                size: [ fill, 48 ]
+                values:
+                  label: Начать ведение
+                  size: lg
+                  iconVisible: true
+                  icon:
+                    - {
+                        id: g.start,
+                        type: svg,
+                        size: [ 16, 16 ],
+                        icon: fas:play,
+                        fill: $text.inverse
+                      }
+              - id: button.sim
+                type: instance
+                source: button
+                size: [ hug, 48 ]
+                values: { label: Симуляция, kind: secondary, size: lg }
+      - {
+          id: hi.preview,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+  # ═══ 7. Активное ведение ═══
+  - id: screen.guidance
+    type: frame
+    position: [ 960, 1070 ]
+    size: [ 390, 844 ]
+    layout: { type: free, overflow: hidden }
+    fill: $map.canvas
+    children:
+      - id: guidance.map
+        type: instance
+        source: map-base
+        size: [ 390, 844 ]
+        position: [ 0, 0 ]
+        values:
+          overlays:
+            - id: ov.g.passed
+              type: path
+              position: [ 0, 0 ]
+              size: [ 390, 844 ]
+              viewBox: [ 390, 844 ]
+              path: M198 844 L198 560 Q198 528 230 528 L318 528
+              stroke: { color: $status.unknown, width: 8, cap: round }
+            - id: ov.g.left
+              type: path
+              position: [ 0, 0 ]
+              size: [ 390, 844 ]
+              viewBox: [ 390, 844 ]
+              path: M198 716 L198 560 Q198 528 230 528 L318 528
+              stroke: { color: $brand.primary, width: 8, cap: round }
+            - {
+                id: ov.g.arrow,
+                type: polygon,
+                position: [ 184, 682 ],
+                size: [ 28, 28 ],
+                points: 3,
+                cornerRadius: 5,
+                fill: $brand.primary,
+                stroke: { color: $surface.card, width: 2, alignment: inside }
+              }
+            - {
+                id: ov.g.pin,
+                type: svg,
+                position: [ 305, 494 ],
+                size: [ 26, 34 ],
+                icon: fas:location-dot,
+                fill: $status.error
+              }
+      - {
+          id: sb.guidance,
+          type: instance,
+          source: ios-status-bar,
+          position: [ 0, 0 ],
+          size: [ 390, 59 ],
+          values: { time: "14:32", style: light }
+        }
+      - id: guidance.card
+        type: frame
+        position: [ 16, 72 ]
+        size: [ 358, hug ]
+        layout: { type: flex, direction: row, gap: 14, padding: 14, alignItems: center }
+        fill: $surface.card
+        cornerRadius: $radius.xl
+        effects: $shadow.overlay
+        children:
+          - id: guidance.mIcon
+            type: frame
+            size: [ 52, 52 ]
+            cornerRadius: $radius.md
+            fill: $brand.primary
+            layout: { type: flex, alignItems: center, justifyContent: center }
+            children:
+              - {
+                  id: g.turn,
+                  type: svg,
+                  size: [ 26, 26 ],
+                  icon: fas:arrow-right,
+                  fill: $text.inverse
+                }
+          - id: guidance.texts
+            type: frame
+            size: [ 196, hug ]
+            layout: { type: flex, direction: column, gap: 2 }
+            children:
+              - {
+                  id: guidance.dist,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.caption,
+                  color: $brand.primary,
+                  fontWeight: 600,
+                  content: Через 300 м
+                }
+              - {
+                  id: guidance.maneuver,
+                  type: text,
+                  size: [ fill, hug ],
+                  style: $text.maneuver,
+                  content: Поверните направо
+                }
+              - {
+                  id: guidance.street,
+                  type: text,
+                  size: [ fill, hug ],
+                  style: $text.body,
+                  color: $text.secondary,
+                  content: ул. Охотный Ряд
+                }
+          - id: button.mute
+            type: instance
+            source: icon-button
+            size: [ 44, 44 ]
+            overrides:
+              ib.root: { fill: $surface.base, effects: null }
+            values:
+              glyph:
+                - {
+                    id: g.mute,
+                    type: svg,
+                    size: [ 18, 18 ],
+                    icon: fas:volume-xmark,
+                    fill: $text.secondary
+                  }
+      - id: guidance.zoom
+        type: frame
+        position: [ 330, 280 ]
+        size: [ 44, 89 ]
+        layout: { type: flex, direction: column }
+        fill: $surface.card
+        cornerRadius: $radius.pill
+        effects: $shadow.card
+        children:
+          - id: guidance.zoom.in
+            type: frame
+            size: [ fill, 44 ]
+            layout: { type: flex, alignItems: center, justifyContent: center }
+            children:
+              - {
+                  id: guidance.zoom.plus,
+                  type: text,
+                  size: [ hug, hug ],
+                  fontSize: 20,
+                  fontWeight: 600,
+                  color: $text.secondary,
+                  content: "+"
+                }
+          - {
+              id: guidance.zoom.div,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 10 ]
+            }
+          - id: guidance.zoom.out
+            type: frame
+            size: [ fill, 44 ]
+            layout: { type: flex, alignItems: center, justifyContent: center }
+            children:
+              - {
+                  id: guidance.zoom.minus,
+                  type: text,
+                  size: [ hug, hug ],
+                  fontSize: 20,
+                  fontWeight: 600,
+                  color: $text.secondary,
+                  content: "−"
+                }
+      - id: guidance.sheet
+        type: frame
+        position: [ 0, 560 ]
+        size: [ 390, 284 ]
+        layout: { type: flex, direction: column, gap: 12, padding: [ 10, 16, 34, 16 ] }
+        fill: $surface.card
+        cornerRadius: [ 20, 20, 0, 0 ]
+        effects: $shadow.overlay
+        children:
+          - {
+              id: guidance.grab,
+              type: rect,
+              size: [ 36, 4 ],
+              cornerRadius: $radius.pill,
+              fill: $border.default,
+              alignSelf: center
+            }
+          - id: guidance.eta
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, justifyContent: spaceBetween }
+            children:
+              - id: guidance.eta.col1
+                type: frame
+                size: [ hug, hug ]
+                layout: { type: flex, direction: column }
+                children:
+                  - {
+                      id: guidance.eta.time,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.eta,
+                      content: "14:58"
+                    }
+                  - {
+                      id: guidance.eta.cap,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: прибытие
+                    }
+              - id: guidance.eta.col2
+                type: frame
+                size: [ hug, hug ]
+                layout: { type: flex, direction: column, alignItems: center }
+                children:
+                  - {
+                      id: guidance.eta.left,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.title,
+                      content: 26 мин
+                    }
+                  - {
+                      id: guidance.eta.leftcap,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: осталось
+                    }
+              - id: guidance.eta.col3
+                type: frame
+                size: [ hug, hug ]
+                layout: { type: flex, direction: column, alignItems: end }
+                children:
+                  - {
+                      id: guidance.eta.km,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.title,
+                      content: "12,4 км"
+                    }
+                  - {
+                      id: guidance.eta.kmcap,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: впереди
+                    }
+          - id: guidance.progress
+            type: frame
+            size: [ fill, 6 ]
+            cornerRadius: $radius.pill
+            fill: $divider.subtle
+            children:
+              - {
+                  id: guidance.progress.fill,
+                  type: rect,
+                  position: [ 0, 0 ],
+                  size: [ 128, 6 ],
+                  cornerRadius: $radius.pill,
+                  fill: $brand.primary
+                }
+          - id: guidance.next
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 6 }
+            children:
+              - {
+                  id: guidance.next.cap,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.caption,
+                  content: Далее
+                }
+              - id: guidance.next.1
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 8, alignItems: center }
+                children:
+                  - {
+                      id: g.n1,
+                      type: svg,
+                      size: [ 14, 14 ],
+                      icon: fas:arrow-left,
+                      fill: $text.secondary
+                    }
+                  - {
+                      id: guidance.next.1.t,
+                      type: text,
+                      size: [ 300, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: "Через 1,2 км, налево на ул. Тверская"
+                    }
+              - id: guidance.next.2
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 8, alignItems: center }
+                children:
+                  - {
+                      id: g.n2,
+                      type: svg,
+                      size: [ 14, 14 ],
+                      icon: fas:flag-checkered,
+                      fill: $text.secondary
+                    }
+                  - {
+                      id: guidance.next.2.t,
+                      type: text,
+                      size: [ 300, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: "Через 3,8 км, прибытие справа"
+                    }
+          - id: button.finish
+            type: instance
+            source: button
+            size: [ fill, 40 ]
+            values: { label: Завершить маршрут, kind: secondary }
+      - {
+          id: hi.guidance,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+  # ═══ 8. Прибытие ═══
+  - id: screen.arrival
+    type: frame
+    position: [ 1410, 1070 ]
+    size: [ 390, 844 ]
+    layout: { type: flex, direction: column, overflow: hidden }
+    fill: $surface.base
+    children:
+      - {
+          id: sb.arrival,
+          type: instance,
+          source: ios-status-bar,
+          size: [ fill, 59 ],
+          values: { time: "14:58" }
+        }
+      - id: arrival.hero
+        type: frame
+        size: [ fill, hug ]
+        layout:
+          {
+            type: flex,
+            direction: column,
+            gap: 12,
+            padding: [ 36, 24, 8, 24 ],
+            alignItems: center
+          }
+        children:
+          - id: arrival.check
+            type: frame
+            size: [ 88, 88 ]
+            cornerRadius: $radius.pill
+            fill: $status.successBg
+            layout: { type: flex, alignItems: center, justifyContent: center }
+            children:
+              - {
+                  id: g.check,
+                  type: svg,
+                  size: [ 40, 40 ],
+                  icon: fas:check,
+                  fill: $status.success
+                }
+          - {
+              id: arrival.title,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.h1,
+              content: Вы приехали
+            }
+          - {
+              id: arrival.sub,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.body,
+              color: $text.secondary,
+              content: "Тверская ул., 15, прибытие 14:58"
+            }
+          - {
+              id: arrival.live,
+              type: instance,
+              source: tag,
+              values: { label: "LIVE, обновления остановлены", tone: live }
+            }
+      - id: arrival.stats
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 16, 16, 0, 16 ]
+        layout:
+          {
+            type: grid,
+            rows: [ auto, auto ],
+            columns: [ 1fr, 1fr ],
+            gap: 16,
+            padding: 16
+          }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - id: arrival.st1
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 2 }
+            children:
+              - {
+                  id: arrival.st1.v,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.title,
+                  content: "18,4 км"
+                }
+              - {
+                  id: arrival.st1.l,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.caption,
+                  content: расстояние
+                }
+          - id: arrival.st2
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 2 }
+            children:
+              - {
+                  id: arrival.st2.v,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.title,
+                  content: 31 мин
+                }
+              - {
+                  id: arrival.st2.l,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.caption,
+                  content: время в пути
+                }
+          - id: arrival.st3
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 2 }
+            children:
+              - {
+                  id: arrival.st3.v,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.title,
+                  content: 36 км/ч
+                }
+              - {
+                  id: arrival.st3.l,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.caption,
+                  content: средняя скорость
+                }
+          - id: arrival.st4
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 2 }
+            children:
+              - {
+                  id: arrival.st4.v,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.title,
+                  color: $status.warning,
+                  content: +3 мин
+                }
+              - {
+                  id: arrival.st4.l,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.caption,
+                  content: отклонение от плана
+                }
+      - { id: arrival.spacer, type: frame, size: [ fill, fill ] }
+      - id: arrival.actions
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: column, gap: 4, padding: [ 8, 16, 40, 16 ] }
+        children:
+          - id: button.tomap
+            type: instance
+            source: button
+            size: [ fill, 48 ]
+            values: { label: Вернуться на карту, size: lg }
+          - id: button.reverse
+            type: instance
+            source: button
+            size: [ fill, 40 ]
+            values: { label: Обратный маршрут, kind: secondary }
+          - id: button.rate
+            type: instance
+            source: button
+            size: [ fill, 40 ]
+            values: { label: Оценить поездку, kind: ghost }
+      - {
+          id: hi.arrival,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+  # ═══ 9. Событие ИТС ═══
+  - id: screen.event
+    type: frame
+    position: [ 60, 2020 ]
+    size: [ 390, 844 ]
+    layout: { type: flex, direction: column, overflow: hidden }
+    fill: $surface.base
+    children:
+      - {
+          id: sb.event,
+          type: instance,
+          source: ios-status-bar,
+          size: [ fill, 59 ],
+          values: { time: "14:32" }
+        }
+      - id: event.header
+        type: frame
+        size: [ fill, hug ]
+        layout:
+          {
+            type: flex,
+            direction: row,
+            gap: 10,
+            padding: [ 8, 16 ],
+            alignItems: center
+          }
+        children:
+          - id: event.back
+            type: instance
+            source: icon-button
+            size: [ 44, 44 ]
+            values:
+              glyph:
+                - {
+                    id: g.event.back,
+                    type: svg,
+                    size: [ 18, 18 ],
+                    icon: fas:arrow-left,
+                    fill: $text.primary
+                  }
+          - {
+              id: event.title,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.subtitle,
+              content: Событие ИТС
+            }
+          - {
+              id: event.tag.live,
+              type: instance,
+              source: tag,
+              values: { label: Активно, tone: success }
+            }
+      - id: event.hero
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 8, 16, 0, 16 ]
+        layout: { type: flex, direction: row, gap: 14, padding: 16, alignItems: center }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - id: event.icon
+            type: frame
+            size: [ 52, 52 ]
+            cornerRadius: $radius.md
+            fill: $status.errorBg
+            layout: { type: flex, alignItems: center, justifyContent: center }
+            children:
+              - {
+                  id: g.event.car,
+                  type: svg,
+                  size: [ 24, 24 ],
+                  icon: fas:car-burst,
+                  fill: $status.error
+                }
+          - id: event.hero.texts
+            type: frame
+            size: [ 150, hug ]
+            layout: { type: flex, direction: column, gap: 2 }
+            children:
+              - {
+                  id: event.hero.t,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.title,
+                  content: ДТП
+                }
+              - {
+                  id: event.hero.s,
+                  type: text,
+                  size: [ fill, hug ],
+                  style: $text.caption,
+                  content: "Тверская ул., 300 м впереди по маршруту"
+                }
+          - {
+              id: event.tag.sev,
+              type: instance,
+              source: tag,
+              values: { label: Серьёзное, tone: error, dotVisible: false }
+            }
+      - id: event.meta
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 12, 16, 0, 16 ]
+        layout: { type: flex, direction: column }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - id: event.m1
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Срок действия
+              subtitle: "с 14:10 до 15:30, истекает через 58 мин"
+              control:
+                - {
+                    id: g.em1,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:clock,
+                    fill: $text.disabled
+                  }
+          - {
+              id: event.d1,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: event.m2
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Обновлено
+              subtitle: "14:32, источник ИТС, поток LIVE"
+              control:
+                - {
+                    id: event.m2.tag,
+                    type: instance,
+                    source: tag,
+                    values: { label: LIVE, tone: live }
+                  }
+          - {
+              id: event.d2,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: event.m3
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 8, padding: [ 13, 16 ] }
+            children:
+              - id: event.m3.row
+                type: frame
+                size: [ fill, hug ]
+                layout:
+                  {
+                    type: flex,
+                    direction: row,
+                    justifyContent: spaceBetween,
+                    alignItems: center
+                  }
+                children:
+                  - {
+                      id: event.m3.t,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.body,
+                      content: Достоверность
+                    }
+                  - {
+                      id: event.m3.v,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.strong,
+                      content: "87%"
+                    }
+              - id: event.m3.bar
+                type: frame
+                size: [ fill, 6 ]
+                cornerRadius: $radius.pill
+                fill: $divider.subtle
+                children:
+                  - {
+                      id: event.m3.fill,
+                      type: rect,
+                      position: [ 0, 0 ],
+                      size: [ 284, 6 ],
+                      cornerRadius: $radius.pill,
+                      fill: $status.success
+                    }
+      - id: event.desc
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 12, 16, 0, 16 ]
+        layout: { type: flex, direction: column, gap: 6, padding: 16 }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - {
+              id: event.desc.cap,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.caption,
+              content: Описание
+            }
+          - {
+              id: event.desc.t,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.body,
+              content: "Столкновение двух автомобилей, занята правая полоса. Объезд по левой
+                полосе, скорость потока 12 км/ч."
+            }
+      - { id: event.spacer, type: frame, size: [ fill, fill ] }
+      - id: event.actions
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: column, gap: 4, padding: [ 8, 16, 40, 16 ] }
+        children:
+          - id: button.recalc2
+            type: instance
+            source: button
+            size: [ fill, 48 ]
+            values: { label: Пересчитать маршрут, size: lg }
+          - id: button.showmap2
+            type: instance
+            source: button
+            size: [ fill, 40 ]
+            values: { label: Показать на карте, kind: secondary }
+      - {
+          id: hi.event,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+  # ═══ 10. Настройки ═══
+  - id: screen.settings
+    type: frame
+    position: [ 510, 2020 ]
+    size: [ 390, 844 ]
+    layout: { type: flex, direction: column, overflow: hidden }
+    fill: $surface.base
+    children:
+      - {
+          id: sb.settings,
+          type: instance,
+          source: ios-status-bar,
+          size: [ fill, 59 ],
+          values: { time: "14:32" }
+        }
+      - id: settings.header
+        type: frame
+        size: [ fill, hug ]
+        layout:
+          {
+            type: flex,
+            direction: row,
+            gap: 10,
+            padding: [ 8, 16 ],
+            alignItems: center
+          }
+        children:
+          - id: settings.back
+            type: instance
+            source: icon-button
+            size: [ 44, 44 ]
+            values:
+              glyph:
+                - {
+                    id: g.set.back,
+                    type: svg,
+                    size: [ 18, 18 ],
+                    icon: fas:arrow-left,
+                    fill: $text.primary
+                  }
+          - {
+              id: settings.title,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.subtitle,
+              content: Настройки
+            }
+      - {
+          id: settings.cap1,
+          type: text,
+          size: [ fill, hug ],
+          margin: [ 8, 16, 4, 16 ],
+          style: $text.caption,
+          content: Голос и язык
+        }
+      - id: settings.g1
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 0, 16 ]
+        layout: { type: flex, direction: column }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - id: set.lang
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Язык
+              subtitle: Русский
+              control:
+                - {
+                    id: g.set.lang,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:chevron-right,
+                    fill: $text.disabled
+                  }
+          - {
+              id: settings.d1,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: set.voice
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Голос подсказок
+              subtitle: Алёна, женский
+              control:
+                - {
+                    id: g.set.voice,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:chevron-right,
+                    fill: $text.disabled
+                  }
+      - {
+          id: settings.cap2,
+          type: text,
+          size: [ fill, hug ],
+          margin: [ 16, 16, 4, 16 ],
+          style: $text.caption,
+          content: Навигация
+        }
+      - id: settings.g2
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 0, 16 ]
+        layout: { type: flex, direction: column }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - id: set.units
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Единицы измерения
+              subtitle: Километры
+              control:
+                - {
+                    id: g.set.units,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:chevron-right,
+                    fill: $text.disabled
+                  }
+          - {
+              id: settings.d2,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: set.recalc
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Авто-пересчёт маршрута
+              subtitle: При сходе или изменении трафика
+              control:
+                - { id: sw.recalc, type: instance, source: switch, values: { state: on } }
+          - {
+              id: settings.d3,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: set.threshold
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Порог предупреждений
+              subtitle: За 300 м до манёвра
+              control:
+                - {
+                    id: g.set.thr,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:chevron-right,
+                    fill: $text.disabled
+                  }
+      - {
+          id: settings.cap3,
+          type: text,
+          size: [ fill, hug ],
+          margin: [ 16, 16, 4, 16 ],
+          style: $text.caption,
+          content: Карта и данные
+        }
+      - id: settings.g3
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 0, 16 ]
+        layout: { type: flex, direction: column }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - id: set.mapmode
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Режим карты
+              subtitle: Авто, день и ночь
+              control:
+                - {
+                    id: g.set.map,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:chevron-right,
+                    fill: $text.disabled
+                  }
+          - {
+              id: settings.d4,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: set.sim
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Режим симуляции
+              subtitle: Для Desktop и Web вместо GNSS
+              control:
+                - { id: sw.sim, type: instance, source: switch }
+          - {
+              id: settings.d5,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: row.reset
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Сбросить локальные данные
+              subtitle: История, сохранённые точки, DataStore
+              control:
+                - {
+                    id: g.set.trash,
+                    type: svg,
+                    size: [ 16, 16 ],
+                    icon: fas:trash-can,
+                    fill: $status.error
+                  }
+            overrides:
+              row.title: { color: $status.error }
+      - {
+          id: settings.footer,
+          type: text,
+          size: [ fill, hug ],
+          margin: [ 16, 24, 0, 24 ],
+          style: $text.caption,
+          align: [ center, top ],
+          content: "Настройки хранятся локально, DataStore"
+        }
+      - {
+          id: hi.settings,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+  # ═══ 11. Статус и симуляция ═══
+  - id: screen.status
+    type: frame
+    position: [ 960, 2020 ]
+    size: [ 390, 844 ]
+    layout: { type: flex, direction: column, overflow: hidden }
+    fill: $surface.base
+    children:
+      - {
+          id: sb.status,
+          type: instance,
+          source: ios-status-bar,
+          size: [ fill, 59 ],
+          values: { time: "14:32" }
+        }
+      - id: status.header
+        type: frame
+        size: [ fill, hug ]
+        layout:
+          {
+            type: flex,
+            direction: row,
+            gap: 10,
+            padding: [ 8, 16 ],
+            alignItems: center
+          }
+        children:
+          - id: status.back
+            type: instance
+            source: icon-button
+            size: [ 44, 44 ]
+            values:
+              glyph:
+                - {
+                    id: g.st.back,
+                    type: svg,
+                    size: [ 18, 18 ],
+                    icon: fas:arrow-left,
+                    fill: $text.primary
+                  }
+          - {
+              id: status.title,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.subtitle,
+              content: Статус и симуляция
+            }
+          - {
+              id: status.live,
+              type: instance,
+              source: tag,
+              values: { label: LIVE, tone: live }
+            }
+      - id: status.health
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 8, 16, 0, 16 ]
+        layout: { type: flex, direction: column }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - {
+              id: status.health.t,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.strong,
+              margin: [ 16, 16, 4, 16 ],
+              content: Потоки данных
+            }
+          - id: status.row.routes
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Маршруты
+              subtitle: "обновлено 14:32:10, 12 с назад"
+              control:
+                - {
+                    id: status.tag.routes,
+                    type: instance,
+                    source: tag,
+                    values: { label: OK, tone: success, dotVisible: false }
+                  }
+          - {
+              id: status.d1,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: status.row.traffic
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Пробки
+              subtitle: "обновлено 14:31:58, 24 с назад"
+              control:
+                - {
+                    id: status.tag.traffic,
+                    type: instance,
+                    source: tag,
+                    values: { label: OK, tone: success, dotVisible: false }
+                  }
+          - {
+              id: status.d2,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: status.row.events
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: События
+              subtitle: "данные на 14:20, задержка потока"
+              control:
+                - {
+                    id: status.tag.events,
+                    type: instance,
+                    source: tag,
+                    values: { label: Stale, tone: warning, dotVisible: false }
+                  }
+      - id: status.coverage
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 12, 16, 0, 16 ]
+        layout: { type: flex, direction: column, gap: 8, padding: 16 }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - id: status.coverage.row
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                justifyContent: spaceBetween,
+                alignItems: center
+              }
+            children:
+              - {
+                  id: status.coverage.t,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.strong,
+                  content: Покрытие картой
+                }
+              - {
+                  id: status.coverage.v,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.strong,
+                  content: "82%"
+                }
+          - id: status.coverage.bar
+            type: frame
+            size: [ fill, 6 ]
+            cornerRadius: $radius.pill
+            fill: $divider.subtle
+            children:
+              - {
+                  id: status.coverage.fill,
+                  type: rect,
+                  position: [ 0, 0 ],
+                  size: [ 268, 6 ],
+                  cornerRadius: $radius.pill,
+                  fill: $brand.primary
+                }
+          - {
+              id: status.coverage.s,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.caption,
+              content: "Районы Север и Восток без данных показаны серым, а не зелёным"
+            }
+      - id: status.errors
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 12, 16, 0, 16 ]
+        layout: { type: flex, direction: row, gap: 10, padding: 16, alignItems: center }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - {
+              id: g.st.ok,
+              type: svg,
+              size: [ 18, 18 ],
+              icon: fas:circle-check,
+              fill: $status.success
+            }
+          - id: status.errors.texts
+            type: frame
+            size: [ 280, hug ]
+            layout: { type: flex, direction: column, gap: 2 }
+            children:
+              - {
+                  id: status.errors.t,
+                  type: text,
+                  size: [ fill, hug ],
+                  style: $text.strong,
+                  content: Ошибок нет
+                }
+              - {
+                  id: status.errors.s,
+                  type: text,
+                  size: [ fill, hug ],
+                  style: $text.caption,
+                  content: "За последний час, API отвечает стабильно"
+                }
+      - id: status.sim
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 12, 16, 0, 16 ]
+        layout: { type: flex, direction: column, gap: 12, padding: 16 }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - {
+              id: status.sim.t,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.strong,
+              content: Панель симуляции
+            }
+          - id: status.sim.controls
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 12, alignItems: center }
+            children:
+              - id: sim.play
+                type: instance
+                source: icon-button
+                size: [ 44, 44 ]
+                values:
+                  kind: primary
+                  glyph:
+                    - {
+                        id: g.sim.play,
+                        type: svg,
+                        size: [ 16, 16 ],
+                        icon: fas:play,
+                        fill: $text.inverse
+                      }
+              - id: sim.pause
+                type: instance
+                source: icon-button
+                size: [ 44, 44 ]
+                overrides:
+                  ib.root: { fill: $surface.base, effects: null }
+                values:
+                  glyph:
+                    - {
+                        id: g.sim.pause,
+                        type: svg,
+                        size: [ 16, 16 ],
+                        icon: fas:pause,
+                        fill: $text.secondary
+                      }
+              - id: sim.speed
+                type: instance
+                source: segmented
+                values: { label1: "1×", label2: "2×", label3: "4×" }
+          - id: status.sim.seek
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 6 }
+            children:
+              - id: status.sim.seekbar
+                type: frame
+                size: [ fill, 6 ]
+                cornerRadius: $radius.pill
+                fill: $divider.subtle
+                children:
+                  - {
+                      id: status.sim.seekfill,
+                      type: rect,
+                      position: [ 0, 0 ],
+                      size: [ 130, 6 ],
+                      cornerRadius: $radius.pill,
+                      fill: $brand.primary
+                    }
+              - {
+                  id: status.sim.time,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.caption,
+                  content: "00:12:40 / 00:31:00"
+                }
+          - id: status.sim.triggers
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 8, wrap: true }
+            children:
+              - {
+                  id: sim.trig.offroute,
+                  type: instance,
+                  source: button,
+                  values: { label: Off-route, kind: secondary }
+                }
+              - {
+                  id: sim.trig.stale,
+                  type: instance,
+                  source: button,
+                  values: { label: Stale, kind: secondary }
+                }
+              - {
+                  id: sim.trig.crash,
+                  type: instance,
+                  source: button,
+                  values: { label: ДТП, kind: secondary }
+                }
+              - {
+                  id: sim.trig.offline,
+                  type: instance,
+                  source: button,
+                  values: { label: Offline, kind: secondary }
+                }
+              - {
+                  id: sim.trig.arrive,
+                  type: instance,
+                  source: button,
+                  values: { label: Прибытие, kind: secondary }
+                }
+              - {
+                  id: sim.trig.nocov,
+                  type: instance,
+                  source: button,
+                  values: { label: Нет покрытия, kind: secondary }
+                }
+      - {
+          id: hi.status,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+  # ═══ 12. О программе ═══
+  - id: screen.about
+    type: frame
+    position: [ 1410, 2020 ]
+    size: [ 390, 844 ]
+    layout: { type: flex, direction: column, overflow: hidden }
+    fill: $surface.base
+    children:
+      - {
+          id: sb.about,
+          type: instance,
+          source: ios-status-bar,
+          size: [ fill, 59 ],
+          values: { time: "14:32" }
+        }
+      - id: about.header
+        type: frame
+        size: [ fill, hug ]
+        layout:
+          {
+            type: flex,
+            direction: row,
+            gap: 10,
+            padding: [ 8, 16 ],
+            alignItems: center
+          }
+        children:
+          - id: about.back
+            type: instance
+            source: icon-button
+            size: [ 44, 44 ]
+            values:
+              glyph:
+                - {
+                    id: g.about.back,
+                    type: svg,
+                    size: [ 18, 18 ],
+                    icon: fas:arrow-left,
+                    fill: $text.primary
+                  }
+          - {
+              id: about.title,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.subtitle,
+              content: О программе
+            }
+      - id: about.hero
+        type: frame
+        size: [ fill, hug ]
+        layout:
+          {
+            type: flex,
+            direction: column,
+            gap: 10,
+            padding: [ 16, 24, 8, 24 ],
+            alignItems: center
+          }
+        children:
+          - id: about.icon
+            type: frame
+            size: [ 72, 72 ]
+            cornerRadius: $radius.xl
+            fill: $brand.primary
+            layout: { type: flex, alignItems: center, justifyContent: center }
+            children:
+              - {
+                  id: g.about.logo,
+                  type: svg,
+                  size: [ 32, 32 ],
+                  icon: fas:route,
+                  fill: $text.inverse
+                }
+          - {
+              id: about.name,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.title,
+              content: Навигатор
+            }
+          - {
+              id: about.ver,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.caption,
+              content: "Версия 1.4.2 (104), Compose Multiplatform"
+            }
+          - {
+              id: about.mode,
+              type: instance,
+              source: tag,
+              values: { label: "Режим данных: LIVE", tone: live, dotVisible: false }
+            }
+      - id: about.rows
+        type: frame
+        size: [ fill, hug ]
+        margin: [ 16, 16, 0, 16 ]
+        layout: { type: flex, direction: column }
+        fill: $surface.card
+        cornerRadius: $radius.lg
+        children:
+          - id: about.r1
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Данные карты
+              subtitle: © OpenStreetMap contributors
+              control:
+                - {
+                    id: g.ab1,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:chevron-right,
+                    fill: $text.disabled
+                  }
+          - {
+              id: about.d1,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: about.r2
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Лицензии картографии
+              subtitle: "ODbL 1.0, CC BY-SA 2.0"
+              control:
+                - {
+                    id: g.ab2,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:chevron-right,
+                    fill: $text.disabled
+                  }
+          - {
+              id: about.d2,
+              type: rect,
+              size: [ fill, 1 ],
+              fill: $divider.subtle,
+              margin: [ 0, 16 ]
+            }
+          - id: about.r3
+            type: instance
+            source: setting-row
+            size: [ fill, hug ]
+            values:
+              title: Правовая информация
+              subtitle: Условия использования и приватность
+              control:
+                - {
+                    id: g.ab3,
+                    type: svg,
+                    size: [ 14, 14 ],
+                    icon: fas:chevron-right,
+                    fill: $text.disabled
+                  }
+      - id: about.offline
+        type: instance
+        source: alert
+        size: [ fill, hug ]
+        margin: [ 12, 16, 0, 16 ]
+        values:
+          {
+            title: "Работает без сети",
+            message: "Экран доступен полностью offline, все тексты встроены в приложение"
+          }
+      - { id: about.spacer, type: frame, size: [ fill, fill ] }
+      - {
+          id: about.copy,
+          type: text,
+          size: [ fill, hug ],
+          margin: [ 0, 24, 0, 24 ],
+          style: $text.caption,
+          align: [ center, top ],
+          content: "© 2025 Навигатор"
+        }
+      - {
+          id: hi.about,
+          type: instance,
+          source: ios-home-indicator,
+          position: [ 128, 827 ],
+          size: [ 134, 5 ]
+        }
+
+prototype: |
+  flow main = "screen.welcome" {
+    viewport: [390, 844]
+  }
+
+  on click("button.allow") { navigate("screen.map", transition: slide("left", 300)) }
+  on click("button.skip") { navigate("screen.map", transition: slide("left", 300)) }
+
+  on click("search.bar") { navigate("screen.search") }
+  on click("fab.route") { navigate("screen.build", transition: slide("up", 300)) }
+  on click("button.events") { navigate("screen.event") }
+  on click("button.status") { navigate("screen.status") }
+  on click("button.settings") { navigate("screen.settings") }
+  on click("button.about") { navigate("screen.about") }
+
+  on click("search.back") { back() }
+  on click("result.1") { navigate("screen.point", transition: slide("left", 300)) }
+  on click("result.2") { navigate("screen.point", transition: slide("left", 300)) }
+  on click("result.3") { navigate("screen.point", transition: slide("left", 300)) }
+
+  on click("point.back") { back() }
+  on click("button.here") { navigate("screen.build", transition: slide("left", 300)) }
+  on click("button.from") { navigate("screen.build", transition: slide("left", 300)) }
+  on click("button.recalc") { navigate("screen.preview", transition: slide("left", 300)) }
+
+  on click("build.back") { back() }
+  on click("button.build") { navigate("screen.preview", transition: slide("left", 300)) }
+
+  on click("preview.back") { back() }
+  on click("button.start") { navigate("screen.guidance", transition: slide("left", 300)) }
+  on click("button.sim") { navigate("screen.guidance", transition: slide("left", 300)) }
+
+  on click("button.finish") { navigate("screen.arrival", transition: dissolve(200)) }
+
+  on click("button.tomap") { navigate("screen.map") }
+  on click("button.reverse") { navigate("screen.build", transition: slide("left", 300)) }
+
+  on click("event.back") { back() }
+  on click("button.showmap2") { back() }
+  on click("settings.back") { back() }
+  on click("status.back") { back() }
+  on click("about.back") { back() }

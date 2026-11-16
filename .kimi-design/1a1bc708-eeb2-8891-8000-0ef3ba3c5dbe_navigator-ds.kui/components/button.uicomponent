@@ -1,0 +1,47 @@
+id: button
+name: Button
+
+expose:
+  label: {node: button.label, field: content}
+  icon: {node: button.icon, field: children}
+  iconVisible: {node: button.icon, field: visible}
+
+root:
+  id: button.root
+  type: frame
+  size: [hug, 40]
+  layout: {type: flex, direction: row, gap: 8, padding: [0, 16], alignItems: center, justifyContent: center}
+  fill: $brand.primary
+  cornerRadius: $radius.md
+  children:
+    - id: button.icon
+      type: frame
+      size: [hug, hug]
+      visible: false
+      layout: {type: flex, alignItems: center, justifyContent: center}
+    - id: button.label
+      type: text
+      size: [hug, hug]
+      style: $text.strong
+      color: $text.inverse
+      content: Кнопка
+
+variants:
+  kind:
+    secondary:
+      button.root: {fill: $surface.card, stroke: $stroke.hairline}
+      button.label: {color: $text.primary}
+    ghost:
+      button.root: {fill: "#FFFFFF00"}
+      button.label: {color: $brand.primary}
+    danger:
+      button.root: {fill: $status.error}
+    dark:
+      button.root: {fill: $map.canvas}
+  size:
+    lg:
+      button.root: {size: [hug, 48], layout: {padding: [0, 20]}, cornerRadius: $radius.lg}
+      button.label: {fontSize: 17}
+  disabled:
+    true:
+      button.root: {opacity: 0.35}

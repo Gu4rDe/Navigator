@@ -1,0 +1,36 @@
+id: setting-row
+name: Setting row
+
+expose:
+  title: {node: row.title, field: content}
+  subtitle: {node: row.subtitle, field: content}
+  control: {node: row.control, field: children}
+
+root:
+  id: row.root
+  type: frame
+  size: [fill, hug]
+  layout: {type: flex, direction: row, gap: 12, padding: [13, 16], alignItems: center}
+  fill: $surface.card
+  children:
+    - id: row.texts
+      type: frame
+      size: [200, hug]
+      layout: {type: flex, direction: column, gap: 2}
+      children:
+        - id: row.title
+          type: text
+          size: [fill, hug]
+          style: $text.body
+          maxLines: 1
+          content: Настройка
+        - id: row.subtitle
+          type: text
+          size: [fill, hug]
+          style: $text.caption
+          maxLines: 2
+          content: Пояснение
+    - id: row.control
+      type: frame
+      size: [hug, hug]
+      layout: {type: flex, direction: row, gap: 8, alignItems: center}

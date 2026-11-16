@@ -1,0 +1,1564 @@
+name: UI-kit
+
+children:
+  - {
+      id: unote.1,
+      type: text,
+      position: [ 60, 72 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: Токены
+    }
+  - {
+      id: unote.2,
+      type: text,
+      position: [ 60, 1252 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: Компоненты
+    }
+
+  # ═══ Токены ═══
+  - id: uikit.tokens
+    type: frame
+    position: [ 60, 120 ]
+    size: [ 1440, 1080 ]
+    layout: { type: flex, direction: column, gap: 28, padding: 48 }
+    fill: $surface.card
+    children:
+      - {
+          id: ut.title,
+          type: text,
+          size: [ hug, hug ],
+          style: $text.h1,
+          content: Дизайн-токены
+        }
+      - id: ut.colors
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: column, gap: 12 }
+        children:
+          - {
+              id: ut.colors.t,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.subtitle,
+              content: Цвета
+            }
+          - id: ut.swatches
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: grid,
+                rows: [ auto, auto, auto, auto ],
+                columns: [ 168, 168, 168, 168, 168, 168, 168 ],
+                gap: 12
+              }
+            children:
+              - id: sw.1
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.1.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $brand.primary
+                    }
+                  - {
+                      id: sw.1.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: brand.primary
+                    }
+                  - {
+                      id: sw.1.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#1677FF"
+                    }
+              - id: sw.2
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.2.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $brand.hover
+                    }
+                  - {
+                      id: sw.2.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: brand.hover
+                    }
+                  - {
+                      id: sw.2.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#4096FF"
+                    }
+              - id: sw.3
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.3.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $brand.active
+                    }
+                  - {
+                      id: sw.3.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: brand.active
+                    }
+                  - {
+                      id: sw.3.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#0958D9"
+                    }
+              - id: sw.4
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.4.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $brand.bg
+                    }
+                  - {
+                      id: sw.4.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: brand.bg
+                    }
+                  - {
+                      id: sw.4.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#E6F4FF"
+                    }
+              - id: sw.5
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.5.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $text.primary
+                    }
+                  - {
+                      id: sw.5.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: text.primary
+                    }
+                  - {
+                      id: sw.5.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#262626"
+                    }
+              - id: sw.6
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.6.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $text.secondary
+                    }
+                  - {
+                      id: sw.6.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: text.secondary
+                    }
+                  - {
+                      id: sw.6.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#595959"
+                    }
+              - id: sw.7
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.7.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $text.disabled
+                    }
+                  - {
+                      id: sw.7.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: text.disabled
+                    }
+                  - {
+                      id: sw.7.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#BFBFBF"
+                    }
+              - id: sw.8
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.8.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $status.success
+                    }
+                  - {
+                      id: sw.8.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: status.success
+                    }
+                  - {
+                      id: sw.8.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#52C41A"
+                    }
+              - id: sw.9
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.9.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $status.warning
+                    }
+                  - {
+                      id: sw.9.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: status.warning
+                    }
+                  - {
+                      id: sw.9.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#FAAD14"
+                    }
+              - id: sw.10
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.10.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $status.error
+                    }
+                  - {
+                      id: sw.10.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: status.error
+                    }
+                  - {
+                      id: sw.10.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#FF4D4F"
+                    }
+              - id: sw.11
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.11.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $status.unknown
+                    }
+                  - {
+                      id: sw.11.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: status.unknown
+                    }
+                  - {
+                      id: sw.11.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#8C8C8C"
+                    }
+              - id: sw.12
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.12.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $status.successBg
+                    }
+                  - {
+                      id: sw.12.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: successBg
+                    }
+                  - {
+                      id: sw.12.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#F6FFED"
+                    }
+              - id: sw.13
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.13.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $status.warningBg
+                    }
+                  - {
+                      id: sw.13.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: warningBg
+                    }
+                  - {
+                      id: sw.13.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#FFFBE6"
+                    }
+              - id: sw.14
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.14.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $status.errorBg
+                    }
+                  - {
+                      id: sw.14.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: errorBg
+                    }
+                  - {
+                      id: sw.14.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#FFF2F0"
+                    }
+              - id: sw.15
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.15.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $surface.base,
+                      stroke: $stroke.hairline
+                    }
+                  - {
+                      id: sw.15.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: surface.base
+                    }
+                  - {
+                      id: sw.15.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#F5F5F5"
+                    }
+              - id: sw.16
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.16.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $map.canvas
+                    }
+                  - {
+                      id: sw.16.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: map.canvas
+                    }
+                  - {
+                      id: sw.16.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#1B2735"
+                    }
+              - id: sw.17
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.17.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $map.road
+                    }
+                  - {
+                      id: sw.17.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: map.road
+                    }
+                  - {
+                      id: sw.17.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#3A4E66"
+                    }
+              - id: sw.18
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.18.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $map.water
+                    }
+                  - {
+                      id: sw.18.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: map.water
+                    }
+                  - {
+                      id: sw.18.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#131E2A"
+                    }
+              - id: sw.19
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.19.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $map.park
+                    }
+                  - {
+                      id: sw.19.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: map.park
+                    }
+                  - {
+                      id: sw.19.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#1E3A32"
+                    }
+              - id: sw.20
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.20.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $border.default
+                    }
+                  - {
+                      id: sw.20.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: border.default
+                    }
+                  - {
+                      id: sw.20.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#D9D9D9"
+                    }
+              - id: sw.21
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 4 }
+                children:
+                  - {
+                      id: sw.21.c,
+                      type: rect,
+                      size: [ fill, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $divider.subtle
+                    }
+                  - {
+                      id: sw.21.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: divider.subtle
+                    }
+                  - {
+                      id: sw.21.h,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 11,
+                      color: $text.secondary,
+                      content: "#F0F0F0"
+                    }
+      - id: ut.type
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: column, gap: 12 }
+        children:
+          - {
+              id: ut.type.t,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.subtitle,
+              content: "Типографика, Helvetica Neue"
+            }
+          - id: ut.type.rows
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 10 }
+            children:
+              - id: ty.1
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 24, alignItems: baseline }
+                children:
+                  - {
+                      id: ty.1.s,
+                      type: text,
+                      size: [ 420, hug ],
+                      style: $text.eta,
+                      content: Прибытие 14:58
+                    }
+                  - {
+                      id: ty.1.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: "text.eta, 28/34, 700"
+                    }
+              - id: ty.2
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 24, alignItems: baseline }
+                children:
+                  - {
+                      id: ty.2.s,
+                      type: text,
+                      size: [ 420, hug ],
+                      style: $text.maneuver,
+                      content: Поверните направо
+                    }
+                  - {
+                      id: ty.2.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: "text.maneuver, 24/30, 700, дорожные подсказки"
+                    }
+              - id: ty.3
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 24, alignItems: baseline }
+                children:
+                  - {
+                      id: ty.3.s,
+                      type: text,
+                      size: [ 420, hug ],
+                      style: $text.h1,
+                      content: Навигатор
+                    }
+                  - {
+                      id: ty.3.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: "text.h1, 24/32, 700"
+                    }
+              - id: ty.4
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 24, alignItems: baseline }
+                children:
+                  - {
+                      id: ty.4.s,
+                      type: text,
+                      size: [ 420, hug ],
+                      style: $text.title,
+                      content: "Тверская ул., 15"
+                    }
+                  - {
+                      id: ty.4.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: "text.title, 20/28, 600"
+                    }
+              - id: ty.5
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 24, alignItems: baseline }
+                children:
+                  - {
+                      id: ty.5.s,
+                      type: text,
+                      size: [ 420, hug ],
+                      style: $text.subtitle,
+                      content: Маршрут
+                    }
+                  - {
+                      id: ty.5.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: "text.subtitle, 17/24, 600"
+                    }
+              - id: ty.6
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 24, alignItems: baseline }
+                children:
+                  - {
+                      id: ty.6.s,
+                      type: text,
+                      size: [ 420, hug ],
+                      style: $text.body,
+                      content: "Москва, 2,4 км"
+                    }
+                  - {
+                      id: ty.6.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: "text.body, 15/22, 400"
+                    }
+              - id: ty.7
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 24, alignItems: baseline }
+                children:
+                  - {
+                      id: ty.7.s,
+                      type: text,
+                      size: [ 420, hug ],
+                      style: $text.caption,
+                      content: "обновлено 14:32, данные на 14:20"
+                    }
+                  - {
+                      id: ty.7.n,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: "text.caption, 13/18, 400"
+                    }
+      - id: ut.shapes
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: row, gap: 48 }
+        children:
+          - id: ut.radius
+            type: frame
+            size: [ hug, hug ]
+            layout: { type: flex, direction: column, gap: 12 }
+            children:
+              - {
+                  id: ut.radius.t,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.subtitle,
+                  content: Радиусы
+                }
+              - id: ut.radius.row
+                type: frame
+                size: [ hug, hug ]
+                layout: { type: flex, direction: row, gap: 12, alignItems: end }
+                children:
+                  - {
+                      id: ur.1,
+                      type: rect,
+                      size: [ 56, 56 ],
+                      cornerRadius: $radius.sm,
+                      fill: $brand.bg,
+                      stroke: $stroke.hairline
+                    }
+                  - {
+                      id: ur.2,
+                      type: rect,
+                      size: [ 56, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $brand.bg,
+                      stroke: $stroke.hairline
+                    }
+                  - {
+                      id: ur.3,
+                      type: rect,
+                      size: [ 56, 56 ],
+                      cornerRadius: $radius.lg,
+                      fill: $brand.bg,
+                      stroke: $stroke.hairline
+                    }
+                  - {
+                      id: ur.4,
+                      type: rect,
+                      size: [ 56, 56 ],
+                      cornerRadius: $radius.xl,
+                      fill: $brand.bg,
+                      stroke: $stroke.hairline
+                    }
+                  - {
+                      id: ur.5,
+                      type: rect,
+                      size: [ 88, 56 ],
+                      cornerRadius: $radius.pill,
+                      fill: $brand.bg,
+                      stroke: $stroke.hairline
+                    }
+              - {
+                  id: ut.radius.n,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.caption,
+                  content: "sm 6, md 8, lg 12, xl 16, pill 999"
+                }
+          - id: ut.shadow
+            type: frame
+            size: [ hug, hug ]
+            layout: { type: flex, direction: column, gap: 12 }
+            children:
+              - {
+                  id: ut.shadow.t,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.subtitle,
+                  content: Тени
+                }
+              - id: ut.shadow.row
+                type: frame
+                size: [ hug, hug ]
+                layout: { type: flex, direction: row, gap: 24 }
+                children:
+                  - {
+                      id: us.1,
+                      type: rect,
+                      size: [ 96, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $surface.card,
+                      effects: $shadow.card
+                    }
+                  - {
+                      id: us.2,
+                      type: rect,
+                      size: [ 96, 56 ],
+                      cornerRadius: $radius.md,
+                      fill: $surface.card,
+                      effects: $shadow.overlay
+                    }
+              - {
+                  id: ut.shadow.n,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.caption,
+                  content: "shadow.card, shadow.overlay"
+                }
+          - id: ut.spacing
+            type: frame
+            size: [ hug, hug ]
+            layout: { type: flex, direction: column, gap: 12 }
+            children:
+              - {
+                  id: ut.spacing.t,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.subtitle,
+                  content: "Отступы, сетка 8"
+                }
+              - id: ut.spacing.row
+                type: frame
+                size: [ hug, hug ]
+                layout: { type: flex, direction: row, gap: 8, alignItems: end }
+                children:
+                  - { id: up.1, type: rect, size: [ 4, 24 ], fill: $brand.primary }
+                  - { id: up.2, type: rect, size: [ 8, 32 ], fill: $brand.primary }
+                  - { id: up.3, type: rect, size: [ 12, 40 ], fill: $brand.primary }
+                  - { id: up.4, type: rect, size: [ 16, 48 ], fill: $brand.primary }
+                  - { id: up.5, type: rect, size: [ 24, 56 ], fill: $brand.primary }
+                  - { id: up.6, type: rect, size: [ 32, 64 ], fill: $brand.primary }
+                  - { id: up.7, type: rect, size: [ 48, 72 ], fill: $brand.primary }
+              - {
+                  id: ut.spacing.n,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.caption,
+                  content: "4, 8, 12, 16, 24, 32, 48"
+                }
+
+  # ═══ Компоненты ═══
+  - id: uikit.components
+    type: frame
+    position: [ 60, 1300 ]
+    size: [ 1440, 1240 ]
+    layout: { type: flex, direction: column, gap: 28, padding: 48 }
+    fill: $surface.card
+    children:
+      - {
+          id: uc.title,
+          type: text,
+          size: [ hug, hug ],
+          style: $text.h1,
+          content: Компоненты
+        }
+      - id: uc.buttons
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: column, gap: 12 }
+        children:
+          - {
+              id: uc.buttons.t,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.subtitle,
+              content: Button
+            }
+          - id: uc.buttons.row1
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 12, alignItems: center }
+            children:
+              - {
+                  id: cb.1,
+                  type: instance,
+                  source: button,
+                  values: { label: Основное действие }
+                }
+              - {
+                  id: cb.2,
+                  type: instance,
+                  source: button,
+                  values: { label: Вторичное, kind: secondary }
+                }
+              - {
+                  id: cb.3,
+                  type: instance,
+                  source: button,
+                  values: { label: Текстовая, kind: ghost }
+                }
+              - {
+                  id: cb.4,
+                  type: instance,
+                  source: button,
+                  values: { label: Опасное, kind: danger }
+                }
+              - {
+                  id: cb.5,
+                  type: instance,
+                  source: button,
+                  values: { label: На карте, kind: dark }
+                }
+              - {
+                  id: cb.6,
+                  type: instance,
+                  source: button,
+                  values: { label: Недоступно, disabled: true }
+                }
+          - id: uc.buttons.row2
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 12, alignItems: center }
+            children:
+              - id: cb.7
+                type: instance
+                source: button
+                values:
+                  label: Сюда, высота 48
+                  size: lg
+                  iconVisible: true
+                  icon:
+                    - {
+                        id: g.cb7,
+                        type: svg,
+                        size: [ 16, 16 ],
+                        icon: fas:location-arrow,
+                        fill: $text.inverse
+                      }
+              - id: cb.8
+                type: instance
+                source: icon-button
+                size: [ 44, 44 ]
+                values:
+                  glyph:
+                    - {
+                        id: g.cb8,
+                        type: svg,
+                        size: [ 18, 18 ],
+                        icon: fas:gear,
+                        fill: $text.primary
+                      }
+              - id: cb.9
+                type: instance
+                source: icon-button
+                size: [ 56, 56 ]
+                values:
+                  kind: primary
+                  size: lg
+                  glyph:
+                    - {
+                        id: g.cb9,
+                        type: svg,
+                        size: [ 22, 22 ],
+                        icon: fas:route,
+                        fill: $text.inverse
+                      }
+              - id: cb.10
+                type: instance
+                source: icon-button
+                size: [ 44, 44 ]
+                values:
+                  badge: true
+                  glyph:
+                    - {
+                        id: g.cb10,
+                        type: svg,
+                        size: [ 20, 20 ],
+                        icon: fas:triangle-exclamation,
+                        fill: $text.primary
+                      }
+      - id: uc.tags
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: column, gap: 12 }
+        children:
+          - {
+              id: uc.tags.t,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.subtitle,
+              content: Tag и бейджи данных
+            }
+          - id: uc.tags.row
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 10, alignItems: center }
+            children:
+              - {
+                  id: ct.1,
+                  type: instance,
+                  source: tag,
+                  values: { label: LIVE, tone: live }
+                }
+              - {
+                  id: ct.2,
+                  type: instance,
+                  source: tag,
+                  values: { label: REPLAY, tone: replay }
+                }
+              - {
+                  id: ct.3,
+                  type: instance,
+                  source: tag,
+                  values: { label: "данные на 14:32", tone: warning }
+                }
+              - {
+                  id: ct.4,
+                  type: instance,
+                  source: tag,
+                  values: { label: Активно, tone: success }
+                }
+              - {
+                  id: ct.5,
+                  type: instance,
+                  source: tag,
+                  values: { label: Ошибка, tone: error }
+                }
+              - {
+                  id: ct.6,
+                  type: instance,
+                  source: tag,
+                  values: { label: "нет данных", tone: unknown }
+                }
+              - { id: ct.7, type: instance, source: tag, values: { label: Инфо } }
+      - id: uc.inputs
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: column, gap: 12 }
+        children:
+          - {
+              id: uc.inputs.t,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.subtitle,
+              content: Input и поиск
+            }
+          - id: uc.inputs.row
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 16 }
+            children:
+              - {
+                  id: ci.1,
+                  type: instance,
+                  source: input,
+                  size: [ 320, 48 ],
+                  values: { value: Куда поедем? }
+                }
+              - {
+                  id: ci.2,
+                  type: instance,
+                  source: input,
+                  size: [ 320, 48 ],
+                  values: { value: Тверская, state: focus }
+                }
+              - {
+                  id: ci.3,
+                  type: instance,
+                  source: input,
+                  size: [ 320, 48 ],
+                  values: { value: "Ошибка ввода", state: error }
+                }
+              - {
+                  id: ci.4,
+                  type: instance,
+                  source: input,
+                  size: [ 320, 48 ],
+                  values: { value: Недоступно offline, state: disabled }
+                }
+      - id: uc.alerts
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: column, gap: 12 }
+        children:
+          - {
+              id: uc.alerts.t,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.subtitle,
+              content: Alert
+            }
+          - id: uc.alerts.row
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 16 }
+            children:
+              - {
+                  id: ca.1,
+                  type: instance,
+                  source: alert,
+                  size: [ 330, hug ],
+                  values: { title: "Инфо", message: "Поток данных LIVE, обновлено 14:32" }
+                }
+              - {
+                  id: ca.2,
+                  type: instance,
+                  source: alert,
+                  size: [ 330, hug ],
+                  values: { tone: success, title: "Готово", message: "Маршрут построен за 0,4 с" }
+                }
+              - {
+                  id: ca.3,
+                  type: instance,
+                  source: alert,
+                  size: [ 330, hug ],
+                  values:
+                    {
+                      tone: warning,
+                      title: "Данные устарели",
+                      message: "Пробки на 14:20, не маскируются под LIVE"
+                    }
+                }
+              - {
+                  id: ca.4,
+                  type: instance,
+                  source: alert,
+                  size: [ 330, hug ],
+                  values:
+                    {
+                      tone: error,
+                      title: "Нет соединения",
+                      message: "requestId: a41f-92ce, retryable"
+                    }
+                }
+      - id: uc.rows
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: row, gap: 16 }
+        children:
+          - id: uc.lists
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 12 }
+            children:
+              - {
+                  id: uc.lists.t,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.subtitle,
+                  content: List item и строка настройки
+                }
+              - id: uc.lists.card
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column }
+                fill: $surface.card
+                stroke: $stroke.hairline
+                cornerRadius: $radius.lg
+                children:
+                  - id: cl.1
+                    type: instance
+                    source: list-item
+                    size: [ fill, hug ]
+                    values:
+                      title: Тверская улица
+                      subtitle: "Москва, 1,1 км"
+                      leading:
+                        - {
+                            id: g.cl1,
+                            type: svg,
+                            size: [ 16, 16 ],
+                            icon: fas:location-dot,
+                            fill: $status.info
+                          }
+                      trailing:
+                        - {
+                            id: g.cl1t,
+                            type: svg,
+                            size: [ 14, 14 ],
+                            icon: fas:chevron-right,
+                            fill: $text.disabled
+                          }
+                  - {
+                      id: uc.ld1,
+                      type: rect,
+                      size: [ fill, 1 ],
+                      fill: $divider.subtle,
+                      margin: [ 0, 16 ]
+                    }
+                  - id: cl.2
+                    type: instance
+                    source: setting-row
+                    size: [ fill, hug ]
+                    values:
+                      title: Авто-пересчёт маршрута
+                      subtitle: При сходе или изменении трафика
+                      control:
+                        - { id: sw.demo, type: instance, source: switch, values: { state: on } }
+          - id: uc.controls
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 12 }
+            children:
+              - {
+                  id: uc.controls.t,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.subtitle,
+                  content: Контролы
+                }
+              - id: uc.controls.row
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 16, alignItems: center }
+                children:
+                  - { id: cc.1, type: instance, source: switch }
+                  - { id: cc.2, type: instance, source: switch, values: { state: on } }
+                  - {
+                      id: cc.3,
+                      type: instance,
+                      source: segmented,
+                      values: { label1: Авто, label2: Пешком, label3: Вело }
+                    }
+                  - {
+                      id: cc.4,
+                      type: instance,
+                      source: segmented,
+                      values: { label1: "1×", label2: "2×", label3: "4×", selected: third }
+                    }
+              - id: uc.progress
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 6 }
+                children:
+                  - {
+                      id: uc.progress.t,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: "Progress, 62%"
+                    }
+                  - id: uc.progress.bar
+                    type: frame
+                    size: [ fill, 6 ]
+                    cornerRadius: $radius.pill
+                    fill: $divider.subtle
+                    children:
+                      - {
+                          id: uc.progress.fill,
+                          type: rect,
+                          position: [ 0, 0 ],
+                          size: [ 240, 6 ],
+                          cornerRadius: $radius.pill,
+                          fill: $brand.primary
+                        }
+      - id: uc.feedback
+        type: frame
+        size: [ fill, hug ]
+        layout: { type: flex, direction: column, gap: 12 }
+        children:
+          - {
+              id: uc.feedback.t,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.subtitle,
+              content: "Обратная связь: skeleton, snackbar, empty, steps"
+            }
+          - id: uc.feedback.row
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 16, alignItems: start }
+            children:
+              - id: cf.skeleton
+                type: frame
+                size: [ 330, hug ]
+                layout: { type: flex, direction: column, gap: 10, padding: 16 }
+                fill: $surface.card
+                stroke: $stroke.hairline
+                cornerRadius: $radius.lg
+                children:
+                  - id: cf.sk.row
+                    type: frame
+                    size: [ fill, hug ]
+                    layout: { type: flex, direction: row, gap: 12, alignItems: center }
+                    children:
+                      - { id: cf.sk.av, type: ellipse, size: [ 36, 36 ], fill: $divider.subtle }
+                      - id: cf.sk.col
+                        type: frame
+                        size: [ fill, hug ]
+                        layout: { type: flex, direction: column, gap: 6 }
+                        children:
+                          - {
+                              id: cf.sk.l1,
+                              type: rect,
+                              size: [ fill, 12 ],
+                              cornerRadius: $radius.sm,
+                              fill: $divider.subtle
+                            }
+                          - {
+                              id: cf.sk.l2,
+                              type: rect,
+                              size: [ 180, 12 ],
+                              cornerRadius: $radius.sm,
+                              fill: $divider.subtle
+                            }
+                  - {
+                      id: cf.sk.l3,
+                      type: rect,
+                      size: [ fill, 12 ],
+                      cornerRadius: $radius.sm,
+                      fill: $divider.subtle
+                    }
+                  - {
+                      id: cf.sk.cap,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: "Skeleton при загрузке"
+                    }
+              - id: cf.snack
+                type: frame
+                size: [ 300, hug ]
+                layout:
+                  {
+                    type: flex,
+                    direction: row,
+                    gap: 10,
+                    padding: [ 12, 16 ],
+                    alignItems: center
+                  }
+                fill: $map.canvas
+                cornerRadius: $radius.md
+                effects: $shadow.overlay
+                children:
+                  - {
+                      id: g.cf.check,
+                      type: svg,
+                      size: [ 16, 16 ],
+                      icon: fas:circle-check,
+                      fill: $status.success
+                    }
+                  - {
+                      id: cf.snack.t,
+                      type: text,
+                      size: [ fill, hug ],
+                      fontSize: 14,
+                      color: $text.inverse,
+                      content: "Маршрут построен, 32 мин"
+                    }
+                  - {
+                      id: cf.snack.a,
+                      type: text,
+                      size: [ hug, hug ],
+                      fontSize: 14,
+                      fontWeight: 600,
+                      color: $brand.hover,
+                      content: Отмена
+                    }
+              - id: cf.empty
+                type: frame
+                size: [ 330, hug ]
+                layout: { type: flex, direction: column, gap: 8, padding: 16, alignItems: center }
+                fill: $surface.card
+                stroke: $stroke.hairline
+                cornerRadius: $radius.lg
+                children:
+                  - id: cf.empty.icon
+                    type: frame
+                    size: [ 56, 56 ]
+                    cornerRadius: $radius.pill
+                    fill: $status.unknownBg
+                    layout: { type: flex, alignItems: center, justifyContent: center }
+                    children:
+                      - {
+                          id: g.cf.empty,
+                          type: svg,
+                          size: [ 24, 24 ],
+                          icon: fas:route,
+                          fill: $status.unknown
+                        }
+                  - {
+                      id: cf.empty.t,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.strong,
+                      content: Маршруты не найдены
+                    }
+                  - {
+                      id: cf.empty.btn,
+                      type: instance,
+                      source: button,
+                      values: { label: Изменить точки, kind: secondary }
+                    }
+              - id: cf.steps
+                type: frame
+                size: [ 336, hug ]
+                layout: { type: flex, direction: row, gap: 6, padding: 12, alignItems: center }
+                fill: $surface.card
+                stroke: $stroke.hairline
+                cornerRadius: $radius.lg
+                children:
+                  - id: cf.st1
+                    type: frame
+                    size: [ 24, 24 ]
+                    cornerRadius: $radius.pill
+                    fill: $status.success
+                    layout: { type: flex, alignItems: center, justifyContent: center }
+                    children:
+                      - {
+                          id: g.cf.st1,
+                          type: svg,
+                          size: [ 12, 12 ],
+                          icon: fas:check,
+                          fill: $text.inverse
+                        }
+                  - {
+                      id: cf.st1.l,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: Поиск
+                    }
+                  - { id: cf.stl1, type: rect, size: [ fill, 2 ], fill: $status.success }
+                  - id: cf.st2
+                    type: frame
+                    size: [ 24, 24 ]
+                    cornerRadius: $radius.pill
+                    fill: $brand.primary
+                    layout: { type: flex, alignItems: center, justifyContent: center }
+                    children:
+                      - {
+                          id: cf.st2.n,
+                          type: text,
+                          size: [ hug, hug ],
+                          fontSize: 12,
+                          fontWeight: 600,
+                          color: $text.inverse,
+                          content: "2"
+                        }
+                  - {
+                      id: cf.st2.l,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      color: $text.primary,
+                      content: Маршрут
+                    }
+                  - { id: cf.stl2, type: rect, size: [ fill, 2 ], fill: $divider.subtle }
+                  - id: cf.st3
+                    type: frame
+                    size: [ 24, 24 ]
+                    cornerRadius: $radius.pill
+                    fill: $divider.subtle
+                    layout: { type: flex, alignItems: center, justifyContent: center }
+                    children:
+                      - {
+                          id: cf.st3.n,
+                          type: text,
+                          size: [ hug, hug ],
+                          fontSize: 12,
+                          fontWeight: 600,
+                          color: $text.secondary,
+                          content: "3"
+                        }
+                  - {
+                      id: cf.st3.l,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: Ведение
+                    }

@@ -1,0 +1,1560 @@
+name: Desktop и Web
+
+children:
+  - {
+      id: dnote.1,
+      type: text,
+      position: [ 60, 72 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: D1. Карта
+    }
+  - {
+      id: dnote.2,
+      type: text,
+      position: [ 1560, 72 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: D2. Статус
+    }
+  - {
+      id: dnote.3,
+      type: text,
+      position: [ 3060, 72 ],
+      size: [ hug, hug ],
+      fontSize: 32,
+      fontWeight: 700,
+      color: "#000000",
+      content: D3. Настройки
+    }
+
+  # ═══ D1. Карта desktop ═══
+  - id: screen.desktop.map
+    type: frame
+    position: [ 60, 120 ]
+    size: [ 1440, 900 ]
+    layout: { type: flex, direction: row, overflow: hidden }
+    fill: $map.canvas
+    children:
+      - id: dm.sidebar
+        type: frame
+        size: [ 400, fill ]
+        layout: { type: flex, direction: column, gap: 12, padding: 20 }
+        fill: $surface.card
+        children:
+          - id: dm.brand
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 10, alignItems: center }
+            children:
+              - id: dm.logo
+                type: frame
+                size: [ 36, 36 ]
+                cornerRadius: $radius.md
+                fill: $brand.primary
+                layout: { type: flex, alignItems: center, justifyContent: center }
+                children:
+                  - {
+                      id: g.dm.logo,
+                      type: svg,
+                      size: [ 18, 18 ],
+                      icon: fas:route,
+                      fill: $text.inverse
+                    }
+              - {
+                  id: dm.name,
+                  type: text,
+                  size: [ fill, hug ],
+                  style: $text.subtitle,
+                  content: Навигатор
+                }
+              - {
+                  id: dm.simtag,
+                  type: instance,
+                  source: tag,
+                  values: { label: SIM, tone: replay, dotVisible: false }
+                }
+          - {
+              id: dm.search,
+              type: instance,
+              source: input,
+              size: [ fill, 48 ],
+              values: { value: "Тверская ул., 15" }
+            }
+          - id: dm.gnss
+            type: instance
+            source: alert
+            size: [ fill, hug ]
+            values:
+              title: "GNSS: симуляция"
+              message: "На Desktop и Web позиция генерируется сценарием, это явно отмечено"
+          - id: dm.route
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, padding: 4 }
+            fill: $surface.card
+            stroke: $stroke.hairline
+            cornerRadius: $radius.lg
+            children:
+              - id: dm.from
+                type: frame
+                size: [ fill, hug ]
+                layout:
+                  {
+                    type: flex,
+                    direction: row,
+                    gap: 12,
+                    padding: [ 12, 16 ],
+                    alignItems: center
+                  }
+                children:
+                  - { id: dm.from.dot, type: ellipse, size: [ 12, 12 ], fill: $status.success }
+                  - id: dm.from.texts
+                    type: frame
+                    size: [ fill, hug ]
+                    layout: { type: flex, direction: column, gap: 2 }
+                    children:
+                      - {
+                          id: dm.from.cap,
+                          type: text,
+                          size: [ hug, hug ],
+                          style: $text.caption,
+                          content: Откуда
+                        }
+                      - {
+                          id: dm.from.val,
+                          type: text,
+                          size: [ fill, hug ],
+                          style: $text.strong,
+                          content: Точка симуляции А
+                        }
+              - {
+                  id: dm.div,
+                  type: rect,
+                  size: [ fill, 1 ],
+                  fill: $divider.subtle,
+                  margin: [ 0, 16 ]
+                }
+              - id: dm.to
+                type: frame
+                size: [ fill, hug ]
+                layout:
+                  {
+                    type: flex,
+                    direction: row,
+                    gap: 12,
+                    padding: [ 12, 16 ],
+                    alignItems: center
+                  }
+                children:
+                  - {
+                      id: dm.to.dot,
+                      type: svg,
+                      size: [ 13, 13 ],
+                      icon: fas:location-dot,
+                      fill: $status.error
+                    }
+                  - id: dm.to.texts
+                    type: frame
+                    size: [ fill, hug ]
+                    layout: { type: flex, direction: column, gap: 2 }
+                    children:
+                      - {
+                          id: dm.to.cap,
+                          type: text,
+                          size: [ hug, hug ],
+                          style: $text.caption,
+                          content: Куда
+                        }
+                      - {
+                          id: dm.to.val,
+                          type: text,
+                          size: [ fill, hug ],
+                          style: $text.strong,
+                          content: "Тверская ул., 15"
+                        }
+          - {
+              id: dm.cap,
+              type: text,
+              size: [ fill, hug ],
+              style: $text.caption,
+              content: "3 варианта, данные на 14:32"
+            }
+          - id: dm.r1
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 12,
+                padding: [ 12, 14 ],
+                alignItems: center
+              }
+            fill: $surface.card
+            stroke: { color: $brand.primary, width: 2, alignment: inside }
+            cornerRadius: $radius.lg
+            children:
+              - id: dm.r1.texts
+                type: frame
+                size: [ 200, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: dm.r1.eta,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.subtitle,
+                      content: 32 мин
+                    }
+                  - {
+                      id: dm.r1.meta,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.caption,
+                      content: "18,4 км, пробка 4 мин"
+                    }
+              - {
+                  id: dm.r1.tag,
+                  type: instance,
+                  source: tag,
+                  values: { label: Быстрый, tone: success, dotVisible: false }
+                }
+          - id: dm.r2
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 12,
+                padding: [ 12, 14 ],
+                alignItems: center
+              }
+            fill: $surface.card
+            stroke: $stroke.hairline
+            cornerRadius: $radius.lg
+            children:
+              - id: dm.r2.texts
+                type: frame
+                size: [ 200, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: dm.r2.eta,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.subtitle,
+                      color: $text.secondary,
+                      content: 38 мин
+                    }
+                  - {
+                      id: dm.r2.meta,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.caption,
+                      content: "19,2 км, без платных"
+                    }
+              - {
+                  id: dm.r2.tag,
+                  type: instance,
+                  source: tag,
+                  values: { label: Спокойный, dotVisible: false }
+                }
+          - id: dm.r3
+            type: frame
+            size: [ fill, hug ]
+            layout:
+              {
+                type: flex,
+                direction: row,
+                gap: 12,
+                padding: [ 12, 14 ],
+                alignItems: center
+              }
+            fill: $surface.card
+            stroke: $stroke.hairline
+            cornerRadius: $radius.lg
+            children:
+              - id: dm.r3.texts
+                type: frame
+                size: [ 200, hug ]
+                layout: { type: flex, direction: column, gap: 2 }
+                children:
+                  - {
+                      id: dm.r3.eta,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.subtitle,
+                      color: $text.secondary,
+                      content: 41 мин
+                    }
+                  - {
+                      id: dm.r3.meta,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.caption,
+                      content: "17,1 км, зона ДТП"
+                    }
+              - {
+                  id: dm.r3.tag,
+                  type: instance,
+                  source: tag,
+                  values: { label: События, tone: warning, dotVisible: false }
+                }
+          - { id: dm.spacer, type: frame, size: [ fill, fill ] }
+          - id: dm.actions
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 8 }
+            children:
+              - {
+                  id: dm.btn.start,
+                  type: instance,
+                  source: button,
+                  size: [ fill, 48 ],
+                  values: { label: Начать ведение, size: lg }
+                }
+              - id: dm.nav.status
+                type: instance
+                source: button
+                size: [ fill, 48 ]
+                values: { label: Статус и симуляция, kind: secondary, size: lg }
+      - id: dm.map
+        type: frame
+        size: [ fill, fill ]
+        layout: { type: free, overflow: hidden }
+        fill: $map.canvas
+        children:
+          - id: dm.map.roads
+            type: group
+            children:
+              - {
+                  id: dm.rv1,
+                  type: line,
+                  position: [ 200, 0 ],
+                  size: [ 0, 900 ],
+                  stroke: { color: $map.roadMajor, width: 14 }
+                }
+              - {
+                  id: dm.rv2,
+                  type: line,
+                  position: [ 480, 0 ],
+                  size: [ 0, 900 ],
+                  stroke: { color: $map.road, width: 8 }
+                }
+              - {
+                  id: dm.rv3,
+                  type: line,
+                  position: [ 760, 0 ],
+                  size: [ 0, 900 ],
+                  stroke: { color: $map.roadMajor, width: 14 }
+                }
+              - {
+                  id: dm.rh1,
+                  type: line,
+                  position: [ 0, 180 ],
+                  size: [ 1040, 0 ],
+                  stroke: { color: $map.roadMajor, width: 14 }
+                }
+              - {
+                  id: dm.rh2,
+                  type: line,
+                  position: [ 0, 420 ],
+                  size: [ 1040, 0 ],
+                  stroke: { color: $map.road, width: 8 }
+                }
+              - {
+                  id: dm.rh3,
+                  type: line,
+                  position: [ 0, 640 ],
+                  size: [ 1040, 0 ],
+                  stroke: { color: $map.roadMajor, width: 14 }
+                }
+              - {
+                  id: dm.hw,
+                  type: line,
+                  position: [ -20, 300 ],
+                  size: [ 1080, 340 ],
+                  stroke: { color: $map.roadMajor, width: 18 }
+                }
+          - id: dm.map.blocks
+            type: group
+            children:
+              - {
+                  id: dm.b1,
+                  type: rect,
+                  position: [ 230, 210 ],
+                  size: [ 220, 180 ],
+                  cornerRadius: 12,
+                  fill: $map.block
+                }
+              - {
+                  id: dm.b2,
+                  type: rect,
+                  position: [ 520, 210 ],
+                  size: [ 200, 180 ],
+                  cornerRadius: 12,
+                  fill: $map.block
+                }
+              - {
+                  id: dm.b3,
+                  type: rect,
+                  position: [ 230, 460 ],
+                  size: [ 220, 150 ],
+                  cornerRadius: 12,
+                  fill: $map.block
+                }
+              - {
+                  id: dm.b4,
+                  type: rect,
+                  position: [ 800, 460 ],
+                  size: [ 200, 380 ],
+                  cornerRadius: 12,
+                  fill: $map.block
+                }
+              - {
+                  id: dm.park,
+                  type: rect,
+                  position: [ 520, 460 ],
+                  size: [ 200, 150 ],
+                  cornerRadius: 12,
+                  fill: $map.park
+                }
+          - id: dm.route.line
+            type: path
+            position: [ 0, 0 ]
+            size: [ 1040, 900 ]
+            viewBox: [ 1040, 900 ]
+            path: M480 900 L480 660 Q480 640 500 640 L760 640
+            stroke: { color: $brand.primary, width: 8, cap: round }
+          - id: dm.route.jam
+            type: path
+            position: [ 0, 0 ]
+            size: [ 1040, 900 ]
+            viewBox: [ 1040, 900 ]
+            path: M480 830 L480 740
+            stroke: { color: $status.warning, width: 8, cap: round }
+          - {
+              id: dm.pos,
+              type: ellipse,
+              position: [ 469, 660 ],
+              size: [ 22, 22 ],
+              fill: $brand.primary,
+              stroke: { color: $surface.card, width: 3, alignment: inside }
+            }
+          - {
+              id: dm.pin,
+              type: svg,
+              position: [ 747, 606 ],
+              size: [ 26, 34 ],
+              icon: fas:location-dot,
+              fill: $status.error
+            }
+          - {
+              id: dm.l1,
+              type: text,
+              position: [ 236, 196 ],
+              size: [ hug, hug ],
+              fontSize: 12,
+              color: $map.label,
+              content: ул. Пушкина
+            }
+          - {
+              id: dm.l2,
+              type: text,
+              position: [ 490, 406 ],
+              size: [ hug, hug ],
+              fontSize: 12,
+              color: $map.label,
+              content: пр. Мира
+            }
+          - id: dm.tags
+            type: frame
+            position: [ 760, 24 ]
+            size: [ hug, hug ]
+            layout: { type: flex, direction: row, gap: 8, alignItems: center }
+            children:
+              - {
+                  id: dm.tag.sim,
+                  type: instance,
+                  source: tag,
+                  values: { label: SIM, tone: replay }
+                }
+              - {
+                  id: dm.tag.fresh,
+                  type: instance,
+                  source: tag,
+                  values: { label: "данные на 14:32", tone: unknown, dotVisible: false }
+                }
+          - id: dm.simpanel
+            type: frame
+            position: [ 640, 620 ]
+            size: [ 376, hug ]
+            layout: { type: flex, direction: column, gap: 12, padding: 16 }
+            fill: $surface.card
+            cornerRadius: $radius.lg
+            effects: $shadow.overlay
+            children:
+              - id: dm.sim.head
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 8, alignItems: center }
+                children:
+                  - {
+                      id: dm.sim.t,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.strong,
+                      content: Симуляция GNSS
+                    }
+                  - {
+                      id: dm.sim.tag,
+                      type: instance,
+                      source: tag,
+                      values: { label: Desktop, dotVisible: false }
+                    }
+              - id: dm.sim.controls
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 10, alignItems: center }
+                children:
+                  - id: dm.sim.play
+                    type: instance
+                    source: icon-button
+                    size: [ 40, 40 ]
+                    overrides:
+                      ib.root: { size: [ 40, 40 ] }
+                    values:
+                      kind: primary
+                      glyph:
+                        - {
+                            id: g.dm.play,
+                            type: svg,
+                            size: [ 14, 14 ],
+                            icon: fas:play,
+                            fill: $text.inverse
+                          }
+                  - id: dm.sim.pause
+                    type: instance
+                    source: icon-button
+                    size: [ 40, 40 ]
+                    overrides:
+                      ib.root: { size: [ 40, 40 ], fill: $surface.base, effects: null }
+                    values:
+                      glyph:
+                        - {
+                            id: g.dm.pause,
+                            type: svg,
+                            size: [ 14, 14 ],
+                            icon: fas:pause,
+                            fill: $text.secondary
+                          }
+                  - id: dm.sim.speed
+                    type: instance
+                    source: segmented
+                    values: { label1: "1×", label2: "2×", label3: "4×", selected: second }
+              - id: dm.sim.seek
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 6 }
+                children:
+                  - id: dm.sim.seekbar
+                    type: frame
+                    size: [ fill, 6 ]
+                    cornerRadius: $radius.pill
+                    fill: $divider.subtle
+                    children:
+                      - {
+                          id: dm.sim.seekfill,
+                          type: rect,
+                          position: [ 0, 0 ],
+                          size: [ 140, 6 ],
+                          cornerRadius: $radius.pill,
+                          fill: $brand.primary
+                        }
+                  - {
+                      id: dm.sim.time,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: "00:12:40 / 00:31:00"
+                    }
+              - id: dm.sim.triggers
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 8, wrap: true }
+                children:
+                  - {
+                      id: dm.trig.offroute,
+                      type: instance,
+                      source: button,
+                      values: { label: Off-route, kind: secondary }
+                    }
+                  - {
+                      id: dm.trig.stale,
+                      type: instance,
+                      source: button,
+                      values: { label: Stale, kind: secondary }
+                    }
+                  - {
+                      id: dm.trig.crash,
+                      type: instance,
+                      source: button,
+                      values: { label: ДТП, kind: secondary }
+                    }
+                  - {
+                      id: dm.trig.nocov,
+                      type: instance,
+                      source: button,
+                      values: { label: Нет покрытия, kind: secondary }
+                    }
+
+  # ═══ D2. Статус desktop ═══
+  - id: screen.desktop.status
+    type: frame
+    position: [ 1560, 120 ]
+    size: [ 1440, 900 ]
+    layout: { type: flex, direction: column, overflow: hidden }
+    fill: $surface.base
+    children:
+      - id: ds.topbar
+        type: frame
+        size: [ fill, 56 ]
+        layout:
+          {
+            type: flex,
+            direction: row,
+            gap: 24,
+            padding: [ 0, 24 ],
+            alignItems: center
+          }
+        fill: $surface.card
+        children:
+          - id: ds.brand
+            type: frame
+            size: [ hug, hug ]
+            layout: { type: flex, direction: row, gap: 10, alignItems: center }
+            children:
+              - id: ds.logo
+                type: frame
+                size: [ 32, 32 ]
+                cornerRadius: $radius.md
+                fill: $brand.primary
+                layout: { type: flex, alignItems: center, justifyContent: center }
+                children:
+                  - {
+                      id: g.ds.logo,
+                      type: svg,
+                      size: [ 16, 16 ],
+                      icon: fas:route,
+                      fill: $text.inverse
+                    }
+              - {
+                  id: ds.name,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.strong,
+                  content: Навигатор
+                }
+          - id: ds.nav
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 20, alignItems: center }
+            children:
+              - id: ds.nav.map
+                type: text
+                size: [ hug, hug ]
+                style: $text.body
+                color: $text.secondary
+                content: Карта
+              - {
+                  id: ds.nav.status,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.strong,
+                  color: $brand.primary,
+                  content: Статус
+                }
+              - id: ds.nav.settings
+                type: text
+                size: [ hug, hug ]
+                style: $text.body
+                color: $text.secondary
+                content: Настройки
+          - {
+              id: ds.tag,
+              type: instance,
+              source: tag,
+              values: { label: REPLAY, tone: replay }
+            }
+          - {
+              id: ds.clock,
+              type: text,
+              size: [ hug, hug ],
+              style: $text.caption,
+              content: "14:32, 12.06"
+            }
+      - id: ds.body
+        type: frame
+        size: [ fill, fill ]
+        layout: { type: flex, direction: row, gap: 16, padding: 20 }
+        children:
+          - id: ds.main
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 16 }
+            children:
+              - id: ds.kpis
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: row, gap: 16 }
+                children:
+                  - id: ds.kpi1
+                    type: frame
+                    size: [ fill, hug ]
+                    layout: { type: flex, direction: column, gap: 4, padding: 16 }
+                    fill: $surface.card
+                    cornerRadius: $radius.lg
+                    children:
+                      - {
+                          id: ds.kpi1.l,
+                          type: text,
+                          size: [ hug, hug ],
+                          style: $text.caption,
+                          content: Покрытие картой
+                        }
+                      - {
+                          id: ds.kpi1.v,
+                          type: text,
+                          size: [ hug, hug ],
+                          style: $text.eta,
+                          content: "82%"
+                        }
+                  - id: ds.kpi2
+                    type: frame
+                    size: [ fill, hug ]
+                    layout: { type: flex, direction: column, gap: 4, padding: 16 }
+                    fill: $surface.card
+                    cornerRadius: $radius.lg
+                    children:
+                      - {
+                          id: ds.kpi2.l,
+                          type: text,
+                          size: [ hug, hug ],
+                          style: $text.caption,
+                          content: "Uptime API, 24 ч"
+                        }
+                      - {
+                          id: ds.kpi2.v,
+                          type: text,
+                          size: [ hug, hug ],
+                          style: $text.eta,
+                          content: "99,4%"
+                        }
+                  - id: ds.kpi3
+                    type: frame
+                    size: [ fill, hug ]
+                    layout: { type: flex, direction: column, gap: 4, padding: 16 }
+                    fill: $surface.card
+                    cornerRadius: $radius.lg
+                    children:
+                      - {
+                          id: ds.kpi3.l,
+                          type: text,
+                          size: [ hug, hug ],
+                          style: $text.caption,
+                          content: Ошибок за час
+                        }
+                      - {
+                          id: ds.kpi3.v,
+                          type: text,
+                          size: [ hug, hug ],
+                          style: $text.eta,
+                          color: $status.warning,
+                          content: "2"
+                        }
+                  - id: ds.kpi4
+                    type: frame
+                    size: [ fill, hug ]
+                    layout: { type: flex, direction: column, gap: 4, padding: 16 }
+                    fill: $surface.card
+                    cornerRadius: $radius.lg
+                    children:
+                      - {
+                          id: ds.kpi4.l,
+                          type: text,
+                          size: [ hug, hug ],
+                          style: $text.caption,
+                          content: Режим данных
+                        }
+                      - {
+                          id: ds.kpi4.v,
+                          type: text,
+                          size: [ hug, hug ],
+                          style: $text.eta,
+                          color: $status.warning,
+                          content: Replay
+                        }
+              - id: ds.table
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column }
+                fill: $surface.card
+                cornerRadius: $radius.lg
+                children:
+                  - {
+                      id: ds.table.t,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.strong,
+                      margin: [ 16, 16, 8, 16 ],
+                      content: Freshness по потокам
+                    }
+                  - id: ds.table.head
+                    type: frame
+                    size: [ fill, 36 ]
+                    layout:
+                      {
+                        type: flex,
+                        direction: row,
+                        gap: 12,
+                        padding: [ 0, 16 ],
+                        alignItems: center
+                      }
+                    fill: $surface.base
+                    children:
+                      - {
+                          id: ds.th1,
+                          type: text,
+                          size: [ 140, hug ],
+                          style: $text.caption,
+                          content: Поток
+                        }
+                      - {
+                          id: ds.th2,
+                          type: text,
+                          size: [ 90, hug ],
+                          style: $text.caption,
+                          content: Статус
+                        }
+                      - {
+                          id: ds.th3,
+                          type: text,
+                          size: [ 200, hug ],
+                          style: $text.caption,
+                          content: Обновлено
+                        }
+                      - {
+                          id: ds.th4,
+                          type: text,
+                          size: [ 90, hug ],
+                          style: $text.caption,
+                          content: Покрытие
+                        }
+                      - {
+                          id: ds.th5,
+                          type: text,
+                          size: [ fill, hug ],
+                          style: $text.caption,
+                          content: Последняя ошибка
+                        }
+                      - {
+                          id: ds.th6,
+                          type: text,
+                          size: [ 150, hug ],
+                          style: $text.caption,
+                          content: requestId
+                        }
+                  - id: ds.tr1
+                    type: frame
+                    size: [ fill, 44 ]
+                    layout:
+                      {
+                        type: flex,
+                        direction: row,
+                        gap: 12,
+                        padding: [ 0, 16 ],
+                        alignItems: center
+                      }
+                    children:
+                      - {
+                          id: ds.tr1.c1,
+                          type: text,
+                          size: [ 140, hug ],
+                          style: $text.strong,
+                          fontSize: 14,
+                          content: Маршруты
+                        }
+                      - id: ds.tr1.c2
+                        type: frame
+                        size: [ 90, hug ]
+                        layout: { type: flex }
+                        children:
+                          - {
+                              id: ds.tr1.tag,
+                              type: instance,
+                              source: tag,
+                              values: { label: Replay, tone: replay, dotVisible: false }
+                            }
+                      - {
+                          id: ds.tr1.c3,
+                          type: text,
+                          size: [ 200, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          content: "кадр 00:12:40"
+                        }
+                      - {
+                          id: ds.tr1.c4,
+                          type: text,
+                          size: [ 90, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          content: "84%"
+                        }
+                      - {
+                          id: ds.tr1.c5,
+                          type: text,
+                          size: [ fill, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          color: $text.secondary,
+                          content: "E_COVERAGE, не retryable"
+                        }
+                      - {
+                          id: ds.tr1.c6,
+                          type: text,
+                          size: [ 150, hug ],
+                          style: $text.caption,
+                          content: 07bd-55e1
+                        }
+                  - { id: ds.td1, type: rect, size: [ fill, 1 ], fill: $divider.subtle }
+                  - id: ds.tr2
+                    type: frame
+                    size: [ fill, 44 ]
+                    layout:
+                      {
+                        type: flex,
+                        direction: row,
+                        gap: 12,
+                        padding: [ 0, 16 ],
+                        alignItems: center
+                      }
+                    children:
+                      - {
+                          id: ds.tr2.c1,
+                          type: text,
+                          size: [ 140, hug ],
+                          style: $text.strong,
+                          fontSize: 14,
+                          content: Пробки
+                        }
+                      - id: ds.tr2.c2
+                        type: frame
+                        size: [ 90, hug ]
+                        layout: { type: flex }
+                        children:
+                          - {
+                              id: ds.tr2.tag,
+                              type: instance,
+                              source: tag,
+                              values: { label: Stale, tone: warning, dotVisible: false }
+                            }
+                      - {
+                          id: ds.tr2.c3,
+                          type: text,
+                          size: [ 200, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          content: "данные на 14:20"
+                        }
+                      - {
+                          id: ds.tr2.c4,
+                          type: text,
+                          size: [ 90, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          content: "79%"
+                        }
+                      - {
+                          id: ds.tr2.c5,
+                          type: text,
+                          size: [ fill, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          color: $text.secondary,
+                          content: "нет"
+                        }
+                      - {
+                          id: ds.tr2.c6,
+                          type: text,
+                          size: [ 150, hug ],
+                          style: $text.caption,
+                          content: "—"
+                        }
+                  - { id: ds.td2, type: rect, size: [ fill, 1 ], fill: $divider.subtle }
+                  - id: ds.tr3
+                    type: frame
+                    size: [ fill, 44 ]
+                    layout:
+                      {
+                        type: flex,
+                        direction: row,
+                        gap: 12,
+                        padding: [ 0, 16 ],
+                        alignItems: center
+                      }
+                    children:
+                      - {
+                          id: ds.tr3.c1,
+                          type: text,
+                          size: [ 140, hug ],
+                          style: $text.strong,
+                          fontSize: 14,
+                          content: События
+                        }
+                      - id: ds.tr3.c2
+                        type: frame
+                        size: [ 90, hug ]
+                        layout: { type: flex }
+                        children:
+                          - {
+                              id: ds.tr3.tag,
+                              type: instance,
+                              source: tag,
+                              values: { label: Ошибки, tone: error, dotVisible: false }
+                            }
+                      - {
+                          id: ds.tr3.c3,
+                          type: text,
+                          size: [ 200, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          content: "таймаут, 14:31:02"
+                        }
+                      - {
+                          id: ds.tr3.c4,
+                          type: text,
+                          size: [ 90, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          content: "82%"
+                        }
+                      - {
+                          id: ds.tr3.c5,
+                          type: text,
+                          size: [ fill, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          color: $text.secondary,
+                          content: "E_TIMEOUT, retryable"
+                        }
+                      - {
+                          id: ds.tr3.c6,
+                          type: text,
+                          size: [ 150, hug ],
+                          style: $text.caption,
+                          content: a41f-92ce
+                        }
+                  - { id: ds.td3, type: rect, size: [ fill, 1 ], fill: $divider.subtle }
+                  - id: ds.tr4
+                    type: frame
+                    size: [ fill, 44 ]
+                    layout:
+                      {
+                        type: flex,
+                        direction: row,
+                        gap: 12,
+                        padding: [ 0, 16 ],
+                        alignItems: center
+                      }
+                    children:
+                      - {
+                          id: ds.tr4.c1,
+                          type: text,
+                          size: [ 140, hug ],
+                          style: $text.strong,
+                          fontSize: 14,
+                          content: Геокодинг
+                        }
+                      - id: ds.tr4.c2
+                        type: frame
+                        size: [ 90, hug ]
+                        layout: { type: flex }
+                        children:
+                          - {
+                              id: ds.tr4.tag,
+                              type: instance,
+                              source: tag,
+                              values: { label: OK, tone: success, dotVisible: false }
+                            }
+                      - {
+                          id: ds.tr4.c3,
+                          type: text,
+                          size: [ 200, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          content: "обновлено 14:32:10"
+                        }
+                      - {
+                          id: ds.tr4.c4,
+                          type: text,
+                          size: [ 90, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          content: "91%"
+                        }
+                      - {
+                          id: ds.tr4.c5,
+                          type: text,
+                          size: [ fill, hug ],
+                          style: $text.body,
+                          fontSize: 14,
+                          color: $text.secondary,
+                          content: "нет"
+                        }
+                      - {
+                          id: ds.tr4.c6,
+                          type: text,
+                          size: [ 150, hug ],
+                          style: $text.caption,
+                          content: "—"
+                        }
+          - id: ds.side
+            type: frame
+            size: [ 380, hug ]
+            layout: { type: flex, direction: column, gap: 16 }
+            children:
+              - id: ds.sim
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 12, padding: 16 }
+                fill: $surface.card
+                cornerRadius: $radius.lg
+                children:
+                  - {
+                      id: ds.sim.t,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.strong,
+                      content: Панель симуляции
+                    }
+                  - id: ds.sim.controls
+                    type: frame
+                    size: [ fill, hug ]
+                    layout: { type: flex, direction: row, gap: 10, alignItems: center }
+                    children:
+                      - id: ds.sim.play
+                        type: instance
+                        source: icon-button
+                        size: [ 40, 40 ]
+                        overrides:
+                          ib.root: { size: [ 40, 40 ] }
+                        values:
+                          kind: primary
+                          glyph:
+                            - {
+                                id: g.ds.play,
+                                type: svg,
+                                size: [ 14, 14 ],
+                                icon: fas:pause,
+                                fill: $text.inverse
+                              }
+                      - id: ds.sim.speed
+                        type: instance
+                        source: segmented
+                        values: { label1: "1×", label2: "2×", label3: "4×", selected: second }
+                  - id: ds.sim.seekbar
+                    type: frame
+                    size: [ fill, 6 ]
+                    cornerRadius: $radius.pill
+                    fill: $divider.subtle
+                    children:
+                      - {
+                          id: ds.sim.seekfill,
+                          type: rect,
+                          position: [ 0, 0 ],
+                          size: [ 140, 6 ],
+                          cornerRadius: $radius.pill,
+                          fill: $brand.primary
+                        }
+                  - {
+                      id: ds.sim.time,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.caption,
+                      content: "00:12:40 / 00:31:00, сценарий ДТП"
+                    }
+                  - id: ds.sim.triggers
+                    type: frame
+                    size: [ fill, hug ]
+                    layout: { type: flex, direction: row, gap: 8, wrap: true }
+                    children:
+                      - {
+                          id: ds.trig.offroute,
+                          type: instance,
+                          source: button,
+                          values: { label: Off-route, kind: secondary }
+                        }
+                      - {
+                          id: ds.trig.stale,
+                          type: instance,
+                          source: button,
+                          values: { label: Stale, kind: secondary }
+                        }
+                      - {
+                          id: ds.trig.offline,
+                          type: instance,
+                          source: button,
+                          values: { label: Offline, kind: secondary }
+                        }
+                      - {
+                          id: ds.trig.arrive,
+                          type: instance,
+                          source: button,
+                          values: { label: Прибытие, kind: secondary }
+                        }
+              - id: ds.errors
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 8, padding: 16 }
+                fill: $surface.card
+                cornerRadius: $radius.lg
+                children:
+                  - {
+                      id: ds.errors.t,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.strong,
+                      content: Ошибки API
+                    }
+                  - id: ds.e1
+                    type: frame
+                    size: [ fill, hug ]
+                    layout: { type: flex, direction: column, gap: 2 }
+                    children:
+                      - {
+                          id: ds.e1.t,
+                          type: text,
+                          size: [ fill, hug ],
+                          style: $text.strong,
+                          fontSize: 13,
+                          content: "E_TIMEOUT, GET /v1/events"
+                        }
+                      - {
+                          id: ds.e1.s,
+                          type: text,
+                          size: [ fill, hug ],
+                          style: $text.caption,
+                          content: "14:31:02, requestId: a41f-92ce, retryable"
+                        }
+                  - { id: ds.ed, type: rect, size: [ fill, 1 ], fill: $divider.subtle }
+                  - id: ds.e2
+                    type: frame
+                    size: [ fill, hug ]
+                    layout: { type: flex, direction: column, gap: 2 }
+                    children:
+                      - {
+                          id: ds.e2.t,
+                          type: text,
+                          size: [ fill, hug ],
+                          style: $text.strong,
+                          fontSize: 13,
+                          content: "E_COVERAGE, POST /v1/routes"
+                        }
+                      - {
+                          id: ds.e2.s,
+                          type: text,
+                          size: [ fill, hug ],
+                          style: $text.caption,
+                          content: "14:12:47, requestId: 07bd-55e1, не retryable"
+                        }
+
+  # ═══ D3. Настройки desktop ═══
+  - id: screen.desktop.settings
+    type: frame
+    position: [ 3060, 120 ]
+    size: [ 1440, 900 ]
+    layout: { type: flex, direction: column, overflow: hidden }
+    fill: $surface.base
+    children:
+      - id: dt.topbar
+        type: frame
+        size: [ fill, 56 ]
+        layout:
+          {
+            type: flex,
+            direction: row,
+            gap: 24,
+            padding: [ 0, 24 ],
+            alignItems: center
+          }
+        fill: $surface.card
+        children:
+          - id: dt.brand
+            type: frame
+            size: [ hug, hug ]
+            layout: { type: flex, direction: row, gap: 10, alignItems: center }
+            children:
+              - id: dt.logo
+                type: frame
+                size: [ 32, 32 ]
+                cornerRadius: $radius.md
+                fill: $brand.primary
+                layout: { type: flex, alignItems: center, justifyContent: center }
+                children:
+                  - {
+                      id: g.dt.logo,
+                      type: svg,
+                      size: [ 16, 16 ],
+                      icon: fas:route,
+                      fill: $text.inverse
+                    }
+              - {
+                  id: dt.name,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.strong,
+                  content: Навигатор
+                }
+          - id: dt.nav
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: row, gap: 20, alignItems: center }
+            children:
+              - id: dt.nav.map
+                type: text
+                size: [ hug, hug ]
+                style: $text.body
+                color: $text.secondary
+                content: Карта
+              - {
+                  id: dt.nav.status,
+                  type: text,
+                  size: [ hug, hug ],
+                  style: $text.body,
+                  color: $text.secondary,
+                  content: Статус
+                }
+              - id: dt.nav.settings
+                type: text
+                size: [ hug, hug ]
+                style: $text.strong
+                color: $brand.primary
+                content: Настройки
+          - {
+              id: dt.tag,
+              type: instance,
+              source: tag,
+              values: { label: SIM, tone: replay, dotVisible: false }
+            }
+      - id: dt.body
+        type: frame
+        size: [ fill, fill ]
+        layout: { type: flex, direction: row, gap: 16, padding: 20, alignItems: start }
+        children:
+          - id: dt.col1
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 16 }
+            children:
+              - id: dt.g1
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column }
+                fill: $surface.card
+                cornerRadius: $radius.lg
+                children:
+                  - {
+                      id: dt.g1.t,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.strong,
+                      margin: [ 16, 16, 4, 16 ],
+                      content: Голос и язык
+                    }
+                  - id: dt.lang
+                    type: instance
+                    source: setting-row
+                    size: [ fill, hug ]
+                    values:
+                      title: Язык
+                      subtitle: Русский
+                      control:
+                        - {
+                            id: g.dt.lang,
+                            type: svg,
+                            size: [ 14, 14 ],
+                            icon: fas:chevron-right,
+                            fill: $text.disabled
+                          }
+                  - {
+                      id: dt.d1,
+                      type: rect,
+                      size: [ fill, 1 ],
+                      fill: $divider.subtle,
+                      margin: [ 0, 16 ]
+                    }
+                  - id: dt.voice
+                    type: instance
+                    source: setting-row
+                    size: [ fill, hug ]
+                    values:
+                      title: Голос подсказок
+                      subtitle: "Алёна, женский"
+                      control:
+                        - {
+                            id: g.dt.voice,
+                            type: svg,
+                            size: [ 14, 14 ],
+                            icon: fas:chevron-right,
+                            fill: $text.disabled
+                          }
+              - id: dt.g2
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column }
+                fill: $surface.card
+                cornerRadius: $radius.lg
+                children:
+                  - {
+                      id: dt.g2.t,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.strong,
+                      margin: [ 16, 16, 4, 16 ],
+                      content: Навигация
+                    }
+                  - id: dt.units
+                    type: instance
+                    source: setting-row
+                    size: [ fill, hug ]
+                    values:
+                      title: Единицы измерения
+                      subtitle: Километры
+                      control:
+                        - {
+                            id: g.dt.units,
+                            type: svg,
+                            size: [ 14, 14 ],
+                            icon: fas:chevron-right,
+                            fill: $text.disabled
+                          }
+                  - {
+                      id: dt.d2,
+                      type: rect,
+                      size: [ fill, 1 ],
+                      fill: $divider.subtle,
+                      margin: [ 0, 16 ]
+                    }
+                  - id: dt.recalc
+                    type: instance
+                    source: setting-row
+                    size: [ fill, hug ]
+                    values:
+                      title: Авто-пересчёт маршрута
+                      subtitle: При сходе или изменении трафика
+                      control:
+                        - { id: sw.dt.recalc, type: instance, source: switch, values: { state: on } }
+          - id: dt.col2
+            type: frame
+            size: [ fill, hug ]
+            layout: { type: flex, direction: column, gap: 16 }
+            children:
+              - id: dt.g3
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column }
+                fill: $surface.card
+                cornerRadius: $radius.lg
+                children:
+                  - {
+                      id: dt.g3.t,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.strong,
+                      margin: [ 16, 16, 4, 16 ],
+                      content: Данные
+                    }
+                  - id: dt.sim
+                    type: instance
+                    source: setting-row
+                    size: [ fill, hug ]
+                    values:
+                      title: Режим симуляции
+                      subtitle: Вместо GNSS на Desktop и Web, помечается явно
+                      control:
+                        - { id: sw.dt.sim, type: instance, source: switch, values: { state: on } }
+                  - {
+                      id: dt.d3,
+                      type: rect,
+                      size: [ fill, 1 ],
+                      fill: $divider.subtle,
+                      margin: [ 0, 16 ]
+                    }
+                  - id: dt.reset
+                    type: instance
+                    source: setting-row
+                    size: [ fill, hug ]
+                    values:
+                      title: Сбросить локальные данные
+                      subtitle: "История, сохранённые точки, DataStore"
+                      control:
+                        - {
+                            id: g.dt.trash,
+                            type: svg,
+                            size: [ 16, 16 ],
+                            icon: fas:trash-can,
+                            fill: $status.error
+                          }
+                    overrides:
+                      row.title: { color: $status.error }
+              - id: dt.about
+                type: frame
+                size: [ fill, hug ]
+                layout: { type: flex, direction: column, gap: 8, padding: 16 }
+                fill: $surface.card
+                cornerRadius: $radius.lg
+                children:
+                  - {
+                      id: dt.about.t,
+                      type: text,
+                      size: [ hug, hug ],
+                      style: $text.strong,
+                      content: О программе
+                    }
+                  - {
+                      id: dt.about.v,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.body,
+                      content: "Навигатор 1.4.2 (104), Compose Multiplatform"
+                    }
+                  - {
+                      id: dt.about.osm,
+                      type: text,
+                      size: [ fill, hug ],
+                      style: $text.caption,
+                      content: "Данные карты © OpenStreetMap contributors, ODbL 1.0"
+                    }
+                  - id: dt.about.alert
+                    type: instance
+                    source: alert
+                    size: [ fill, hug ]
+                    values: { title: "Работает без сети", message: "Экран доступен полностью offline" }
+
+prototype: |
+  flow desktop = "screen.desktop.map" {
+    viewport: [1440, 900]
+  }
+
+  on click("dm.nav.status") { navigate("screen.desktop.status") }
+  on click("ds.nav.map") { navigate("screen.desktop.map") }
+  on click("ds.nav.settings") { navigate("screen.desktop.settings") }
+  on click("dt.nav.map") { navigate("screen.desktop.map") }
+  on click("dt.nav.status") { navigate("screen.desktop.status") }

@@ -1,0 +1,188 @@
+version: v1
+name: Навигатор — дизайн-система
+
+tokens:
+  # ── Базовая палитра ──────────────────────────────
+  brand.primary: { type: color, values: "#1677FF" }
+  brand.hover: { type: color, values: "#4096FF" }
+  brand.active: { type: color, values: "#0958D9" }
+  brand.bg: { type: color, values: "#E6F4FF" }
+
+  surface.base: { type: color, values: "#F5F5F5" }
+  surface.card: { type: color, values: "#FFFFFF" }
+  surface.scrim: { type: color, values: "#00000073" }
+
+  map.canvas: { type: color, values: "#1B2735" }
+  map.block: { type: color, values: "#25344A" }
+  map.road: { type: color, values: "#3A4E66" }
+  map.roadMajor: { type: color, values: "#4A6076" }
+  map.water: { type: color, values: "#131E2A" }
+  map.park: { type: color, values: "#1E3A32" }
+  map.label: { type: color, values: "#7C8DA6" }
+
+  text.primary: { type: color, values: "#262626" }
+  text.secondary: { type: color, values: "#595959" }
+  text.disabled: { type: color, values: "#BFBFBF" }
+  text.inverse: { type: color, values: "#FFFFFF" }
+
+  status.success: { type: color, values: "#52C41A" }
+  status.warning: { type: color, values: "#FAAD14" }
+  status.error: { type: color, values: "#FF4D4F" }
+  status.info: { type: color, values: "#1677FF" }
+  status.unknown: { type: color, values: "#8C8C8C" }
+
+  status.successBg: { type: color, values: "#F6FFED" }
+  status.warningBg: { type: color, values: "#FFFBE6" }
+  status.errorBg: { type: color, values: "#FFF2F0" }
+  status.infoBg: { type: color, values: "#E6F4FF" }
+  status.unknownBg: { type: color, values: "#F0F0F0" }
+
+  border.default: { type: color, values: "#D9D9D9" }
+  divider.subtle: { type: color, values: "#F0F0F0" }
+
+  # ── Радиусы / отступы ────────────────────────────
+  radius.sm: { type: number, values: 6 }
+  radius.md: { type: number, values: 8 }
+  radius.lg: { type: number, values: 12 }
+  radius.xl: { type: number, values: 16 }
+  radius.pill: { type: number, values: 999 }
+
+  spacing.1: { type: number, values: 4 }
+  spacing.2: { type: number, values: 8 }
+  spacing.3: { type: number, values: 12 }
+  spacing.4: { type: number, values: 16 }
+  spacing.5: { type: number, values: 24 }
+  spacing.6: { type: number, values: 32 }
+  spacing.7: { type: number, values: 48 }
+
+  # ── Тени ─────────────────────────────────────────
+  shadow.card:
+    {
+      type: shadow,
+      values: { type: shadow, color: "#0000000F", offset: [ 0, 4 ], blur: 12 }
+    }
+  shadow.overlay:
+    {
+      type: shadow,
+      values: { type: shadow, color: "#00000029", offset: [ 0, 8 ], blur: 24 }
+    }
+
+  stroke.hairline:
+    {
+      type: stroke,
+      values: { color: $border.default, width: 1, alignment: inside }
+    }
+
+  # ── Типографика ──────────────────────────────────
+  text.caption:
+    {
+      type: typography,
+      values:
+        {
+          fontFamily: Helvetica Neue,
+          fontSize: 13,
+          lineHeight: 18,
+          color: $text.secondary
+        }
+    }
+  text.body:
+    {
+      type: typography,
+      values:
+        {
+          fontFamily: Helvetica Neue,
+          fontSize: 15,
+          lineHeight: 22,
+          color: $text.primary
+        }
+    }
+  text.strong:
+    {
+      type: typography,
+      values:
+        {
+          fontFamily: Helvetica Neue,
+          fontSize: 15,
+          lineHeight: 22,
+          fontWeight: 600,
+          color: $text.primary
+        }
+    }
+  text.subtitle:
+    {
+      type: typography,
+      values:
+        {
+          fontFamily: Helvetica Neue,
+          fontSize: 17,
+          lineHeight: 24,
+          fontWeight: 600,
+          color: $text.primary
+        }
+    }
+  text.title:
+    {
+      type: typography,
+      values:
+        {
+          fontFamily: Helvetica Neue,
+          fontSize: 20,
+          lineHeight: 28,
+          fontWeight: 600,
+          color: $text.primary
+        }
+    }
+  text.h1:
+    {
+      type: typography,
+      values:
+        {
+          fontFamily: Helvetica Neue,
+          fontSize: 24,
+          lineHeight: 32,
+          fontWeight: 700,
+          color: $text.primary
+        }
+    }
+  text.maneuver:
+    {
+      type: typography,
+      values:
+        {
+          fontFamily: Helvetica Neue,
+          fontSize: 24,
+          lineHeight: 30,
+          fontWeight: 700,
+          color: $text.primary
+        }
+    }
+  text.eta:
+    {
+      type: typography,
+      values:
+        {
+          fontFamily: Helvetica Neue,
+          fontSize: 28,
+          lineHeight: 34,
+          fontWeight: 700,
+          color: $text.primary
+        }
+    }
+  text.badge:
+    {
+      type: typography,
+      values:
+        {
+          fontFamily: Helvetica Neue,
+          fontSize: 13,
+          lineHeight: 16,
+          fontWeight: 600,
+          color: $text.primary
+        }
+    }
+
+pages:
+  - pages/ui-kit.uipage
+  - pages/mobile.uipage
+  - pages/mobile-states.uipage
+  - pages/desktop.uipage

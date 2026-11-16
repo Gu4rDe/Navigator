@@ -1,0 +1,52 @@
+id: segmented
+name: Segmented control
+
+expose:
+  label1: {node: seg.label1, field: content}
+  label2: {node: seg.label2, field: content}
+  label3: {node: seg.label3, field: content}
+
+root:
+  id: seg.root
+  type: frame
+  size: [hug, hug]
+  layout: {type: flex, direction: row, gap: 2, padding: 2}
+  fill: $divider.subtle
+  cornerRadius: $radius.md
+  children:
+    - id: seg.item1
+      type: frame
+      size: [hug, 32]
+      layout: {type: flex, padding: [0, 14], alignItems: center, justifyContent: center}
+      fill: $surface.card
+      cornerRadius: $radius.sm
+      effects: {type: shadow, color: "#0000000A", offset: [0, 1], blur: 2}
+      children:
+        - {id: seg.label1, type: text, size: [hug, hug], style: $text.badge, content: Вариант 1}
+    - id: seg.item2
+      type: frame
+      size: [hug, 32]
+      layout: {type: flex, padding: [0, 14], alignItems: center, justifyContent: center}
+      cornerRadius: $radius.sm
+      children:
+        - {id: seg.label2, type: text, size: [hug, hug], style: $text.badge, color: $text.secondary, content: Вариант 2}
+    - id: seg.item3
+      type: frame
+      size: [hug, 32]
+      layout: {type: flex, padding: [0, 14], alignItems: center, justifyContent: center}
+      cornerRadius: $radius.sm
+      children:
+        - {id: seg.label3, type: text, size: [hug, hug], style: $text.badge, color: $text.secondary, content: Вариант 3}
+
+variants:
+  selected:
+    second:
+      seg.item1: {fill: "#FFFFFF00", effects: null}
+      seg.label1: {color: $text.secondary}
+      seg.item2: {fill: $surface.card, effects: {type: shadow, color: "#0000000A", offset: [0, 1], blur: 2}}
+      seg.label2: {color: $text.primary}
+    third:
+      seg.item1: {fill: "#FFFFFF00", effects: null}
+      seg.label1: {color: $text.secondary}
+      seg.item3: {fill: $surface.card, effects: {type: shadow, color: "#0000000A", offset: [0, 1], blur: 2}}
+      seg.label3: {color: $text.primary}

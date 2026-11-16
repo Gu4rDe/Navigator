@@ -1,0 +1,47 @@
+id: alert
+name: Alert
+
+expose:
+  title: {node: alert.title, field: content}
+  message: {node: alert.message, field: content}
+
+root:
+  id: alert.root
+  type: frame
+  size: [fill, hug]
+  layout: {type: flex, direction: row, gap: 10, padding: [12, 14]}
+  fill: $status.infoBg
+  cornerRadius: $radius.md
+  children:
+    - id: alert.icon
+      type: svg
+      size: [18, 18]
+      icon: fas:circle-info
+      fill: $status.info
+    - id: alert.texts
+      type: frame
+      size: [252, hug]
+      layout: {type: flex, direction: column, gap: 2}
+      children:
+        - id: alert.title
+          type: text
+          size: [fill, hug]
+          style: $text.strong
+          content: Заголовок
+        - id: alert.message
+          type: text
+          size: [fill, hug]
+          style: $text.caption
+          content: Описание состояния
+
+variants:
+  tone:
+    success:
+      alert.root: {fill: $status.successBg}
+      alert.icon: {fill: $status.success, icon: fas:circle-check}
+    warning:
+      alert.root: {fill: $status.warningBg}
+      alert.icon: {fill: $status.warning, icon: fas:triangle-exclamation}
+    error:
+      alert.root: {fill: $status.errorBg}
+      alert.icon: {fill: $status.error, icon: fas:circle-exclamation}

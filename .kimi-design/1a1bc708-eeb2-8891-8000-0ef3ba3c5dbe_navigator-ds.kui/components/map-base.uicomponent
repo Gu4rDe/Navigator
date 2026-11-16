@@ -1,0 +1,59 @@
+id: map-base
+name: Map canvas (stylized vector)
+
+expose:
+  overlays: {node: map.overlays, field: children}
+
+root:
+  id: map.root
+  type: frame
+  size: [390, 844]
+  layout: {type: free, overflow: hidden}
+  fill: $map.canvas
+  children:
+    - id: map.water
+      type: rect
+      position: [-140, 430]
+      size: [220, 900]
+      rotation: 24
+      fill: $map.water
+    - id: map.blocks
+      type: group
+      children:
+        - {id: map.b1, type: rect, position: [96, 168], size: [84, 148], cornerRadius: 10, fill: $map.block}
+        - {id: map.b2, type: rect, position: [216, 168], size: [84, 148], cornerRadius: 10, fill: $map.block}
+        - {id: map.b3, type: rect, position: [16, 360], size: [44, 148], cornerRadius: 10, fill: $map.block}
+        - {id: map.b4, type: rect, position: [216, 360], size: [84, 148], cornerRadius: 10, fill: $map.block}
+        - {id: map.b5, type: rect, position: [336, 168], size: [38, 340], cornerRadius: 10, fill: $map.block}
+        - {id: map.b6, type: rect, position: [96, 736], size: [84, 92], cornerRadius: 10, fill: $map.block}
+        - {id: map.b7, type: rect, position: [216, 736], size: [84, 92], cornerRadius: 10, fill: $map.block}
+        - {id: map.b8, type: rect, position: [336, 552], size: [38, 276], cornerRadius: 10, fill: $map.block}
+    - id: map.park
+      type: rect
+      position: [216, 552]
+      size: [84, 148]
+      cornerRadius: 12
+      fill: $map.park
+    - id: map.roads
+      type: group
+      children:
+        - {id: map.rv1, type: line, position: [78, 0], size: [0, 844], stroke: {color: $map.roadMajor, width: 12}}
+        - {id: map.rv2, type: line, position: [198, 0], size: [0, 844], stroke: {color: $map.road, width: 8}}
+        - {id: map.rv3, type: line, position: [318, 0], size: [0, 844], stroke: {color: $map.roadMajor, width: 12}}
+        - {id: map.rh1, type: line, position: [0, 148], size: [390, 0], stroke: {color: $map.roadMajor, width: 12}}
+        - {id: map.rh2, type: line, position: [0, 340], size: [390, 0], stroke: {color: $map.road, width: 8}}
+        - {id: map.rh3, type: line, position: [0, 528], size: [390, 0], stroke: {color: $map.roadMajor, width: 12}}
+        - {id: map.rh4, type: line, position: [0, 712], size: [390, 0], stroke: {color: $map.road, width: 8}}
+        - {id: map.highway, type: line, position: [-20, 250], size: [430, 290], stroke: {color: $map.roadMajor, width: 16}}
+    - id: map.labels
+      type: group
+      children:
+        - {id: map.l1, type: text, position: [92, 128], size: [hug, hug], fontSize: 11, color: $map.label, content: ул. Пушкина}
+        - {id: map.l2, type: text, position: [206, 322], size: [hug, hug], fontSize: 11, color: $map.label, content: пр. Мира}
+        - {id: map.l3, type: text, position: [24, 500], size: [hug, hug], fontSize: 11, color: $map.label, rotation: 336, content: наб. Речная}
+        - {id: map.l4, type: text, position: [222, 620], size: [hug, hug], fontSize: 11, color: "#5F7A6E", content: Парк}
+    - id: map.overlays
+      type: frame
+      position: [0, 0]
+      size: [390, 844]
+      layout: {type: free}

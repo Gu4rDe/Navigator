@@ -1,0 +1,37 @@
+id: icon-button
+name: Icon button
+
+expose:
+  glyph: {node: ib.icon, field: children}
+  badge: {node: ib.badge, field: visible}
+
+root:
+  id: ib.root
+  type: frame
+  size: [44, 44]
+  cornerRadius: $radius.pill
+  fill: $surface.card
+  effects: $shadow.card
+  layout: {type: flex, alignItems: center, justifyContent: center}
+  children:
+    - id: ib.icon
+      type: frame
+      size: [hug, hug]
+      layout: {type: flex, alignItems: center, justifyContent: center}
+    - id: ib.badge
+      type: ellipse
+      position: [28, 6]
+      size: [10, 10]
+      fill: $status.error
+      stroke: {color: $surface.card, width: 2, alignment: center}
+      visible: false
+
+variants:
+  kind:
+    primary:
+      ib.root: {fill: $brand.primary}
+    dark:
+      ib.root: {fill: $map.canvas}
+  size:
+    lg:
+      ib.root: {size: [56, 56]}

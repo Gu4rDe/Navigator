@@ -1,0 +1,57 @@
+id: input
+name: Input / Search
+
+expose:
+  value: {node: input.value, field: content}
+  label: {node: input.label, field: content}
+
+root:
+  id: input.root
+  type: frame
+  size: [fill, 48]
+  layout: {type: flex, direction: column, gap: 6}
+  children:
+    - id: input.label
+      type: text
+      size: [hug, hug]
+      style: $text.caption
+      content: Поле
+      visible: false
+    - id: input.box
+      type: frame
+      size: [fill, 48]
+      layout: {type: flex, direction: row, gap: 10, padding: [0, 14], alignItems: center}
+      fill: $surface.card
+      stroke: $stroke.hairline
+      cornerRadius: $radius.md
+      children:
+        - id: input.icon
+          type: svg
+          size: [18, 18]
+          icon: fas:magnifying-glass
+          fill: $text.disabled
+        - id: input.value
+          type: text
+          size: [fill, hug]
+          style: $text.body
+          maxLines: 1
+          content: Поиск
+        - id: input.clear
+          type: svg
+          size: [16, 16]
+          icon: fas:circle-xmark
+          fill: $text.disabled
+          visible: false
+
+variants:
+  state:
+    focus:
+      input.box: {stroke: {color: $brand.primary, width: 2, alignment: inside}}
+    error:
+      input.box: {stroke: {color: $status.error, width: 2, alignment: inside}}
+    disabled:
+      input.box: {fill: $surface.base}
+      input.value: {color: $text.disabled}
+  labeled:
+    true:
+      input.label: {visible: true}

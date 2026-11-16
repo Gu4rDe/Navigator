@@ -1,0 +1,52 @@
+id: tag
+name: Tag / Badge
+
+expose:
+  label: {node: tag.label, field: content}
+  dotVisible: {node: tag.dot, field: visible}
+
+root:
+  id: tag.root
+  type: frame
+  size: [hug, hug]
+  layout: {type: flex, direction: row, gap: 6, padding: [3, 8], alignItems: center}
+  fill: $status.infoBg
+  cornerRadius: $radius.sm
+  children:
+    - id: tag.dot
+      type: ellipse
+      size: [6, 6]
+      fill: $status.info
+    - id: tag.label
+      type: text
+      size: [hug, hug]
+      style: $text.badge
+      color: $status.info
+      content: Инфо
+
+variants:
+  tone:
+    success:
+      tag.root: {fill: $status.successBg}
+      tag.dot: {fill: $status.success}
+      tag.label: {color: $status.success}
+    warning:
+      tag.root: {fill: $status.warningBg}
+      tag.dot: {fill: $status.warning}
+      tag.label: {color: "#AD6800"}
+    error:
+      tag.root: {fill: $status.errorBg}
+      tag.dot: {fill: $status.error}
+      tag.label: {color: $status.error}
+    unknown:
+      tag.root: {fill: $status.unknownBg}
+      tag.dot: {fill: $status.unknown}
+      tag.label: {color: $text.secondary}
+    live:
+      tag.root: {fill: $status.success}
+      tag.dot: {fill: $text.inverse}
+      tag.label: {color: $text.inverse}
+    replay:
+      tag.root: {fill: $status.warning}
+      tag.dot: {fill: $text.inverse}
+      tag.label: {color: $text.inverse}

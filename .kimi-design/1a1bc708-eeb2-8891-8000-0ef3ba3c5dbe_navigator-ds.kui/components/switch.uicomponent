@@ -1,0 +1,22 @@
+id: switch
+name: Switch
+
+root:
+  id: switch.root
+  type: frame
+  size: [44, 26]
+  cornerRadius: $radius.pill
+  fill: $text.disabled
+  children:
+    - id: switch.knob
+      type: ellipse
+      position: [3, 3]
+      size: [20, 20]
+      fill: $surface.card
+      effects: {type: shadow, color: "#0000001F", offset: [0, 2], blur: 4}
+
+variants:
+  state:
+    on:
+      switch.root: {fill: $brand.primary}
+      switch.knob: {position: [21, 3]}
