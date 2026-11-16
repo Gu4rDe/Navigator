@@ -24,13 +24,5 @@ ij_kotlin_allow_trailing_comma = true
 ij_kotlin_allow_trailing_comma_on_call_site = true
 ktlint_standard_trailing-comma-on-call-site = disabled
 ktlint_standard_trailing-comma-on-declaration-site = disabled
-
 # Compose-соглашение: @Composable-функции именуются в PascalCase.
-[app/shared/ui/**/*.kt]
-ktlint_standard_function-naming = disabled
-
-[app/shared/navigation/**/*.kt]
-ktlint_standard_function-naming = disabled
-
-[app/androidApp/**/*.kt]
-ktlint_standard_function-naming = disabled
+ktlint_function_naming_ignore_when_annotated_with = Composable
