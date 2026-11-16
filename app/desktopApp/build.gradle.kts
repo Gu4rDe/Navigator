@@ -12,9 +12,9 @@ kotlin {
     sourceSets {
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.ui)
+            implementation(libs.compose.runtime)
+            implementation(libs.compose.foundation)
+            implementation(libs.compose.ui)
             implementation(libs.decompose)
             implementation(project(":app:shared:navigation"))
             implementation(project(":app:shared:ui"))

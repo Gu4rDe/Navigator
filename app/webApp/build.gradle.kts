@@ -5,7 +5,7 @@ plugins {
 }
 
 kotlin {
-    js(IR) {
+    js {
         browser {
             binaries.executable()
         }
@@ -13,9 +13,9 @@ kotlin {
 
     sourceSets {
         jsMain.dependencies {
-            implementation(compose.ui)
-            implementation(compose.runtime)
-            implementation(compose.foundation)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.runtime)
+            implementation(libs.compose.foundation)
             implementation(libs.decompose)
             implementation(project(":app:shared:navigation"))
             implementation(project(":app:shared:ui"))

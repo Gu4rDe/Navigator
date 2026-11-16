@@ -13,7 +13,7 @@ kotlin {
         minSdk = 26
     }
     jvm("desktop")
-    js(IR) {
+    js {
         browser()
         binaries.executable()
     }
@@ -22,9 +22,9 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.ui)
+            implementation(libs.compose.runtime)
+            implementation(libs.compose.foundation)
+            implementation(libs.compose.ui)
             implementation(libs.decompose)
             implementation(libs.decompose.extensions.compose)
             implementation(libs.kotlinx.serialization.json)
