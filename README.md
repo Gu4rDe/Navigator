@@ -1,5 +1,7 @@
 # Navigator
 
+[![CI](https://github.com/Gu4rDe/Navigator/actions/workflows/ci.yml/badge.svg?branch=dev)](https://github.com/Gu4rDe/Navigator/actions/workflows/ci.yml)
+
 Кроссплатформенный навигатор на Kotlin Multiplatform: Android, iOS, Desktop (JVM) и Web. Клиентский KMP-монорепозиторий для автомобильной навигации с учётом дорожной обстановки; взаимодействует с внешним API навигатора через стабильные DTO и репозитории.
 
 **Стек:** Kotlin Multiplatform, Compose Multiplatform, Decompose, kotlinx.serialization. По плану также Ktor Client, kotlinx.coroutines/Flow, DataStore KMP и MapLibre Compose — эти слои ещё не подключены (см. «Статус»).
@@ -36,6 +38,27 @@ adb install -r app/androidApp/build/outputs/apk/debug/androidApp-debug.apk
 ```
 
 Для сборки нужен Android SDK и JDK; Gradle сам скачивает daemon JVM 25 (см. `gradle/gradle-daemon-jvm.properties`). `local.properties` с `sdk.dir` создаётся локально и не коммитится.
+
+## Проверки
+
+```bash
+# Стиль и форматирование (ktlint)
+./gradlew ktlintCheck
+./gradlew ktlintFormat   # автоисправление
+
+# Статический анализ (detekt + правила для Compose)
+./gradlew detekt
+
+# Android Lint
+./gradlew :app:androidApp:lintDebug
+
+# Всё сразу
+./gradlew check
+```
+
+Настройки лежат в `.editorconfig` (ktlint, стиль `android_studio`) и `config/detekt/detekt.yml`. Длинные строки в UI-коде и SVG-путях иконок не ограничиваются, `@Composable`-функции именуются в PascalCase — это разрешено и для ktlint, и для detekt.
+
+Те же проверки выполняет CI (`.github/workflows/ci.yml`) на каждый push в `dev`/`main` и на pull request: `ktlintCheck`, `detekt`, `:app:androidApp:lintDebug`, `:app:androidApp:assembleDebug` и сборка веб-таргета. Отчёты и debug-APK сохраняются артефактами запуска.
 
 **Статус:** UI-прототип по дизайн-макету — все 12 экранов, компоненты дизайн-системы, навигация на Decompose, доменные DTO. Пока не реализованы: сетевой слой и репозитории (Ktor), DataStore, MapLibre-карта (сейчас схематичный `NvMapBase` на Canvas), геолокация, голосовые подсказки и отдельный iOS entry point (таргеты `iosArm64`/`iosSimulatorArm64` объявлены в shared-модулях). Детали — в [Плане структуры навигатора KMP](План_структуры_навигатора_KMP.md), схемы — в `navigator_mvp_assets/`.
 
