@@ -49,8 +49,12 @@ import ru.navigator.shared.ui.theme.overlayShadow
 // ═══ 5. Построение маршрута (screen.build) ═══
 
 @Composable
-fun BuildScreen(onBack: () -> Unit, onBuild: () -> Unit) {
-    ScreenFrame(NavigatorColors.SurfaceBase) {
+fun BuildScreen(
+    onBack: () -> Unit,
+    onBuild: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ScreenFrame(NavigatorColors.SurfaceBase, modifier) {
         Column(Modifier.fillMaxSize()) {
             DesignStatusBar(time = "14:32", light = false)
             Row(
@@ -167,8 +171,13 @@ private fun RouteEndpoint(dot: @Composable () -> Unit, caption: String, value: S
 // ═══ 6. Предпросмотр маршрута (screen.preview) ═══
 
 @Composable
-fun PreviewScreen(onBack: () -> Unit, onStart: () -> Unit, onSimulate: () -> Unit) {
-    ScreenFrame(NavigatorColors.MapCanvas) {
+fun PreviewScreen(
+    onBack: () -> Unit,
+    onStart: () -> Unit,
+    onSimulate: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ScreenFrame(NavigatorColors.MapCanvas, modifier) {
         NvMapBase {
             OverlayPath(
                 Path().apply {
@@ -309,8 +318,11 @@ private fun RouteOptionRow(
 // ═══ 7. Активное ведение (screen.guidance) ═══
 
 @Composable
-fun GuidanceScreen(onFinish: () -> Unit) {
-    ScreenFrame(NavigatorColors.MapCanvas) {
+fun GuidanceScreen(
+    onFinish: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ScreenFrame(NavigatorColors.MapCanvas, modifier) {
         NvMapBase {
             OverlayPath(mainRoutePath(), NavigatorColors.StatusUnknown, 8f)
             OverlayPath(
@@ -433,8 +445,12 @@ private fun NextManeuverRow(icon: NvIcon, text: String) {
 // ═══ 8. Прибытие (screen.arrival) ═══
 
 @Composable
-fun ArrivalScreen(onToMap: () -> Unit, onReverse: () -> Unit) {
-    ScreenFrame(NavigatorColors.SurfaceBase) {
+fun ArrivalScreen(
+    onToMap: () -> Unit,
+    onReverse: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ScreenFrame(NavigatorColors.SurfaceBase, modifier) {
         Column(Modifier.fillMaxSize()) {
             DesignStatusBar(time = "14:58", light = false)
             Column(

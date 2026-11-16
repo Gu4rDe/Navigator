@@ -51,8 +51,12 @@ import ru.navigator.shared.ui.theme.cardShadow
 // ═══ 1. Первый запуск (screen.welcome) ═══
 
 @Composable
-fun WelcomeScreen(onAllow: () -> Unit, onSkip: () -> Unit) {
-    ScreenFrame(NavigatorColors.SurfaceBase) {
+fun WelcomeScreen(
+    onAllow: () -> Unit,
+    onSkip: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ScreenFrame(NavigatorColors.SurfaceBase, modifier) {
         Column(Modifier.fillMaxSize()) {
             DesignStatusBar(time = "14:32", light = false)
             Column(
@@ -151,8 +155,9 @@ fun MapScreen(
     onStatus: () -> Unit,
     onSettings: () -> Unit,
     onAbout: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
-    ScreenFrame(NavigatorColors.MapCanvas) {
+    ScreenFrame(NavigatorColors.MapCanvas, modifier) {
         NvMapBase {
             OverlayPath(mainRoutePath(), NavigatorColors.BrandPrimary, 8f)
             OverlayPath(
@@ -236,8 +241,12 @@ fun MapScreen(
 // ═══ 3. Поиск (screen.search) ═══
 
 @Composable
-fun SearchScreen(onBack: () -> Unit, onResult: () -> Unit) {
-    ScreenFrame(NavigatorColors.SurfaceBase) {
+fun SearchScreen(
+    onBack: () -> Unit,
+    onResult: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ScreenFrame(NavigatorColors.SurfaceBase, modifier) {
         Column(Modifier.fillMaxSize()) {
             DesignStatusBar(time = "14:32", light = false)
             Row(
@@ -288,8 +297,9 @@ fun PointScreen(
     onRouteHere: () -> Unit,
     onRouteFrom: () -> Unit,
     onRecalc: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
-    ScreenFrame(NavigatorColors.MapCanvas) {
+    ScreenFrame(NavigatorColors.MapCanvas, modifier) {
         NvMapBase {
             PositionMarker(166, 240)
             DestinationPin(182, 330, width = 30, height = 40)

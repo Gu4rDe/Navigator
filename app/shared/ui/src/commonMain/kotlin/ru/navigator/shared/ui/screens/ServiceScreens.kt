@@ -43,8 +43,11 @@ import ru.navigator.shared.ui.theme.PillShape
 // ═══ 9. Событие ИТС (screen.event) ═══
 
 @Composable
-fun EventScreen(onBack: () -> Unit) {
-    ScreenFrame(NavigatorColors.SurfaceBase) {
+fun EventScreen(
+    onBack: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ScreenFrame(NavigatorColors.SurfaceBase, modifier) {
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
             DesignStatusBar(time = "14:32", light = false)
             Row(
@@ -144,8 +147,11 @@ fun EventScreen(onBack: () -> Unit) {
 // ═══ 10. Настройки (screen.settings) ═══
 
 @Composable
-fun SettingsScreen(onBack: () -> Unit) {
-    ScreenFrame(NavigatorColors.SurfaceBase) {
+fun SettingsScreen(
+    onBack: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ScreenFrame(NavigatorColors.SurfaceBase, modifier) {
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
             DesignStatusBar(time = "14:32", light = false)
             Row(
@@ -223,8 +229,11 @@ fun SettingsScreen(onBack: () -> Unit) {
 // ═══ 11. Статус и симуляция (screen.status) ═══
 
 @Composable
-fun StatusScreen(onBack: () -> Unit) {
-    ScreenFrame(NavigatorColors.SurfaceBase) {
+fun StatusScreen(
+    onBack: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ScreenFrame(NavigatorColors.SurfaceBase, modifier) {
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
             DesignStatusBar(time = "14:32", light = false)
             Row(
@@ -352,8 +361,11 @@ fun StatusScreen(onBack: () -> Unit) {
 // ═══ 12. О программе (screen.about) ═══
 
 @Composable
-fun AboutScreen(onBack: () -> Unit) {
-    ScreenFrame(NavigatorColors.SurfaceBase) {
+fun AboutScreen(
+    onBack: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ScreenFrame(NavigatorColors.SurfaceBase, modifier) {
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
             DesignStatusBar(time = "14:32", light = false)
             Row(

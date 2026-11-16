@@ -1,0 +1,30 @@
+# Конфигурация detekt для Navigator.
+# Правила берутся из дефолтного набора detekt (buildUponDefaultConfig = true),
+# здесь только точечные изменения. Форматирование проверяет ktlint, поэтому
+# detekt-formatting не подключён и не дублирует его правила.
+style:
+  # Длину строк контролирует ktlint (в .editorconfig max_line_length = off):
+  # в UI-коде и SVG-путях иконок встречаются длинные строки.
+  MaxLineLength:
+    active: false
+  # TODO/FIXME в коде не запрещаем: комментарий — полезный маркер, а не ошибка.
+  ForbiddenComment:
+    active: false
+  # Размеры и отступы взяты из дизайн-макета и читаются лучше, чем 190
+  # именованных констант вида paddingTop24.
+  MagicNumber:
+    active: false
+
+naming:
+  # Compose-соглашение: @Composable-функции именуются в PascalCase.
+  FunctionNaming:
+    ignoreAnnotated: ['Composable']
+
+complexity:
+  LongMethod:
+    # Экраны — декларативная разметка по макету: вынесение фрагментов ради
+    # порога в 60 строк ухудшает читаемость и усложняет сверку с дизайном.
+    excludes: ['**/screens/**']
+  TooManyFunctions:
+    # Файл превью содержит по функции на экран — это нормально.
+    ignoreAnnotatedFunctions: ['Preview']

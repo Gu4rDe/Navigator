@@ -137,7 +137,7 @@ fun NvMapBase(
 }
 
 @Composable
-private fun MapLabel(text: String, modifier: Modifier) {
+private fun MapLabel(text: String, modifier: Modifier = Modifier) {
     BasicText(
         text = text,
         style = NavigatorType.Caption.copy(fontSize = 11.sp, color = NavigatorColors.MapLabel),

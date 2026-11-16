@@ -35,9 +35,10 @@ import ru.navigator.shared.ui.theme.overlayShadow
 @Composable
 fun ScreenFrame(
     background: Color,
+    modifier: Modifier = Modifier,
     content: @Composable androidx.compose.foundation.layout.BoxScope.() -> Unit,
 ) {
-    Box(Modifier.fillMaxSize().background(background)) {
+    Box(modifier.fillMaxSize().background(background)) {
         content()
         DesignHomeIndicator(light = false, modifier = Modifier.offset(128.dp, 827.dp))
     }
@@ -79,47 +80,49 @@ private fun SheetGrabber() {
 
 /** Путь-оверлей на карте в координатах макета (например, линия маршрута). */
 @Composable
-fun OverlayPath(path: Path, color: Color, width: Float) {
-    Canvas(Modifier.fillMaxSize()) {
+fun OverlayPath(path: Path, color: Color, width: Float, modifier: Modifier = Modifier) {
+    Canvas(modifier.fillMaxSize()) {
         drawPath(path, color, style = Stroke(width = width, cap = StrokeCap.Round))
     }
 }
 
 /** Маркер текущей позиции: круг точности + точка. */
 @Composable
-fun PositionMarker(x: Int, y: Int, accuracy: Boolean = true) {
-    if (accuracy) {
+fun PositionMarker(x: Int, y: Int, modifier: Modifier = Modifier, accuracy: Boolean = true) {
+    Box(modifier) {
+        if (accuracy) {
+            Box(
+                Modifier
+                    .offset(x.dp, y.dp)
+                    .size(64.dp)
+                    .background(Color(0x261677FF), PillShape),
+            )
+        }
         Box(
             Modifier
-                .offset(x.dp, y.dp)
-                .size(64.dp)
-                .background(Color(0x261677FF), PillShape),
+                .offset((x + 21).dp, (y + 21).dp)
+                .size(22.dp)
+                .background(NavigatorColors.BrandPrimary, PillShape)
+                .border(3.dp, NavigatorColors.SurfaceCard, PillShape),
         )
     }
-    Box(
-        Modifier
-            .offset((x + 21).dp, (y + 21).dp)
-            .size(22.dp)
-            .background(NavigatorColors.BrandPrimary, PillShape)
-            .border(3.dp, NavigatorColors.SurfaceCard, PillShape),
-    )
 }
 
 /** Красный пин назначения (fas:location-dot). */
 @Composable
-fun DestinationPin(x: Int, y: Int, width: Int = 26, height: Int = 34) {
+fun DestinationPin(x: Int, y: Int, modifier: Modifier = Modifier, width: Int = 26, height: Int = 34) {
     NvGlyph(
         NvIcon.LocationDot,
         NavigatorColors.StatusError,
-        Modifier.offset(x.dp, y.dp).size(width.dp, height.dp),
+        modifier.offset(x.dp, y.dp).size(width.dp, height.dp),
     )
 }
 
 /** Маркер события ИТС на карте (кружок с car-burst). */
 @Composable
-fun EventMarker(x: Int, y: Int) {
+fun EventMarker(x: Int, y: Int, modifier: Modifier = Modifier) {
     Box(
-        Modifier
+        modifier
             .offset(x.dp, y.dp)
             .size(28.dp)
             .background(NavigatorColors.StatusWarning, PillShape)

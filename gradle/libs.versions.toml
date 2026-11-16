@@ -6,6 +6,8 @@ decompose = "3.5.0"
 kotlinx-serialization = "1.12.0"
 compose-ui-tooling = "1.12.1"
 ktlint = "14.2.0"
+detekt = "2.0.0-alpha.6"
+detekt-compose = "0.6.8"
 
 [libraries]
 decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
@@ -17,6 +19,7 @@ compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", v
 compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose-multiplatform" }
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-ui-tooling" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose-ui-tooling" }
+detekt-compose = { module = "io.nlopez.compose.rules:detekt", version.ref = "detekt-compose" }
 
 [plugins]
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
@@ -26,3 +29,4 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidKmpLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
+detekt = { id = "dev.detekt", version.ref = "detekt" }

@@ -32,6 +32,22 @@ enum class NvButtonKind { Primary, Secondary, Ghost, Danger, Dark }
 
 enum class NvButtonSize { Default, Large }
 
+private val NvButtonKind.backgroundColor: Color
+    get() = when (this) {
+        NvButtonKind.Primary -> NavigatorColors.BrandPrimary
+        NvButtonKind.Secondary -> NavigatorColors.SurfaceCard
+        NvButtonKind.Ghost -> Color.Transparent
+        NvButtonKind.Danger -> NavigatorColors.StatusError
+        NvButtonKind.Dark -> NavigatorColors.MapCanvas
+    }
+
+private val NvButtonKind.labelColor: Color
+    get() = when (this) {
+        NvButtonKind.Primary, NvButtonKind.Danger, NvButtonKind.Dark -> NavigatorColors.TextInverse
+        NvButtonKind.Secondary -> NavigatorColors.TextPrimary
+        NvButtonKind.Ghost -> NavigatorColors.BrandPrimary
+    }
+
 /** Компонент `button` из дизайн-системы (kinds: primary/secondary/ghost/danger/dark; 40/48; disabled). */
 @Composable
 fun NvButton(
@@ -45,18 +61,8 @@ fun NvButton(
     iconTint: Color? = null,
 ) {
     val large = size == NvButtonSize.Large
-    val background = when (kind) {
-        NvButtonKind.Primary -> NavigatorColors.BrandPrimary
-        NvButtonKind.Secondary -> NavigatorColors.SurfaceCard
-        NvButtonKind.Ghost -> Color.Transparent
-        NvButtonKind.Danger -> NavigatorColors.StatusError
-        NvButtonKind.Dark -> NavigatorColors.MapCanvas
-    }
-    val labelColor = when (kind) {
-        NvButtonKind.Primary, NvButtonKind.Danger, NvButtonKind.Dark -> NavigatorColors.TextInverse
-        NvButtonKind.Secondary -> NavigatorColors.TextPrimary
-        NvButtonKind.Ghost -> NavigatorColors.BrandPrimary
-    }
+    val background = kind.backgroundColor
+    val labelColor = kind.labelColor
     val shape = RoundedCornerShape(if (large) NavigatorRadius.Lg else NavigatorRadius.Md)
     Row(
         modifier = modifier
