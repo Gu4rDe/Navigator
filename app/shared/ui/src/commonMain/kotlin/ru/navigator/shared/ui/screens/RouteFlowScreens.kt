@@ -178,14 +178,14 @@ fun PreviewScreen(onBack: () -> Unit, onStart: () -> Unit, onSimulate: () -> Uni
             OverlayPath(
                 Path().apply {
                     moveTo(78f, 844f); lineTo(78f, 560f)
-                    quadraticBezierTo(78f, 528f, 110f, 528f); lineTo(318f, 528f)
+                    quadraticTo(78f, 528f, 110f, 528f); lineTo(318f, 528f)
                 },
                 NavigatorColors.MapRoadMajor, 6f,
             )
             OverlayPath(
                 Path().apply {
                     moveTo(198f, 844f); lineTo(198f, 380f)
-                    quadraticBezierTo(198f, 340f, 238f, 340f)
+                    quadraticTo(198f, 340f, 238f, 340f)
                     lineTo(318f, 340f); lineTo(318f, 528f)
                 },
                 NavigatorColors.MapRoadMajor, 6f,
@@ -308,7 +308,7 @@ fun GuidanceScreen(onFinish: () -> Unit) {
             OverlayPath(
                 Path().apply {
                     moveTo(198f, 716f); lineTo(198f, 560f)
-                    quadraticBezierTo(198f, 528f, 230f, 528f); lineTo(318f, 528f)
+                    quadraticTo(198f, 528f, 230f, 528f); lineTo(318f, 528f)
                 },
                 NavigatorColors.BrandPrimary, 8f,
             )

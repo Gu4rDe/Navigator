@@ -154,6 +154,6 @@ private fun MapLabel(text: String, modifier: Modifier) {
 fun mainRoutePath(): Path = Path().apply {
     moveTo(198f, 844f)
     lineTo(198f, 560f)
-    quadraticBezierTo(198f, 528f, 230f, 528f)
+    quadraticTo(198f, 528f, 230f, 528f)
     lineTo(318f, 528f)
 }
